@@ -81,7 +81,6 @@ $(function(){
             },
             slide: false
         });
-        console.log(opts);
 
         navbar($(opts.navbar.elem), (opts.navbar.opts));
         footer($(opts.footer.elem), (opts.footer.opts));
@@ -114,20 +113,23 @@ $(function(){
             });
         }
 
-        $elem.addClass("kbc-navbar", "navbar-fixed-top")
+        $elem.addClass("kbc-navbar")
+             .addClass("navbar-fixed-top")
              .append($("<div>")
                      .addClass("kbc-container")
                      .append($("<div>")
-                             .addClass("kbc-container-left")
+                             .addClass("kbc-container-inner")
+                             .addClass("kbc-brand")
                              .append($("<h1>")
                                      .append($("<a>")
                                              .attr("href", opts.logoUrl)
                                              .append($("<img>")
                                                      .attr("src", opts.logoSrc)))))
                      .append($("<div>")
-                             .addClass("kbc-container-right")
+                             .addClass("kbc-container-inner")
                              .append($snsCell)
                              .append($navCell)));
+        $elem.parent().prepend($("<div>").height($(".kbc-navbar").height()));
     };
 
     var footer = function($elem, opts){
@@ -145,13 +147,13 @@ $(function(){
             });
         }
 
-        $elem.addClass("kbc-navbar", "navbar-fixed-top")
+        $elem.addClass("kbc-footer")
              .append($("<div>")
                      .addClass("kbc-container")
                      .append($("<div>")
-                             .addClass("kbc-container-left"))
+                             .addClass("kbc-container-inner"))
                      .append($("<div>")
-                             .addClass("kbc-container-right")
+                             .addClass("kbc-container-inner")
                              .append($navCell)
                              .append($("<div>")
                                      .addClass("kbc-cell")
@@ -165,7 +167,6 @@ $(function(){
             pause: "hover",
             wrap: true
         });
-        $elem.css("margin-top", $(".kbc-navbar").height());
     };
 
 }(this, "kbc", "view"));
