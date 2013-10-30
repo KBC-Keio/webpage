@@ -11,13 +11,6 @@
  * HTMLの読み込み完了後に即時実行されるメソッド
  */
 $(function(){
-    $("#main-slide").css("margin-top", $(".kbc-navbar").height());
-    $("#main-slide").carousel({
-        interval: 5000,
-        pause: "hover",
-        wrap: true
-    });
-
     kbc.view.initialize({
         navbar: {
             elem: ".kbc-navbar",
@@ -36,7 +29,16 @@ $(function(){
         },
         footer: {
             elem: ".kbc-footer",
-        }
+            opts: {
+                year: "2013",
+                nav: [
+                    { url: "index.html", text: "トップページ" },
+                    { url: "index.html", text: "お問い合わせ" },
+                    { url: "index.html", text: "サイトマップ" },
+                ]
+            }
+        },
+        slide: "#main-slide"
     });
 });
 
@@ -82,21 +84,11 @@ $(function(){
         console.log(opts);
 
         navbar($(opts.navbar.elem), (opts.navbar.opts));
-        /*
         footer($(opts.footer.elem), (opts.footer.opts));
         if(opts.slide){
             slide($(opts.slide));
         }
-        */
     };
-
-    /*
-    var resize = function(){
-        if($slide){
-            $slide.css("margin-top", $navbar.height());
-        }
-    };
-    */
 
     var navbar = function($elem, opts){
         opts = applyDefaultOpts(opts, {
@@ -138,13 +130,42 @@ $(function(){
                              .append($navCell)));
     };
 
+    var footer = function($elem, opts){
+        opts = applyDefaultOpts(opts, {
+            year: "2013",
+            nav: undefined
+        });
+
+        var $navCell = $("<div>").addClass("kbc-cell");
+        if(opts.nav instanceof Array){
+            opts.nav.forEach(function(e){
+                $navCell.append($("<a>")
+                                .attr("href", e.url)
+                                .append(e.text));
+            });
+        }
+
+        $elem.addClass("kbc-navbar", "navbar-fixed-top")
+             .append($("<div>")
+                     .addClass("kbc-container")
+                     .append($("<div>")
+                             .addClass("kbc-container-left"))
+                     .append($("<div>")
+                             .addClass("kbc-container-right")
+                             .append($navCell)
+                             .append($("<div>")
+                                     .addClass("kbc-cell")
+                                     .append($("<p>")
+                                             .append("Copyright &copy " + opts.year + " KBC Organization Team All Rights Reserced.")))));
+    };
+
     var slide = function($elem){
         $elem.carousel({
             interval: 5000,
             pause: "hover",
             wrap: true
         });
-        $elem.css("margin-top", $("kbc-navbar").height());
+        $elem.css("margin-top", $(".kbc-navbar").height());
     };
 
 }(this, "kbc", "view"));
