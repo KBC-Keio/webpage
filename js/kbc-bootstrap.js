@@ -20,10 +20,10 @@ $(function(){
                     '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://keio-contest.org" data-via="KBC_Keio" data-lang="ja" data-related="KBC_Keio">ツイート</a>'
                 ],
                 nav: [
-                    { url: "index.html", text: "KBC実行委員会について" },
-                    { url: "index.html", text: "KBC Business Leverage" },
+                    { url: "template.html", text: "KBC実行委員会とは" },
+                    { url: "index.html", text: "イベント情報" },
                     { url: "index.html", text: "スポンサーシップ" },
-                    { url: "index.html", text: "活動報告" },
+                    { url: "index.html", text: "過去のイベント" },
                 ]
             }
         },
