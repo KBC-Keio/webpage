@@ -10,14 +10,14 @@ var configuration = {
     navbar: {
         elem: ".kbc-navbar",
         opts: {
-            logoSrc: "img/logo/logo_white.png",
+            logoSrc: "/img/logo/logo_white.png",
             sns: [
                 '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://keio-contest.org" data-via="KBC_Keio" data-lang="ja" data-related="KBC_Keio">ツイート</a>'
             ],
             nav: [
-                { url: "about.html", text: "KBC実行委員会とは" },
-                { url: "event/index.html", text: "イベント情報" },
-                { url: "sponsorship.html", text: "スポンサーシップ" },
+                { url: "/about.html", text: "KBC実行委員会とは" },
+                { url: "/event/index.html", text: "イベント情報" },
+                { url: "/sponsorship.html", text: "スポンサーシップ" },
             ]
         }
     },
@@ -26,9 +26,9 @@ var configuration = {
         opts: {
             year: "2013",
             nav: [
-                { url: "index.html", text: "トップページ" },
-                { url: "index.html", text: "お問い合わせ" },
-                { url: "index.html", text: "サイトマップ" },
+                { url: "/index.html", text: "トップページ" },
+                { url: "/index.html", text: "お問い合わせ" },
+                { url: "/index.html", text: "サイトマップ" },
             ]
         }
     },
