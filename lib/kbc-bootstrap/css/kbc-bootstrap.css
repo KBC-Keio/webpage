@@ -1,0 +1,319 @@
+/*
+ * title       : KBC Bootstrap
+ * description : 初期化のためのCSSコード群。全てのHTMLページで読み込みます。基本的に本ファイルの内容は一切書き換えてはいけません。CSSおよびTwitter Bootstrapを十分に理解していないメンバーが書き換えた場合には全てのWebページが正しく表示されなくなる恐れがあります。
+ * dependency  : Twitter Bootstrap 3.0.0
+ * version     : 1.0.0
+ * date        : 2013年10月30日
+ * author      : 第9期実行委員 出水厚輝
+ */
+/*
+ * タグの標準デザインを変更
+ */
+body, html{
+    height: 100%;
+}
+.caption-black{
+    color: #fff;
+    background-color: #333;
+}
+.caption-red{
+    color: #fff;
+    background-color: #c0392b;
+}
+.caption-green{
+    color: #fff;
+    background-color: #009250;
+}
+.caption-blue{
+    color: #fff;
+    background-color: #3261ab;
+}
+.caption-white{
+    color: #222;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px #999;
+}
+.caption-yellow{
+    color: #fff;
+    background-color: #f6ca06;
+}
+.caption-orange{
+    color: #fff;
+    background-color: #e67e22;
+}
+.caption-purple{
+    color: #fff;
+    background-color: #9b59b6;
+}
+.caption-brown{
+    color: #fff;
+    background-color: #853e22;
+}
+h1{
+    margin: 0;
+}
+h2{
+    padding: 50px 10px 10px 10px;
+    margin: 40px 0;
+    font-size: 20px;
+    border-radius: 7px;
+}
+h3{
+    padding: 8px 10px 6px 10px;
+    margin: 30px 0;
+    font-size: 16px;
+    border-radius: 7px;
+}
+h4{
+    border-bottom: #999 dotted 2px;
+    font-size: 16px;
+    padding: 10px 0 3px 10px;
+    margin: 40px 0 20px 10px;
+}
+p{
+    font-size: 10pt;
+    line-height: 180%;
+    word-break: break-all;
+    margin: 20px 10px 40px 10px;
+}
+a{
+    color: #7f8c8d;
+    text-decoration: none;
+}
+a:hover{
+    color: #2c3e50;
+    text-decoration: none;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 30px 15px;
+    margin: 30px 10px 40px 10px;
+}
+td{
+    vertical-align: top;
+}
+
+/*
+ * 画像のサムネイルデザイン
+ */
+.right-thumbnail{
+    display: table;
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+.right-thumbnail p{
+    display: table-cell;
+    vertical-align: top;
+}
+.right-thumbnail span{
+    display: table-cell;
+    vertical-align: middle;
+}
+.right-thumbnail img{
+    border-radius: 8px;
+    width: 250px;
+    margin: 0 0 0 40px;
+}
+
+/*
+ * パンくずリストのデザインを変更
+ */
+.kbc-breadcrumb{
+    width: 100%;
+    background-color: #f5f5f5;
+}
+.breadcrumb{
+    font-size: 10pt;
+    width: 960px;
+    background-color: #f5f5f5;
+    margin: 0 auto 20px;
+}
+
+/*
+ * 簡易グリッドレイアウト用コンテナ
+ */
+.kbc-container{
+    display: table;
+    width: 960px;
+    height: 100%;
+    margin: 0 auto 0 auto;
+}
+.kbc-container-inner{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*
+ * サイドメニュー
+ */
+.kbc-sidemenu{
+    display: table-cell;
+    vertical-align: top;
+    width: 25%;
+    padding: 40px 25px 0 0;
+    margin: 0;
+}
+.kbc-sidemenu h2{
+    font-size: 12pt;
+    background-color: #444;
+    color: #eee;
+    padding: 10px 20px;
+    margin: 0;
+    border-radius: 7px 7px 0 0;
+}
+.kbc-nav-list{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+    color: #222;
+    border-radius: 0 0 7px 7px;
+}
+.kbc-nav-list li{
+    padding: 10px 20px;
+    list-style: none;
+}
+.kbc-nav-list hr{
+    margin: 0;
+}
+
+/*
+ * ページトップのスライド
+ */
+.kbc-slide{
+    width: 100%;
+    background-color: #000;
+}
+#main-slide{
+    width: 960px;
+    height: 300px;
+    margin: 0 auto 0 auto;
+}
+.carousel-inner{
+    height: 300px;
+}
+
+/*
+ * ナビゲーションバー
+ */
+.kbc-navbar{
+    width: 100%;
+    height: 90px;
+    padding: 0;
+    background-color: #000;
+}
+.kbc-brand img{
+    height: 70px;
+}
+.kbc-nav-btn{
+    display: inline-block;
+    cursor: pointer;
+    color: #ddd;
+    background-color: #444;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px #555 inset, -1px -1px 2px #555 inset;
+    padding: 6px 10px;
+    margin: 15px 8px 5px;
+}
+.kbc-nav-btn:hover{
+    color: #ddd;
+    background-color: #666;
+    text-decoration: none;
+}
+.kbc-navbar .kbc-cell{
+    text-align: right;
+}
+.kbc-brand{
+    width: 35%;
+}
+
+/*
+ * イベント
+ */
+.kbc-event{
+    background-color: #ddd;
+    padding: 0;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: -1px -1px 3px #ccc inset, 1px 1px 3px #ccc inset;
+}
+.kbc-event h2{
+    color: #333;
+    padding: 20px 0 0 25px;
+    margin: 0;
+}
+.kbc-event .event-contents{
+    padding: 10px 0 0 20px;
+    display: table;
+}
+.kbc-event .event-inner-contents{
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+}
+.kbc-event img{
+    width: 300px;
+    display: table-cell;
+    border-radius: 6px;
+    margin: 0 10px 0 0;
+}
+.kbc-event .event-inner-contents p{
+    padding: 0 20px 5px 20px;
+    margin: 0;
+}
+.kbc-event .event-btn{
+    text-align: center;
+}
+.kbc-event a{
+    margin: 15px 0 30px 0;
+    padding: 15px 30px;
+}
+.kbc-event table{
+    font-size: 10px;
+    border-collapse: separate;
+    border-spacing: 12px;
+    margin: 0 0 10px 10px;
+}
+.kbc-event td{
+    border-bottom: 1px dotted #aaa;
+}
+
+/*
+ * フッター
+ */
+.kbc-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    display: table;
+}
+.kbc-footer a{
+    color: #999;
+    margin: 5px 10px;
+}
+.kbc-footer a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.kbc-footer p{
+    color: #999;
+    padding-right: 10px;
+    margin: 10px 0 0 0;
+}
+.kbc-footer .kbc-cell{
+    text-align: right;
+}
+.kbc-body{
+    width: 100%;
+    position: relative;
+    height: auto !important;    
+    height: 100%;
+    min-height: 100%;
+}
+.kbc-main{
+    padding-bottom: 100px;
+}
