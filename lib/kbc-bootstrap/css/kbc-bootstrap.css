@@ -96,23 +96,49 @@ td{
 /*
  * 画像のサムネイルデザイン
  */
-.right-thumbnail{
+.kbc-thumbnail{
     display: table;
     padding: 0 20px;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
-.right-thumbnail p{
+.kbc-thumbnail p{
     display: table-cell;
     vertical-align: top;
 }
-.right-thumbnail span{
+.kbc-thumbnail span{
     display: table-cell;
     vertical-align: middle;
 }
-.right-thumbnail img{
+.kbc-thumbnail img{
     border-radius: 8px;
+    margin: 0;
+}
+.kbc-thumbnail.middle img{
     width: 250px;
-    margin: 0 0 0 40px;
+}
+.kbc-thumbnail.small img{
+    width: 200px;
+}
+.kbc-thumbnail.mini img{
+    width: 150px;
+}
+.kbc-thumbnail.right.small img{
+    margin-left: 40px;
+}
+.kbc-thumbnail.left.small img{
+    margin-right: 40px;
+}
+.kbc-thumbnail.right.mini img{
+    margin-left: 40px;
+}
+.kbc-thumbnail.left.mini img{
+    margin-right: 40px;
+}
+.kbc-thumbnail.right.middle img{
+    margin-left: 60px;
+}
+.kbc-thumbnail.left.middle img{
+    margin-right: 60px;
 }
 
 /*
@@ -184,7 +210,7 @@ td{
     width: 100%;
     background-color: #000;
 }
-#main-slide{
+.kbc-slide .slide{
     width: 960px;
     height: 300px;
     margin: 0 auto 0 auto;
@@ -204,6 +230,9 @@ td{
 }
 .kbc-brand img{
     height: 70px;
+}
+.kbc-navbar .kbc-container-inner{
+    padding: 0;
 }
 .kbc-nav-btn{
     display: inline-block;

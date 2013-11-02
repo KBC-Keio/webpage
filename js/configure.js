@@ -10,14 +10,15 @@ var configuration = {
     navbar: {
         elem: ".kbc-navbar",
         opts: {
-            logoSrc: "/img/logo/logo_white.png",
+            logo: "/img/logo/logo_white.png",
             sns: [
-                '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://keio-contest.org" data-via="KBC_Keio" data-lang="ja" data-related="KBC_Keio">ツイート</a>'
+                '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://keio-contest.org" data-via="KBC_Keio" data-lang="ja" data-related="KBC_Keio">ツイート</a>',
+                '<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkeio-contest.org&amp;width&amp;height=20&amp;colorscheme=light&amp;layout=button_count&amp;action=recommend&amp;show_faces=false&amp;send=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:20px;" allowTransparency="true"></iframe>'
             ],
             nav: [
                 { url: "/about.html", text: "KBC実行委員会とは" },
                 { url: "/event/index.html", text: "イベント情報" },
-                { url: "/sponsorship.html", text: "スポンサーシップ" },
+                { url: "/sponsorship.html", text: "スポンサーシップ" }
             ]
         }
     },
@@ -27,12 +28,17 @@ var configuration = {
             year: "2013",
             nav: [
                 { url: "/index.html", text: "トップページ" },
-                { url: "/index.html", text: "お問い合わせ" },
-                { url: "/index.html", text: "サイトマップ" },
+                { url: "/index.html", text: "お問い合わせ" }
             ]
         }
     },
-    slide: "#main-slide",
+    slide: {
+        elem: ".kbc-slide",
+        opts: [
+            { url: "/index.html", image: "/img/slide/sample1.png" },
+            { url: "/index.html", image: "/img/slide/sample2.png" }
+        ]
+    },
     sidemenu: {
         elem: ".kbc-sidemenu",
         headline: "h2.headline,h3.headline"
@@ -40,5 +46,7 @@ var configuration = {
 }
 
 $(function(){
-    kbc.view.initialize(configuration);
+    $.getJSON("/event/eventlist.json", function(data){
+    });
+    //kbc.view.initialize(configuration);
 });
