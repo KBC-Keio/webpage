@@ -8,11 +8,11 @@
     <meta name="copyright" content="KBC実行委員会" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/event.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/event.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
-    <script type="text/javascript" src="/js/twitter.js"></script>
+    <script type="text/javascript" src="/js/event.js"></script>
 </head>
 <body>
 <div class="kbc-body">
@@ -33,6 +33,18 @@
             <div class="kbc-sidemenu"></div>
             <div class="kbc-container-inner">
                 <h2 class="caption-black headline">イベント情報</h2>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#new" data-toggle="tab">今後のイベント</a></li>
+                    <li><a href="#past" data-toggle="tab">過去のイベント</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="new"></div>
+                    <div class="tab-pane fade" id="past"></div>
+                </div>
+                <div class="more-area">
+                    <button class="btn btn-success more-btn" id="new-btn">もっとイベントを見る</button>
+                    <button class="btn btn-success more-btn hide" id="past-btn">もっとイベントを見る</button>
+                </div>
             </div>
         </div>
     </div>
