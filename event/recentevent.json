@@ -1,7 +1,7 @@
 [
     {
         "name": "KBC Business Leverage 最終審査会観覧",
-        "image": "/img/event/leverage/leverage.jpg",
+        "image": "/img/event/8th/leverage/final.jpg",
         "description": "Leverage最終報告会では9月より3ヶ月間に渡ってKBCの支援を受けてきた5組の学生起業家チームがその事業推進のすべてを露わにします！<br />定員に限りがございますので、お早めにお申込み下さい。",
         "date": {
             "year": 2013,
@@ -21,14 +21,14 @@
         },
         "important": false,
         "button": {
-            "url": "/event/leverage.html",
+            "url": "/event/8th/leverage.html",
             "text": "イベントの詳細ページへ",
             "disabled": false
         }
     },
     {
         "name": "KBC Business Leverage 第3回報告会",
-        "image": "/img/event/leverage/leverage.jpg",
+        "image": "/img/event/8th/leverage/second.jpg",
         "description": "Leverage参加チームのための3回目となるクローズドな報告会を行います。一般の観覧は受け付けていませんが、<a href=\"https://www.facebook.com/KBC.Keio\">KBC実行委員会のFacebookページ</a>などで状況を報告する他、最終報告会については一般観覧を募集しておりますので、そちらをぜひご確認下さい。",
         "date": {
             "year": 2013,
@@ -42,14 +42,14 @@
         "deadline": "一般観覧は受け付けておりません",
         "important": false,
         "button": {
-            "url": "/event/leverage.html",
+            "url": "/event/8th/leverage.html",
             "text": "KBC Business Leverage 全体の詳細ページヘ",
             "disabled": false
         }
     },
     {
         "name": "KBC Business Leverage 第2回報告会",
-        "image": "/img/event/leverage/leverage.jpg",
+        "image": "/img/event/8th/leverage/second.jpg",
         "description": "Leverage参加チームのための2回目となるクローズドな報告会を行います。一般の観覧は受け付けていませんが、<a href=\"https://www.facebook.com/KBC.Keio\">KBC実行委員会のFacebookページ</a>などで状況を報告する他、最終報告会については一般観覧を募集しておりますので、そちらをぜひご確認下さい。",
         "date": {
             "year": 2013,
@@ -63,28 +63,7 @@
         "deadline": "一般観覧は受け付けておりません",
         "important": false,
         "button": {
-            "url": "/event/leverage.html",
-            "text": "KBC Business Leverage 全体の詳細ページヘ",
-            "disabled": false
-        }
-    },
-    {
-        "name": "KBC Business Leverage 第1回報告会",
-        "image": "/img/event/leverage/leverage.jpg",
-        "description": "Leverage参加チームのための2回目となるクローズドな報告会を行います。一般の観覧は受け付けていませんが、<a href=\"https://www.facebook.com/KBC.Keio\">KBC実行委員会のFacebookページ</a>などで状況を報告する他、最終報告会については一般観覧を募集しておりますので、そちらをぜひご確認下さい。",
-        "date": {
-            "year": 2013,
-            "month": 10,
-            "date": 19,
-            "day": "土",
-            "time": "(時間非公開)"
-        },
-        "site": "非公開",
-        "fee": "一般観覧は受け付けておりません",
-        "deadline": "一般観覧は受け付けておりません",
-        "important": false,
-        "button": {
-            "url": "/event/leverage.html",
+            "url": "/event/8th/leverage.html",
             "text": "KBC Business Leverage 全体の詳細ページヘ",
             "disabled": false
         }

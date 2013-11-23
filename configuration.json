@@ -33,6 +33,6 @@
     },
     "sidemenu": {
         "elem": ".kbc-sidemenu",
-        "headline": "h2.headline,h3.headline"
+        "headline": ".headline"
     }
 }

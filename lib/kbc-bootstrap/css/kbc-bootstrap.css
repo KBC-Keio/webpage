@@ -142,6 +142,23 @@ td{
 }
 
 /*
+ * スポンサーテーブル
+ */
+.kbc-sponsor{
+    width: 100%;
+    margin: 0;
+}
+.kbc-sponsor img{
+    max-width: 150px;
+    max-height: 100px;
+}
+.kbc-sponsor td{
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+/*
  * パンくずリストのデザインを変更
  */
 .kbc-breadcrumb{
