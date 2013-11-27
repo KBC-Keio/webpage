@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>README | KBC実行委員会</title>
+    <meta name="description" content="KBC実行委員会メンバーがWebの編集を行うためのREADMEページです" />
+    <meta name="keywords" content="慶應義塾,慶応義塾,スタートアップ,ベンチャー,起業,KBC,ビジネスコンテスト,シードアクセラレーター" />
+    <meta name="copyright" content="KBC実行委員会" />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
+    <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
+</head>
+<body>
+<div class="kbc-body">
+    <!-- Navigation bar -->
+    <div class="kbc-navbar"></div>
+
+    <!-- Bread crumb -->
+    <div class="kbc-breadcrumb">
+        <ul class="breadcrumb">
+            <li><a href="/index.html">ホーム</a></li>
+            <li class="active">README</li>
+        </ul>
+    </div>
+
+    <!-- Main Contents -->
+    <div class="kbc-main">
+        <div class="kbc-container">
+            <div class="kbc-sidemenu"></div>
+            <div class="kbc-container-inner">
+
+                <h2 class="caption-red headline">READMEページへようこそ!</h2>
+                <p>ここはKBC実行委員会のメンバーが本Webページを編集するための情報をまとめたページです。Web担当を行うメンバーは必ず本ページで示されている内容を読み、よく理解した上でWebの編集を行って下さい。<br />
+                また、このページはKBC実行委員会のメンバーだけに見えるように管理されるべきです。アップロードされている場合には必ず認証を掛けるようにして下さい。</p>
+
+                <h3 class="caption-green headline">開発環境の構築</h3>
+                <p>KBC実行委員会のWebページではページの可搬性を高めるために、全てのパスを絶対パスで記述します。そのため、Webページの実際の見た目を確認しながらローカル環境のみで開発を進めるためにはいくつかの準備が必要となります。そうした準備の仕方については<a href="/readme/environment.html">開発環境の構築方法</a>を参照して下さい。</p>
+
+                <h3 class="caption-blue headline">KBC Bootstrapの使用</h3>
+                <p>KBC実行委員会のWebページはjQueryおよびTwitter BootstrapをベースとしたJavaScript/CSSライブラリである「KBC Bootstrap」によって構成されています。</p>
+                <h4>KBC Bootstrap CSS</h4>
+                <p>適切なクラスの指定によって、コンテンツを統一されたデザインで簡単に仕上げることができます。指定できるクラスの一覧とプレビュー、使い方の詳細については<a href="/readme/sample.html">KBC Bootstrap CSSサンプル</a>を参照して下さい。</p>
+                <h4>KBC Bootstrap JS</h4>
+                <p>KBC Bootstrapにより、Webページの簡単な更新のほとんどはHTMLファイルを記述せず、JSONファイルを編集するだけで行うことができます。具体的な編集の仕方については<a href="/readme/edit.html">KBC Bootstrap JS JSON記法</a>を参照して下さい。</p>
+
+                <h3 class="caption-orange headline">ディレクトリ構造の管理</h3>
+                <p>KBC実行委員会のWebページは将来的にファイルが増大したとしても、その検索・維持・管理に大きなコストの掛かることがないよう、単純かつ明確なディレクトリ構造を持っています。そのため、新たなHTMLファイルや画像ファイル、CSSファイル、JavaScriptファイルに加え、応募書類などのダウンロードファイルを追加する場合は必ず<a href="/readme/layer.html">ディレクトリ構造解説ページ</a>を参照し、その構造に従った名前付け、ディレクトリ作成を行って下さい。</p>
+
+                <h3 class="caption-purple headline">より高度な開発</h3>
+                <p>Webページの更新など、比較的簡単な編集であればKBC Bootstrap JSに基づいてJSONファイルを編集するだけで事足りるでしょう。しかし、今後大きなプロジェクトの改変などがあった場合にはWebページのスタイルや形式を変更するために、既存のHTMLファイルやKBC Bootstrap自体を書き換える必要が出てくるかもしれません。<a href="/readme/advance.html">KBC Bootstrap Developmentページ</a>はそうした要求に答えるためのKBC Bootstrapの解説ページです。</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="kbc-footer"></div>
+</div>
+</body>
+</html>
