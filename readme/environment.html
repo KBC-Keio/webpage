@@ -64,9 +64,13 @@
                 ファインダで /Applications/XAMPP/etc ディレクトリを開き、その中の httpd.conf ファイルを適当なテキストエディタ(テキストエディタがわからなければ、テキストエディット.app を使用して下さい)で開きます。<br />
                 DocumentRoot “/Applications/XAMPP/xamppfiles/htdocs” と書かれた行がありますので、それを DocumentRoot “/Applications/XAMPP/xamppfiles/htdocs/kbc” へ変更します。<br />
                 また、その下に &lt;Directory “/Applications/XAMPP/xamppfiles/htdocs”&gt; と書かれた行がありますので、これを &lt;Directory “/Applications/XAMPP/xamppfiles/htdocs/kbc”&gt; へ変更します。<br />
+                <br />
                 これらの変更ができたら、 httpd.conf ファイルの変更を保存してテキストエディタを終了します。ファインダで /Applications/XAMPP/xamppfiles/htdocs フォルダを開いて、そこに新しく「kbc」という名前のフォルダを追加し、追加したフォルダのなかに index.html という名前で適当なHTMLファイルを作成します。
                 <br />
                 その後にXAMMPの管理ウィンドウで一度「Apache」の横の「Stop」と書かれたボタンをクリックしてApacheを止めた後、再度「Start」へと変わった同じボタンをクリックしてApacheを起動します。ブラウザで http://localhost へアクセスすると、今度はkbcフォルダの下に作った index.html が表示されます。今後この kbc ディレクトリはよく操作することになるので、デスクトップなどにこのディレクトリまでのショートカットやエイリアスを作成しておくとよいでしょう。</p>
+
+                <h4>Gitのインストール</h4>
+                <p>GitはWebページやプログラムのソースコードのバージョン管理を行うソフトウェアです。KBCのWebページはGitで管理されており、これによって手軽にバックアップを取りながら開発を進めることができます。</p>
 
             </div>
         </div>
