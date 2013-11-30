@@ -51,6 +51,23 @@
                 <br />
                 Apacheの起動後にブラウザで http://localhost へアクセスしてXAMPPのWelcomeページが表示されればインストールは完了です。もし、エラーなどが出てApacheを起動できなかった場合は、Googleなどでエラーの文章を検索することで解決方法が見つかるかもしれません。</p>
 
+                <h4>ApacheのDocumentRootの変更</h4>
+                <p>現状ではlocalhostにアクセスするとXAMPPのWelcomeページが表示されてしまうので、これを自分の作成したWebページヘと変更します。なお、両OSの説明で設定しているDocumentRootは以下で説明しているフォルダ・ディレクトリ以外に設定しても構いません。もしあなたにある程度の知識があるのであれば、htdocs以下よりももっとわかりやすい場所にDocumentRootを設定するといいでしょう。<br/>
+                <br />
+                (Windowsの場合)<br />
+                エクスプローラで C:\xampp\apache\conf フォルダを開き、その中の httpd.conf ファイルを適当なテキストエディタ(テキストエディタがわからなければ、メモ帳を使用して下さい)で開きます。<br />
+                DocumentRoot “C:/xampp/htdocs” と書かれた行がありますので、それを DocumentRoot “C:/xampp/htdocs/kbc” へ変更します。<br />
+                また、その下に &lt;Directory “C:/xampp/htdocs”&gt; と書かれた行がありますので、これを &lt;Directory “C:/xampp/htdocs/kbc”&gt; へ変更します。<br />
+                これらの変更ができたら、 httpd.conf ファイルの変更を保存してテキストエディタを終了します。エクスプローラで C:\xampp\htdocs フォルダを開いて、そこに新しく「kbc」という名前のフォルダを追加し、追加したフォルダのなかに index.html という名前で適当なHTMLファイルを作成します。<br />
+                <br />
+                (Mac OS Xの場合)<br />
+                ファインダで /Applications/XAMPP/etc ディレクトリを開き、その中の httpd.conf ファイルを適当なテキストエディタ(テキストエディタがわからなければ、テキストエディット.app を使用して下さい)で開きます。<br />
+                DocumentRoot “/Applications/XAMPP/xamppfiles/htdocs” と書かれた行がありますので、それを DocumentRoot “/Applications/XAMPP/xamppfiles/htdocs/kbc” へ変更します。<br />
+                また、その下に &lt;Directory “/Applications/XAMPP/xamppfiles/htdocs”&gt; と書かれた行がありますので、これを &lt;Directory “/Applications/XAMPP/xamppfiles/htdocs/kbc”&gt; へ変更します。<br />
+                これらの変更ができたら、 httpd.conf ファイルの変更を保存してテキストエディタを終了します。ファインダで /Applications/XAMPP/xamppfiles/htdocs フォルダを開いて、そこに新しく「kbc」という名前のフォルダを追加し、追加したフォルダのなかに index.html という名前で適当なHTMLファイルを作成します。
+                <br />
+                その後にXAMMPの管理ウィンドウで一度「Apache」の横の「Stop」と書かれたボタンをクリックしてApacheを止めた後、再度「Start」へと変わった同じボタンをクリックしてApacheを起動します。ブラウザで http://localhost へアクセスすると、今度はkbcフォルダの下に作った index.html が表示されます。今後この kbc ディレクトリはよく操作することになるので、デスクトップなどにこのディレクトリまでのショートカットやエイリアスを作成しておくとよいでしょう。</p>
+
             </div>
         </div>
     </div>
