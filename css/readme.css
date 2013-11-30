@@ -2,3 +2,12 @@
     margin: 10px 30px;
     padding: 10px 30px;
 }
+
+.quoted-sample .btn{
+    margin: 10px;
+    width: 170px;
+}
+
+.center{
+    text-align: center;
+}

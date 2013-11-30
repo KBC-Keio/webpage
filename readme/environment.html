@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>開発環境の構築方法 | KBC実行委員会</title>
+    <meta name="description" content="KBC実行委員会のWebページを開発するメンバーのための環境構築方法を示したページです。" />
+    <meta name="keywords" content="慶應義塾,慶応義塾,スタートアップ,ベンチャー,起業,KBC,ビジネスコンテスト,シードアクセラレーター" />
+    <meta name="copyright" content="KBC実行委員会" />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
+    <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
+</head>
+<body>
+<div class="kbc-body">
+    <!-- Navigation bar -->
+    <div class="kbc-navbar"></div>
+
+    <!-- Bread crumb -->
+    <div class="kbc-breadcrumb">
+        <ul class="breadcrumb">
+            <li><a href="/index.html">ホーム</a></li>
+            <li><a href="/readme/index.html">README</a></li>
+            <li class="active">開発環境の構築方法</li>
+        </ul>
+    </div>
+
+    <!-- Main Contents -->
+    <div class="kbc-main">
+        <div class="kbc-container">
+            <div class="kbc-sidemenu"></div>
+            <div class="kbc-container-inner">
+
+                <h2 class="caption-black headline">開発環境の構築方法</h2>
+                <p>このページではこれからKBC実行委員会のWebページの開発を進めるメンバーのための開発環境の構築方法を解説しています。<br />
+                通常のWebページ製作であれば、自分のPCなどでエディタを用いて、HTMLファイルやCSSファイル、JavaScriptファイルを編集した後にブラウザでHTMLファイルを開くことで、編集結果を確認することができます。しかし、KBC実行委員会のWebページではその可搬性を高めるために全てのパスが絶対パスで記述されているため、ローカル環境で編集結果を確認するには多少の準備が必要です。本ページではその詳細な方法を解説するとともに、できあがった新しいWebページの公開方法の解説までを行っています。</p>
+
+                <h3 class="caption-black headline">ローカル環境でサーバソフトウェアを立てる</h3>
+                <p>ローカル環境で絶対パスのルート(ドキュメントルート)を設定できるようにするためには、ローカル環境のWebページをApacheなどのWebサーバソフトウェア(以降単に「サーバ」と呼ぶ)によって管理する必要があります。ここではサーバを立てるためにサーバやデータベース管理ソフトウェアなどをまとめてインストール・管理できるXAMPPというソフトウェアを用いたサーバの立て方を紹介します。<br />
+                XAMPPでは今回は必要ないアプリケーションも一緒にインストールされてしまいますが、提供されているコントロールパネルによってシェルなどを使わずともサーバの起動・ログ確認を行うことができる上、主要なOSを十分にサポートしていますので、KBC実行委員会ではこのソフトウェアの使用を推奨しています。なお、サーバなどについて十分な知識のある場合には、もちろんパッケージ管理ツールなどを用いてApacheをインストールして使用しても構いません。</p>
+
+                <h4>XAMPPのインストール</h4>
+                <p><a href="http://www.apachefriends.org/jp/xampp.html">XAMPPのWebページ</a>より使用しているOSに合ったXAMPPのインストーラをダウンロードします。ダウンロードが完了したらインストーラを実行して、指示通りに進むとインストールが完了します。<br />
+                <br />
+                (Windowsの場合)<br />
+                スタートメニューの「すべてのプログラム」からXAMPP.exeを起動しましょう。XAMPPを起動すると管理ウィンドウが表示されるので、「Apache」の横の「Start」と書かれたボタンをクリックするとApacheが起動します。<br />
+                <br />
+                (Mac OS Xの場合)<br />
+                Applicationディレクトリの中のXAMPPディレクトリ内にある XAMPP Control.app を起動すると、小さな管理ウィンドウが表示されます。ウィンドウの「Apache」の横にある「Start」と書かれたボタンをクリックするとApacheが起動します。<br />
+                <br />
+                Apacheの起動後にブラウザで http://localhost へアクセスしてXAMPPのWelcomeページが表示されればインストールは完了です。もし、エラーなどが出てApacheを起動できなかった場合は、Googleなどでエラーの文章を検索することで解決方法が見つかるかもしれません。</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="kbc-footer"></div>
+</div>
+</body>
+</html>
