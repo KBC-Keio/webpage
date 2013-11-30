@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>KBC Bootstrap CSSサンプル | KBC実行委員会</title>
+    <meta name="description" content="KBC実行委員会のWebページを構成するための内部メンバー向けライブラリ「KBC Bootstrap CSS」のサンプルです。" />
+    <meta name="keywords" content="慶應義塾,慶応義塾,スタートアップ,ベンチャー,起業,KBC,ビジネスコンテスト,シードアクセラレーター" />
+    <meta name="copyright" content="KBC実行委員会" />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/readme.css" />
+    <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
+</head>
+<body>
+<div class="kbc-body">
+    <!-- Navigation bar -->
+    <div class="kbc-navbar"></div>
+
+    <!-- Bread crumb -->
+    <div class="kbc-breadcrumb">
+        <ul class="breadcrumb">
+            <li><a href="/index.html">ホーム</a></li>
+            <li><a href="/readme/index.html">README</a></li>
+            <li class="active">KBC Bootstrap CSSサンプル</li>
+        </ul>
+    </div>
+
+    <!-- Main Contents -->
+    <div class="kbc-main">
+        <div class="kbc-container">
+            <div class="kbc-sidemenu"></div>
+            <div class="kbc-container-inner">
+
+                <h2 class="caption-black headline">KBC Bootstrap CSSサンプル</h2>
+                <p>このページではKBC実行委員会のWebページを構成するための補助ライブラリ「KBC Bootstrap」を使ったCSSでのWebページの構成方法を説明しています。本ページでは全ての紹介要素について実例を掲載していますので、もし説明で具体的な書き方を理解できなければ、このページのソースコードを見て使い方を学んで下さい。<br />
+                また、このようなレイアウト用のクラス群はデザインを統一するため、なるべく各ページで用いるようにするべきです。ここで用意されているものと同じ目的の要素を独自に定義するとWebページ全体の見た目が悪くなるだけでなく、将来的なコードの保守性や新しいページを作成する際のコードの可搬性を著しく低下させてしまいます。</p>
+                <div class="quoted-sample">
+                    <p>※ 本ページで示すサンプルではそれがサンプルであると分かりやすいように、この文章が書かれているPタグと同じように上下左右に多く余白を取っています。そのため、実際に使用する場合とは表示される大きさが異なりますので、注意して下さい。</p>
+                </div>
+
+                <h3 class="caption-black headline">ヘッダー</h3>
+                <p>KBC Bootstrapには豊富なカラーバリエーションのヘッダーが標準で用意されています。<br />
+                これらを利用するにはH2タグまたはH3タグのクラスに「caption-[色名]」を追加します。以下はH2タグに「caption-red」クラスを追加した場合の例です。</p>
+                <div class="quoted-sample">
+                    <h2 class="caption-red">H2.caption-red</h2>
+                </div>
+                <p>また、以下はH3タグでの全てのカラーバリエーションの例です。</p>
+                <div class="quoted-sample">
+                    <h3 class="caption-black">H3.caption-black</h3>
+                    <h3 class="caption-red">H3.caption-red</h3>
+                    <h3 class="caption-green">H3.caption-green</h3>
+                    <h3 class="caption-blue">H3.caption-blue</h3>
+                    <h3 class="caption-yellow">H3.caption-yellow</h3>
+                    <h3 class="caption-white">H3.caption-white</h3>
+                    <h3 class="caption-orange">H3.caption-orange</h3>
+                    <h3 class="caption-purple">H3.caption-purple</h3>
+                    <h3 class="caption-brown">H3.caption-brown</h3>
+                </div>
+                <p>さらに、H4タグはH2タグやH3タグで区切られたコンテンツ内の小見出しとして使用することができます。</p>
+                <div class="quoted-sample">
+                    <h4>H4</h4>
+                </div>
+                <p>なお、これらのヘッダータグで区切ったコンテンツ内の文章はインデントを合わせる必要があるので、必ずPタグで囲みます。まさに今読まれているこの文章もPタグで囲まれています。</p>
+
+                <h3 class="caption-black headline">ボタン</h3>
+                <p>KBC Bootstrapでは<a href="http://getbootstrap.com">Twitter Bootstrap</a>で用意されているボタンと同じ記法で、KBCのWebページ用に余白などの調節されたものを使用することができます。Twitter Bootstrapの記法では、ボタンにしたい要素(主にAタグ)のクラスに「btn」と「btn-[種類名]」を追加します。以下は作成できる全ての種類のボタンの例です。</p>
+                <div class="quoted-sample">
+                    <a href="#" class="btn btn-default">A.btn.btn-default</a>
+                    <a href="#" class="btn btn-primary">A.btn.btn-primary</a>
+                    <a href="#" class="btn btn-success">A.btn.btn-success</a>
+                    <a href="#" class="btn btn-info">A.btn.btn-info</a>
+                    <a href="#" class="btn btn-warning">A.btn.btn-warning</a>
+                    <a href="#" class="btn btn-danger">A.btn.btn-danger</a>
+                </div>
+
+                <h3 class="caption-black headline">サムネイル</h3>
+                <p>写真をメインに載せるのではなく、イメージとして文章の横に画像を表示したい場合にはKBC Bootstrapのサムネイルレイアウトが便利です。サムネイルレイアウトではmiddle(画像250px)、small(画像200px)、mini(画像150px)の3種類の大きさに加え、画像を左右どちらに表示するかを選択することができます。サムネイルレイアウトはDIVタグで囲ったPタグと、そのDIVタグの中でさらにSPANタグに囲まれたIMGタグによって構成されます。<br />
+                以下はminiサイズで右側に画像を表示した場合の例です。</p>
+                <div class="quoted-sample">
+                    <div class="kbc-thumbnail mini right">
+                        <p>ここはPタグです。右側にminiサイズの画像を表示する場合は、クラスに「kbc-thumbnail」と「mini」、「right」を追加したDIVタグのなかにこのようなPタグを記述してから、クラスや属性を指定しないただのSPANタグで囲んだIMGタグを記述します。</p>
+                        <span><img src="/img/news/leverage_final.jpg" /></span>
+                    </div>
+                </div>
+                3種類の大きさと2種類の位置を組み合わせることで、6パターンのサムネイルレイアウトを行うことができます。以下は上で示した「mini」「right」以外のすべての例です。</p>
+                <div class="quoted-sample">
+                    <div class="kbc-thumbnail mini left">
+                        <span><img src="/img/news/leverage_final.jpg" /></span>
+                        <p>このPタグを囲うDIVタグには「mini」と「left」が適用されています。左側に画像を表示したい場合は、DIVタグのなかにSPANタグで囲まれたIMGタグを記述してからPタグを記述します。</p>
+                    </div>
+                    <div class="kbc-thumbnail small right">
+                        <p>このPタグを囲うDIVタグには「small」と「right」が適用されています。</p>
+                        <span><img src="/img/news/leverage_final.jpg" /></span>
+                    </div>
+                    <div class="kbc-thumbnail small left">
+                        <span><img src="/img/news/leverage_final.jpg" /></span>
+                        <p>このPタグを囲うDIVタグには「small」と「left」が適用されています。</p>
+                    </div>
+                    <div class="kbc-thumbnail middle right">
+                        <p>このPタグを囲うDIVタグには「middle」と「right」が適用されています。</p>
+                        <span><img src="/img/news/leverage_final.jpg" /></span>
+                    </div>
+                    <div class="kbc-thumbnail middle left">
+                        <span><img src="/img/news/leverage_final.jpg" /></span>
+                        <p>このPタグを囲うDIVタグには「middle」と「left」が適用されています。</p>
+                    </div>
+                </div>
+                <p>なお、サムネイルレイアウトを使用した場合、その中のPタグの字詰は左上詰めとなります。そのため、Pタグに記述する文章は横に表示される画像の大きさと同じ程度か、それよりも大きくなるくらいの分量が適切でしょう。</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="kbc-footer"></div>
+</div>
+</body>
+</html>

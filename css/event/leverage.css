@@ -1,16 +1,14 @@
 .leverage-top{
-    margin: 40px 0;
-    padding: 130px 20px 0 20px;
-    width: 100%;
+    margin: 40px 25px;
+    padding: 75px 0 0 45px;
     height: 200px;
-    border-radius: 7px;
-    text-align: center;
-    background-image: url("/img/event/8th/leverage/final.jpg");
+    border-radius: 9px;
+    background-image: url("/img/event/8th/leverage/leverage.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 .leverage-top a{
-    padding: 15px 30px;
+    padding: 15px 15px;
 }
 
 .leverage-menu{
@@ -23,11 +21,15 @@
     width: 27%;
     display: inline-block;
 }
+.leverage-menu a:hover{
+    opacity: 0.6;
+}
 .leverage-menu img{
     border-radius: 9px;
     margin-bottom: 10px;
     width: 100%;
 }
-.leverage-menu a{
+.leverage-menu p{
+    margin: 0;
     font-size: 10pt;
 }
