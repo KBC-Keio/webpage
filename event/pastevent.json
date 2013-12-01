@@ -36,8 +36,8 @@
         "deadline": "イベントは終了いたしました",
         "important": false,
         "button": {
-            "url": "/event/8th/kop.html",
-            "text": "イベントの報告ページへ",
+            "url": "/event/8th/leverage.html",
+            "text": "KBC Business Leverage 全体の詳細ページヘ",
             "disabled": false
         }
     }

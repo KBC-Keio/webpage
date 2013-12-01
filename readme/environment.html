@@ -8,6 +8,7 @@
     <meta name="copyright" content="KBC実行委員会" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/readme.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
@@ -33,44 +34,82 @@
             <div class="kbc-container-inner">
 
                 <h2 class="caption-black headline">開発環境の構築方法</h2>
-                <p>このページではこれからKBC実行委員会のWebページの開発を進めるメンバーのための開発環境の構築方法を解説しています。<br />
-                通常のWebページ製作であれば、自分のPCなどでエディタを用いて、HTMLファイルやCSSファイル、JavaScriptファイルを編集した後にブラウザでHTMLファイルを開くことで、編集結果を確認することができます。しかし、KBC実行委員会のWebページではその可搬性を高めるために全てのパスが絶対パスで記述されているため、ローカル環境で編集結果を確認するには多少の準備が必要です。本ページではその詳細な方法を解説するとともに、できあがった新しいWebページの公開方法の解説までを行っています。</p>
+                <p>このページではこれからKBC実行委員会のWebページの開発を進めるメンバーのための開発環境の構築方法を解説しています。</p>
+                <p>通常のWebページ製作であれば、自分のPCなどでエディタを用いて、HTMLファイルやCSSファイル、JavaScriptファイルを編集した後にブラウザでHTMLファイルを開くことで、編集結果を確認することができます。しかし、KBC実行委員会のWebページではその可搬性を高めるために全てのパスが絶対パスで記述されているため、ローカル環境で編集結果を確認するには多少の準備が必要です。本ページではその詳細な方法を解説するとともに、できあがった新しいWebページの公開方法の解説までを行っています。</p>
 
                 <h3 class="caption-black headline">ローカル環境でサーバソフトウェアを立てる</h3>
-                <p>ローカル環境で絶対パスのルート(ドキュメントルート)を設定できるようにするためには、ローカル環境のWebページをApacheなどのWebサーバソフトウェア(以降単に「サーバ」と呼ぶ)によって管理する必要があります。ここではサーバを立てるためにサーバやデータベース管理ソフトウェアなどをまとめてインストール・管理できるXAMPPというソフトウェアを用いたサーバの立て方を紹介します。<br />
-                XAMPPでは今回は必要ないアプリケーションも一緒にインストールされてしまいますが、提供されているコントロールパネルによってシェルなどを使わずともサーバの起動・ログ確認を行うことができる上、主要なOSを十分にサポートしていますので、KBC実行委員会ではこのソフトウェアの使用を推奨しています。なお、サーバなどについて十分な知識のある場合には、もちろんパッケージ管理ツールなどを用いてApacheをインストールして使用しても構いません。</p>
+                <p>ローカル環境で絶対パスのルート(ドキュメントルート)を設定できるようにするためには、ローカル環境のWebページをApacheなどのWebサーバソフトウェア(以降単に「サーバ」と呼ぶ)によって管理する必要があります。ここではサーバを立てるためにサーバやデータベース管理ソフトウェアなどをまとめてインストール・管理できるXAMPPというソフトウェアを用いたサーバの立て方を紹介します。</p>
+                <p>XAMPPでは今回は必要ないアプリケーションも一緒にインストールされてしまいますが、提供されているコントロールパネルによってシェルなどを使わずともサーバの起動・ログ確認を行うことができる上、主要なOSを十分にサポートしていますので、KBC実行委員会ではこのソフトウェアの使用を推奨しています。なお、サーバなどについて十分な知識のある場合には、もちろんパッケージ管理ツールなどを用いてApacheをインストールして使用しても構いません。</p>
 
                 <h4>XAMPPのインストール</h4>
-                <p><a href="http://www.apachefriends.org/jp/xampp.html">XAMPPのWebページ</a>より使用しているOSに合ったXAMPPのインストーラをダウンロードします。ダウンロードが完了したらインストーラを実行して、指示通りに進むとインストールが完了します。<br />
-                <br />
-                (Windowsの場合)<br />
-                スタートメニューの「すべてのプログラム」からXAMPP.exeを起動しましょう。XAMPPを起動すると管理ウィンドウが表示されるので、「Apache」の横の「Start」と書かれたボタンをクリックするとApacheが起動します。<br />
-                <br />
-                (Mac OS Xの場合)<br />
-                Applicationディレクトリの中のXAMPPディレクトリ内にある XAMPP Control.app を起動すると、小さな管理ウィンドウが表示されます。ウィンドウの「Apache」の横にある「Start」と書かれたボタンをクリックするとApacheが起動します。<br />
-                <br />
-                Apacheの起動後にブラウザで http://localhost へアクセスしてXAMPPのWelcomeページが表示されればインストールは完了です。もし、エラーなどが出てApacheを起動できなかった場合は、Googleなどでエラーの文章を検索することで解決方法が見つかるかもしれません。</p>
+                <p><a href="http://www.apachefriends.org/jp/xampp.html">XAMPPのWebページ</a>より使用しているOSに合ったXAMPPのインストーラをダウンロードします。ダウンロードが完了したらインストーラを実行して、指示通りに進むとインストールが完了します。</p>
+                <table class="os-branch">
+                    <tr>
+                        <td>(Windowsの場合)</td>
+                        <td>(Mac OS Xの場合)</td>
+                    </tr>
+                    <tr>
+                        <td>スタートメニューの「すべてのプログラム」から<span class="code">XAMPP.exe</span>を起動しましょう。XAMPPを起動すると管理ウィンドウが表示されるので、「Apache」の横の「Start」と書かれたボタンをクリックするとApacheが起動します。</td>
+                        <td>Applicationディレクトリの中のXAMPPディレクトリ内にある<span class="code">XAMPP Control.app</span>を起動すると、小さな管理ウィンドウが表示されます。ウィンドウの「Apache」の横にある「Start」と書かれたボタンをクリックするとApacheが起動します。</td>
+                    </tr>
+                </table>
+                <p>Apacheの起動後にブラウザで<a href="http://localhost">http://localhost</a>へアクセスしてXAMPPのWelcomeページが表示されればインストールは完了です。もし、エラーなどが出てApacheを起動できなかった場合は、<a href="http://google.co.jp">Google</a>などでエラーの文章を検索することで解決方法が見つかるかもしれません。</p>
 
                 <h4>ApacheのDocumentRootの変更</h4>
-                <p>現状ではlocalhostにアクセスするとXAMPPのWelcomeページが表示されてしまうので、これを自分の作成したWebページヘと変更します。なお、両OSの説明で設定しているDocumentRootは以下で説明しているフォルダ・ディレクトリ以外に設定しても構いません。もしあなたにある程度の知識があるのであれば、htdocs以下よりももっとわかりやすい場所にDocumentRootを設定するといいでしょう。<br/>
-                <br />
-                (Windowsの場合)<br />
-                エクスプローラで C:\xampp\apache\conf フォルダを開き、その中の httpd.conf ファイルを適当なテキストエディタ(テキストエディタがわからなければ、メモ帳を使用して下さい)で開きます。<br />
-                DocumentRoot “C:/xampp/htdocs” と書かれた行がありますので、それを DocumentRoot “C:/xampp/htdocs/kbc” へ変更します。<br />
-                また、その下に &lt;Directory “C:/xampp/htdocs”&gt; と書かれた行がありますので、これを &lt;Directory “C:/xampp/htdocs/kbc”&gt; へ変更します。<br />
-                これらの変更ができたら、 httpd.conf ファイルの変更を保存してテキストエディタを終了します。エクスプローラで C:\xampp\htdocs フォルダを開いて、そこに新しく「kbc」という名前のフォルダを追加し、追加したフォルダのなかに index.html という名前で適当なHTMLファイルを作成します。<br />
-                <br />
-                (Mac OS Xの場合)<br />
-                ファインダで /Applications/XAMPP/etc ディレクトリを開き、その中の httpd.conf ファイルを適当なテキストエディタ(テキストエディタがわからなければ、テキストエディット.app を使用して下さい)で開きます。<br />
-                DocumentRoot “/Applications/XAMPP/xamppfiles/htdocs” と書かれた行がありますので、それを DocumentRoot “/Applications/XAMPP/xamppfiles/htdocs/kbc” へ変更します。<br />
-                また、その下に &lt;Directory “/Applications/XAMPP/xamppfiles/htdocs”&gt; と書かれた行がありますので、これを &lt;Directory “/Applications/XAMPP/xamppfiles/htdocs/kbc”&gt; へ変更します。<br />
-                <br />
-                これらの変更ができたら、 httpd.conf ファイルの変更を保存してテキストエディタを終了します。ファインダで /Applications/XAMPP/xamppfiles/htdocs フォルダを開いて、そこに新しく「kbc」という名前のフォルダを追加し、追加したフォルダのなかに index.html という名前で適当なHTMLファイルを作成します。
-                <br />
-                その後にXAMMPの管理ウィンドウで一度「Apache」の横の「Stop」と書かれたボタンをクリックしてApacheを止めた後、再度「Start」へと変わった同じボタンをクリックしてApacheを起動します。ブラウザで http://localhost へアクセスすると、今度はkbcフォルダの下に作った index.html が表示されます。今後この kbc ディレクトリはよく操作することになるので、デスクトップなどにこのディレクトリまでのショートカットやエイリアスを作成しておくとよいでしょう。</p>
+                <p>現状では<a href="http://localhost">http://localhost</a>にアクセスするとXAMPPのWelcomeページが表示されてしまうので、これを自分の作成したWebページヘと変更します。なお、両OSの説明で設定している<span class="code">DocumentRoot</span>は以下で説明しているフォルダ・ディレクトリ以外に設定しても構いません。もしあなたにある程度の知識があるのであれば、<span class="code">htdocs</span>以下よりももっとわかりやすい場所に<span class="code">DocumentRoot</span>を設定するといいでしょう。</p>
+                <table class="os-branch">
+                    <tr>
+                        <td>(Windowsの場合)</td>
+                        <td>(Mac OS Xの場合)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            エクスプローラでXAMPPのインストールフォルダ(おそらく<span class="code">C:\xampp</span>や<span class="code">D:\Program Files\xampp</span>となっていると思います)を開き、その中の<span class="code">apache\conf\httpd.conf</span>ファイルを適当なテキストエディタ(テキストエディタがわからなければ、メモ帳を使用して下さい)で開きます。<br />
+                            <span class="code">DocumentRoot “C:/xampp/htdocs”</span>と書かれた行がありますので、それを<span class="code">DocumentRoot “C:/xampp/htdocs/kbc”</span>へ変更します。<br />また、その下に<span class="code">&lt;Directory “C:/xampp/htdocs”&gt;</span>と書かれた行がありますので、これを<br />
+                            <span class="code">&lt;Directory “C:/xampp/htdocs/kbc”&gt;</span>へ変更します。<br />
+                            これらの変更ができたら、<span class="code">httpd.conf</span>ファイルの変更を保存してテキストエディタを終了します。エクスプローラでXAMPPのインストールフォルダフォルダ以下にある<span class="code">htdocs</span>フォルダを開いて、そこに新しく<span class="code">kbc</span>という名前のフォルダを追加し、追加したフォルダのなかに<span class="code">index.html</span>という名前で適当なHTMLファイルを作成します。
+                        </td>
+                        <td>
+                            ファインダで<span class="code">/Applications/XAMPP/etc</span>ディレクトリを開き、その中の<span class="code">httpd.conf</span>ファイルを適当なテキストエディタ(テキストエディタがわからなければ、<br />
+                            <span class="code">TextEdit.app</span>を使用して下さい)で開きます。<br />
+                            <span class="code">DocumentRoot “/Applications/XAMPP/xamppfiles/htdocs”</span>と書かれた行がありますので、それを<br />
+                            <span class="code">DocumentRoot “/Applications/XAMPP/xamppfiles/htdocs/kbc”</span><br />
+                            へ変更します。また、その下に<br />
+                            <span class="code">&lt;Directory “/Applications/XAMPP/xamppfiles/htdocs”&gt;</span><br />
+                            と書かれた行がありますので、これを<br />
+                            <span class="code">&lt;Directory “/Applications/XAMPP/xamppfiles/htdocs/kbc”&gt;</span><br />
+                            へ変更します。<br />
+                            これらの変更ができたら、<span class="code">httpd.conf</span>ファイルの変更を保存してテキストエディタを終了します。ファインダで<span class="code">/Applications/XAMPP/xamppfiles/htdocs</span>ディレクトリを開いて、そこに新しく<span class="code">kbc</span>という名前のフォルダを追加し、追加したフォルダのなかに<span class="code">index.html</span>という名前で適当なHTMLファイルを作成します。
+                        </td>
+                    </tr>
+                </table>
+                その後にXAMMPの管理ウィンドウで一度「Apache」の横の「Stop」と書かれたボタンをクリックしてApacheを止めた後、再度「Start」へと変わった同じボタンをクリックしてApacheを起動します。ブラウザで<a href="http://localhost">http://localhost</a>へアクセスすると、今度は<span class="code">kbc</span>フォルダ(ディレクトリ)の下に作った<span class="code">index.html</span>が表示されます。今後この<span class="code">kbc</span>フォルダ(ディレクトリ)はよく操作することになるので、デスクトップなどにこのフォルダ(ディレクトリ)までのショートカット(エイリアス)を作成しておくとよいでしょう。</p>
+
+                <h3 class="caption-black headline">バージョン管理ソフトウェアGitの導入</h3>
+                <p>GitはWebページやプログラムのソースコードのバージョン管理を行うソフトウェアです。KBCのWebページはGitで管理されており、これによって手軽にバックアップを取りながら開発を進めることができます。</p>
 
                 <h4>Gitのインストール</h4>
-                <p>GitはWebページやプログラムのソースコードのバージョン管理を行うソフトウェアです。KBCのWebページはGitで管理されており、これによって手軽にバックアップを取りながら開発を進めることができます。</p>
+
+                <h4>Gitでの管理を始める</h3>
+
+                <h3 class="caption-black headline">GitHubによるソースコードの共有</h3>
+                <h4>GitHubアカウントの取得・公開鍵の紐付け</h4>
+
+                <h4>KBC実行委員会のGitHub Organizationへ加わる</h4>
+
+                <h4>最新版のWebページを取得</h4>
+
+                <h3 class="caption-black headline">ページの作成・編集</h3>
+
+                <h4>Gitを活用した開発</h4>
+
+                <h3 class="caption-black headline">編集したページの公開</h3>
+
+                <h4>ローカルでの変更の確定</h4>
+
+                <h4>他のメンバーが行った変更の取り込み</h4>
+
+                <h4>サーバへの公開</h4>
 
             </div>
         </div>

@@ -55,18 +55,18 @@ h1{
 h2{
     padding: 50px 10px 10px 10px;
     margin: 40px 0;
-    font-size: 20px;
+    font-size: 15pt;
     border-radius: 7px;
 }
 h3{
     padding: 8px 10px 6px 10px;
-    margin: 30px 0;
-    font-size: 16px;
+    margin: 40px 0;
+    font-size: 12pt;
     border-radius: 7px;
 }
 h4{
     border-bottom: #999 dotted 2px;
-    font-size: 16px;
+    font-size: 13pt;
     padding: 10px 0 3px 10px;
     margin: 40px 0 20px 10px;
 }
@@ -74,7 +74,10 @@ p{
     font-size: 10pt;
     line-height: 180%;
     word-break: break-all;
-    margin: 20px 10px 40px 10px;
+    margin: 20px 10px;
+}
+p+h2 p+h3 p+h4{
+    margin-top: 40px;
 }
 a{
     color: #7f8c8d;
@@ -85,6 +88,7 @@ a:hover{
     text-decoration: none;
 }
 table{
+    font-size: 10pt;
     border-collapse: separate;
     border-spacing: 30px 15px;
     margin: 30px 10px 40px 10px;
@@ -95,6 +99,11 @@ td{
 .btn{
     padding: 15px 30px;
 }
+.margin-center{
+    margin-right: auto;
+    margin-left: auto;
+}
+
 
 /*
  * 画像のサムネイルデザイン
@@ -147,21 +156,37 @@ td{
 /*
  * スポンサーテーブル
  */
-.kbc-sponsor{
+table.kbc-sponsor{
     width: 100%;
     margin: 0;
 }
-.kbc-sponsor img{
+table.kbc-sponsor img{
     max-width: 150px;
     max-height: 100px;
 }
-.kbc-sponsor td{
+table.kbc-sponsor td{
     text-align: center;
     vertical-align: middle;
     padding: 10px;
 }
-.kbc-sponsor a img:hover{
+table.kbc-sponsor a img:hover{
     opacity: 0.7;
+}
+
+/*
+ * タイムテーブル
+ */
+table.kbc-timetable{
+    background-color: #dde3e7;
+    border-radius: 15px;
+    border-collapse: collapse;
+}
+table.kbc-timetable tr{
+    border-bottom: 1px #fff solid;
+}
+table.kbc-timetable td{
+    vertical-align: middle;
+    padding: 13px 20px;
 }
 
 /*
@@ -203,7 +228,7 @@ td{
     margin: 0;
 }
 .kbc-sidemenu h2{
-    font-size: 12pt;
+    font-size: 10pt;
     background-color: #444;
     color: #eee;
     padding: 10px 20px;
