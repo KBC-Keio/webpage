@@ -11,3 +11,23 @@
 .center{
     text-align: center;
 }
+
+table.os-branch{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px;
+    margin: 20px 0;
+}
+table.os-branch tr td{
+}
+
+.code{
+    font-size: 8pt;
+    color: #111;
+    background-color: #bbb;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 5px;
+    word-break: keep-all;
+}
