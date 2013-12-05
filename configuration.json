@@ -27,8 +27,8 @@
     "slide": {
         "elem": ".kbc-slide",
         "opts": [
-            { "url": "/index.html", "image": "/img/slide/sample1.png" },
-            { "url": "/index.html", "image": "/img/slide/sample2.png" }
+            { "url": "/index.html", "image": "/img/slide/leverage_slide.jpg" },
+            { "url": "/index.html", "image": "/img/slide/sample1.png" }
         ]
     },
     "sidemenu": {
