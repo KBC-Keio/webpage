@@ -154,26 +154,6 @@ td{
 }
 
 /*
- * スポンサーテーブル
- */
-table.kbc-sponsor{
-    width: 100%;
-    margin: 0;
-}
-table.kbc-sponsor img{
-    max-width: 150px;
-    max-height: 100px;
-}
-table.kbc-sponsor td{
-    text-align: center;
-    vertical-align: middle;
-    padding: 10px;
-}
-table.kbc-sponsor a img:hover{
-    opacity: 0.7;
-}
-
-/*
  * タイムテーブル
  */
 table.kbc-timetable{
