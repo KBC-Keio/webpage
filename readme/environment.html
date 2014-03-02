@@ -6,6 +6,7 @@
     <meta name="description" content="KBC実行委員会のWebページを開発するメンバーのための環境構築方法を示したページです。" />
     <meta name="keywords" content="慶應義塾,慶応義塾,スタートアップ,ベンチャー,起業,KBC,ビジネスコンテスト,シードアクセラレーター" />
     <meta name="copyright" content="KBC実行委員会" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/logo/kbc_fabicon.ico" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/css/readme.css" />
@@ -34,12 +35,12 @@
             <div class="kbc-container-inner">
 
                 <h2 class="caption-black headline">開発環境の構築方法</h2>
-                <p>このページではこれからKBC実行委員会のWebページの開発を進めるメンバーのための開発環境の構築方法を解説しています。</p>
-                <p>通常のWebページ製作であれば、自分のPCなどでエディタを用いて、HTMLファイルやCSSファイル、JavaScriptファイルを編集した後にブラウザでHTMLファイルを開くことで、編集結果を確認することができます。しかし、KBC実行委員会のWebページではその可搬性を高めるために全てのパスが絶対パスで記述されているため、ローカル環境で編集結果を確認するには多少の準備が必要です。本ページではその詳細な方法を解説するとともに、できあがった新しいWebページの公開方法の解説までを行っています。</p>
+                <p>このページではこれからKBC実行委員会のWebページの開発を始めるメンバーのための開発環境の構築方法を解説しています。</p>
+                <p>通常のWebページ製作であれば、自分のPCなどでエディタを用いて、HTMLファイルやCSSファイル、JavaScriptファイルを編集した後にブラウザでHTMLファイルを開くことで、編集結果を確認することができます。しかし、KBC実行委員会のWebページではその可搬性を高めるために全てのパスが絶対パスで記述されており、ローカル環境で編集結果を確認するには多少の準備が必要です。本ページではその詳細な方法を解説するとともに、できあがった新しいWebページの公開方法の解説までを行っています。</p>
 
                 <h3 class="caption-black headline">ローカル環境でサーバソフトウェアを立てる</h3>
                 <p>ローカル環境で絶対パスのルート(ドキュメントルート)を設定できるようにするためには、ローカル環境のWebページをApacheなどのWebサーバソフトウェア(以降単に「サーバ」と呼ぶ)によって管理する必要があります。ここではサーバを立てるためにサーバやデータベース管理ソフトウェアなどをまとめてインストール・管理できるXAMPPというソフトウェアを用いたサーバの立て方を紹介します。</p>
-                <p>XAMPPでは今回は必要ないアプリケーションも一緒にインストールされてしまいますが、提供されているコントロールパネルによってシェルなどを使わずともサーバの起動・ログ確認を行うことができる上、主要なOSを十分にサポートしていますので、KBC実行委員会ではこのソフトウェアの使用を推奨しています。なお、サーバなどについて十分な知識のある場合には、もちろんパッケージ管理ツールなどを用いてApacheをインストールして使用しても構いません。</p>
+                <p>XAMPPでは必要ないアプリケーションも一緒にインストールされてしまいますが、提供されているコントロールパネルによってシェルなどを使わずともサーバの起動・ログ確認を行うことができる上、主要なOSを十分にサポートしていますので、KBC実行委員会ではこのソフトウェアの使用を推奨しています。なお、サーバなどについて十分な知識のある場合には、もちろんMac OSに標準でインストールされているApacheを使用しても構いませんし、パッケージ管理ツールなどを用いてApacheをインストールしたり、nginxなどの他のサーバソフトウェアを使用しても構いません。</p>
 
                 <h4>XAMPPのインストール</h4>
                 <p><a href="http://www.apachefriends.org/jp/xampp.html">XAMPPのWebページ</a>より使用しているOSに合ったXAMPPのインストーラをダウンロードします。ダウンロードが完了したらインストーラを実行して、指示通りに進むとインストールが完了します。</p>
@@ -64,7 +65,7 @@
                     </tr>
                     <tr>
                         <td>
-                            エクスプローラでXAMPPのインストールフォルダ(おそらく<span class="code">C:\xampp</span>や<span class="code">D:\Program Files\xampp</span>となっていると思います)を開き、その中の<span class="code">apache\conf\httpd.conf</span>ファイルを適当なテキストエディタ(テキストエディタがわからなければ、メモ帳を使用して下さい)で開きます。<br />
+                            エクスプローラでXAMPPのインストールフォルダ(おそらく<span class="code">C:xampp</span>や<span class="code">D:Program Filesxampp</span>となっていると思います)を開き、その中の<span class="code">apacheconfhttpd.conf</span>ファイルを適当なテキストエディタ(テキストエディタがわからなければ、メモ帳を使用して下さい)で開きます。<br />
                             <span class="code">DocumentRoot “C:/xampp/htdocs”</span>と書かれた行がありますので、それを<span class="code">DocumentRoot “C:/xampp/htdocs/kbc”</span>へ変更します。<br />また、その下に<span class="code">&lt;Directory “C:/xampp/htdocs”&gt;</span>と書かれた行がありますので、これを<br />
                             <span class="code">&lt;Directory “C:/xampp/htdocs/kbc”&gt;</span>へ変更します。<br />
                             これらの変更ができたら、<span class="code">httpd.conf</span>ファイルの変更を保存してテキストエディタを終了します。エクスプローラでXAMPPのインストールフォルダフォルダ以下にある<span class="code">htdocs</span>フォルダを開いて、そこに新しく<span class="code">kbc</span>という名前のフォルダを追加し、追加したフォルダのなかに<span class="code">index.html</span>という名前で適当なHTMLファイルを作成します。
