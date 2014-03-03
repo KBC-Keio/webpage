@@ -19,10 +19,8 @@ table.os-branch{
     border-spacing: 20px;
     margin: 20px 0;
 }
-table.os-branch tr td{
-}
 
-span.code{
+code{
     font-family: "Droid Sans Mono", sans-serif;
     font-size: 8pt;
     color: #111;
@@ -30,16 +28,12 @@ span.code{
     padding: 1px;
     margin: 0 3px;
     border-radius: 3px;
-    word-break: keep-all;
+    word-wrap: break-word;
 }
 
-div.code{
-    font-family: "Droid Sans Mono", sans-serif;
-    font-size: 8pt;
-    color: #111;
-    background-color: #ccc;
+code.block{
+    display: block;
     padding: 10px;
     margin: 0 20px;
-    border-radius: 3px;
-    word-break: keep-all;
+    white-space: pre;
 }

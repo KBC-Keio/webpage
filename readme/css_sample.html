@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/css/readme.css" />
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono'>
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
@@ -22,8 +23,8 @@
     <!-- Bread crumb -->
     <div class="kbc-breadcrumb">
         <ul class="breadcrumb">
-            <li><a href="/index.html">ホーム</a></li>
-            <li><a href="/readme/index.html">README</a></li>
+            <li><a href="/">ホーム</a></li>
+            <li><a href="/readme/">README</a></li>
             <li class="active">KBC Bootstrap CSSサンプル</li>
         </ul>
     </div>
@@ -36,14 +37,15 @@
 
                 <h2 class="caption-black headline">KBC Bootstrap CSSサンプル</h2>
                 <p>このページではKBC実行委員会のWebページを構成するための補助ライブラリ「KBC Bootstrap」を使ったCSSでのWebページの構成方法を説明しています。本ページでは全ての紹介要素について実例を掲載していますので、もし説明で具体的な書き方を理解できなければ、このページのソースコードを見て使い方を学んで下さい。<br />
-                また、このようなレイアウト用のクラス群はデザインを統一するため、なるべく各ページで用いるようにするべきです。ここで用意されているものと同じ目的の要素を独自に定義するとWebページ全体の見た目が悪くなるだけでなく、将来的なコードの保守性や新しいページを作成する際のコードの可搬性を著しく低下させてしまいます。</p>
+                また、このようなレイアウト用のクラス群はデザインを統一するため、なるべく各ページで積極的に用いるべきです。ここで用意されているものと同じ目的の要素を独自に定義するとWebページ全体の見た目が悪くなるだけでなく、将来的なコードの保守性や新しいページを作成する際のコードの可搬性を著しく低下させてしまいます。<br />
+                どうしてもデザインを変更したい場合には、<a href="advance.html">より高度な開発の方法</a>を参照し、適切な方法でKBC Bootstrapライブラリ自体を変更して下さい。</p>
                 <div class="quoted-sample">
-                    <p>※ 本ページで示すサンプルではそれがサンプルであると分かりやすいように、この文章が書かれているPタグと同じように上下左右に多く余白を取っています。そのため、実際に使用する場合とは表示される大きさが異なりますので、注意して下さい。</p>
+                    <p>本ページで示すサンプルではそれがサンプルであると分かりやすいように、この文章が書かれているPタグと同じように上下左右に多く余白を取っています。そのため、実際に使用する場合とは表示される大きさが異なりますので、注意して下さい。</p>
                 </div>
 
                 <h3 class="caption-black headline">ヘッダー</h3>
                 <p>KBC Bootstrapには豊富なカラーバリエーションのヘッダーが標準で用意されています。<br />
-                これらを利用するにはH2タグまたはH3タグのクラスに「caption-[色名]」を追加します。以下はH2タグに「caption-red」クラスを追加した場合の例です。</p>
+                これらを利用するにはH2タグまたはH3タグのクラスに<code>caption-&lt;色名&gt;</code>を追加します。以下はH2タグに<code>caption-red</code>クラスを追加した場合の例です。</p>
                 <div class="quoted-sample">
                     <h2 class="caption-red">H2.caption-red</h2>
                 </div>
@@ -63,10 +65,10 @@
                 <div class="quoted-sample">
                     <h4>H4</h4>
                 </div>
-                <p>なお、これらのヘッダータグで区切ったコンテンツ内の文章はインデントを合わせる必要があるので、必ずPタグで囲みます。まさに今読まれているこの文章もPタグで囲まれています。</p>
+                <p>なお、これらのヘッダータグで区切ったコンテンツ内の文章はインデントを合わせる必要があるので、必ずPタグで囲みます。まさに今読んでいるこの文章もPタグで囲まれています。</p>
 
                 <h3 class="caption-black headline">ボタン</h3>
-                <p>KBC Bootstrapでは<a href="http://getbootstrap.com">Twitter Bootstrap</a>で用意されているボタンと同じ記法で、KBCのWebページ用に余白などの調節されたものを使用することができます。Twitter Bootstrapの記法では、ボタンにしたい要素(主にAタグ)のクラスに「btn」と「btn-[種類名]」を追加します。以下は作成できる全ての種類のボタンの例です。</p>
+                <p>KBC Bootstrapでは<a href="http://getbootstrap.com">Twitter Bootstrap</a>で用意されているボタンと同じ記法で、KBCのWebページ用に余白などの調節されたボタンを使用することができます。Twitter Bootstrapの記法では、ボタンにしたい要素(主にAタグ)のクラスに<code>btn</code>と<code>btn-&lt;種類名&gt;</code>を追加します。以下は作成できる全ての種類のボタンの例です。</p>
                 <div class="quoted-sample">
                     <a href="#" class="btn btn-default">A.btn.btn-default</a>
                     <a href="#" class="btn btn-primary">A.btn.btn-primary</a>
@@ -81,7 +83,7 @@
                 以下はminiサイズで右側に画像を表示した場合の例です。</p>
                 <div class="quoted-sample">
                     <div class="kbc-thumbnail mini right">
-                        <p>ここはPタグです。右側にminiサイズの画像を表示する場合は、クラスに「kbc-thumbnail」と「mini」、「right」を追加したDIVタグのなかにこのようなPタグを記述してから、クラスや属性を指定しないただのSPANタグで囲んだIMGタグを記述します。</p>
+                        <p>ここはPタグです。右側にminiサイズの画像を表示する場合は、クラスに<code>kbc-thumbnail</code>と<code>mini</code>、<code>right</code>を追加したDIVタグのなかにこのようなPタグを記述してから、クラスや属性を指定しないただのSPANタグで囲んだIMGタグを記述します。</p>
                         <span><img src="/img/news/leverage_final.jpg" /></span>
                     </div>
                 </div>
