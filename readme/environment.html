@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/css/readme.css" />
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono'>
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
@@ -37,6 +38,10 @@
                 <h2 class="caption-black headline">開発環境の構築方法</h2>
                 <p>このページではこれからKBC実行委員会のWebページの開発を始めるメンバーのための開発環境の構築方法を解説しています。</p>
                 <p>通常のWebページ製作であれば、自分のPCなどでエディタを用いて、HTMLファイルやCSSファイル、JavaScriptファイルを編集した後にブラウザでHTMLファイルを開くことで、編集結果を確認することができます。しかし、KBC実行委員会のWebページではその可搬性を高めるために全てのパスが絶対パスで記述されており、ローカル環境で編集結果を確認するには多少の準備が必要です。本ページではその詳細な方法を解説するとともに、できあがった新しいWebページの公開方法の解説までを行っています。</p>
+                <p>なお、KBC実行委員会の開発環境は安定した継続的なWebページ更新のために少々複雑なものとなっています。そのため、環境構築やWebページの編集を行なっていると、解説の通りにいかなかったり、よくわからないエラーが発生することがあるかもしれません。<br />
+                そうした場合には必ず(例えその表示が日本語でなかったとしても)エラーメッセージをよく読んでその指示に従い、それでもわからない場合には<a href="http://google.com">Google</a>などの優れた検索サイトでエラーメッセージや状況について検索してみてください。初心者が躓くような問題は大抵の場合、先に躓いた人たちがブログ記事などとしてインターネット上にその原因と解決方法の考察を載せています。<br />
+                どうしてもわからない場合には<a href="http://stackoverflow.com">stackoverflow</a>などの良質な質問サイトで質問してみるのもいいでしょう(もちろん、stackoverflowに日本語の質問を投稿するような狂気の沙汰は避けたほうがいいでしょうが)。</p>
+                <p>こうした試行錯誤は特にスタートアップが盛んに活躍しているIT分野では必須とすら言えるものです。それを支援する側としても、最低限自分たちの運営するWebサイトくらいは満足にメンテナンスできるようになっておいて損はないでしょう。</p>
 
                 <h3 class="caption-black headline">ローカル環境でサーバソフトウェアを立てる</h3>
                 <p>ローカル環境で絶対パスのルート(ドキュメントルート)を設定できるようにするためには、ローカル環境のWebページをApacheなどのWebサーバソフトウェア(以降単に「サーバ」と呼ぶ)によって管理する必要があります。ここではサーバを立てるためにサーバやデータベース管理ソフトウェアなどをまとめてインストール・管理できるXAMPPというソフトウェアを用いたサーバの立て方を紹介します。</p>
@@ -46,8 +51,8 @@
                 <p><a href="http://www.apachefriends.org/jp/xampp.html">XAMPPのWebページ</a>より使用しているOSに合ったXAMPPのインストーラをダウンロードします。ダウンロードが完了したらインストーラを実行して、指示通りに進むとインストールが完了します。</p>
                 <table class="os-branch">
                     <tr>
-                        <td>(Windowsの場合)</td>
-                        <td>(Mac OS Xの場合)</td>
+                        <td>Windowsの場合</td>
+                        <td>Mac OS Xの場合</td>
                     </tr>
                     <tr>
                         <td>スタートメニューの「すべてのプログラム」から<span class="code">XAMPP.exe</span>を起動しましょう。XAMPPを起動すると管理ウィンドウが表示されるので、「Apache」の横の「Start」と書かれたボタンをクリックするとApacheが起動します。</td>
@@ -56,16 +61,16 @@
                 </table>
                 <p>Apacheの起動後にブラウザで<a href="http://localhost">http://localhost</a>へアクセスしてXAMPPのWelcomeページが表示されればインストールは完了です。もし、エラーなどが出てApacheを起動できなかった場合は、<a href="http://google.co.jp">Google</a>などでエラーの文章を検索することで解決方法が見つかるかもしれません。</p>
 
-                <h4>ApacheのDocumentRootの変更</h4>
+                <h4 id="setDocumentRoot">ApacheのDocumentRootの変更</h4>
                 <p>現状では<a href="http://localhost">http://localhost</a>にアクセスするとXAMPPのWelcomeページが表示されてしまうので、これを自分の作成したWebページヘと変更します。なお、両OSの説明で設定している<span class="code">DocumentRoot</span>は以下で説明しているフォルダ・ディレクトリ以外に設定しても構いません。もしあなたにある程度の知識があるのであれば、<span class="code">htdocs</span>以下よりももっとわかりやすい場所に<span class="code">DocumentRoot</span>を設定するといいでしょう。</p>
                 <table class="os-branch">
                     <tr>
-                        <td>(Windowsの場合)</td>
-                        <td>(Mac OS Xの場合)</td>
+                        <td>Windowsの場合</td>
+                        <td>Mac OS Xの場合</td>
                     </tr>
                     <tr>
                         <td>
-                            エクスプローラでXAMPPのインストールフォルダ(おそらく<span class="code">C:xampp</span>や<span class="code">D:Program Filesxampp</span>となっていると思います)を開き、その中の<span class="code">apacheconfhttpd.conf</span>ファイルを適当なテキストエディタ(テキストエディタがわからなければ、メモ帳を使用して下さい)で開きます。<br />
+                            エクスプローラでXAMPPのインストールフォルダ(おそらく<span class="code">C:xampp</span>や<span class="code">D:Program Files/xampp</span>となっていると思います)を開き、その中の<span class="code">apache/conf/httpd.conf</span>ファイルを適当なテキストエディタ(テキストエディタがわからなければ、メモ帳を使用して下さい)で開きます。<br />
                             <span class="code">DocumentRoot “C:/xampp/htdocs”</span>と書かれた行がありますので、それを<span class="code">DocumentRoot “C:/xampp/htdocs/kbc”</span>へ変更します。<br />また、その下に<span class="code">&lt;Directory “C:/xampp/htdocs”&gt;</span>と書かれた行がありますので、これを<br />
                             <span class="code">&lt;Directory “C:/xampp/htdocs/kbc”&gt;</span>へ変更します。<br />
                             これらの変更ができたら、<span class="code">httpd.conf</span>ファイルの変更を保存してテキストエディタを終了します。エクスプローラでXAMPPのインストールフォルダフォルダ以下にある<span class="code">htdocs</span>フォルダを開いて、そこに新しく<span class="code">kbc</span>という名前のフォルダを追加し、追加したフォルダのなかに<span class="code">index.html</span>という名前で適当なHTMLファイルを作成します。
@@ -84,34 +89,219 @@
                         </td>
                     </tr>
                 </table>
-                その後にXAMMPの管理ウィンドウで一度「Apache」の横の「Stop」と書かれたボタンをクリックしてApacheを止めた後、再度「Start」へと変わった同じボタンをクリックしてApacheを起動します。ブラウザで<a href="http://localhost">http://localhost</a>へアクセスすると、今度は<span class="code">kbc</span>フォルダ(ディレクトリ)の下に作った<span class="code">index.html</span>が表示されます。今後この<span class="code">kbc</span>フォルダ(ディレクトリ)はよく操作することになるので、デスクトップなどにこのフォルダ(ディレクトリ)までのショートカット(エイリアス)を作成しておくとよいでしょう。</p>
+                <p>その後にXAMMPの管理ウィンドウで一度「Apache」の横の「Stop」と書かれたボタンをクリックしてApacheを止めた後、再度「Start」へと変わった同じボタンをクリックしてApacheを起動します。ブラウザで<a href="http://localhost">http://localhost</a>へアクセスすると、今度は<span class="code">kbc</span>フォルダ(ディレクトリ)の下に作った<span class="code">index.html</span>が表示されます。今後この<span class="code">kbc</span>フォルダ(ディレクトリ)はよく操作することになるので、デスクトップなどにこのフォルダ(ディレクトリ)までのショートカット(エイリアス)を作成しておくとよいでしょう。</p>
 
                 <h3 class="caption-black headline">バージョン管理ソフトウェアGitの導入</h3>
                 <p>GitはWebページやプログラムのソースコードのバージョン管理を行うソフトウェアです。KBCのWebページはGitで管理されており、これによって手軽にバックアップを取りながら開発を進めることができます。</p>
 
                 <h4>Gitのインストール</h4>
+                <table class="os-branch">
+                    <tr>
+                        <td>Windowsの場合</td>
+                        <td>Mac OS Xの場合</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="http://msysgit.github.io">Git for Windowsのページ</a>へ進み、「Download」より最新版のGit for Windowsのインストーラをダウンロードします。ダウンロードしたインストーラを実行して指示に従えばインストールが完了します。<br />
+                            インストールが完了したら、<span class="code">GitBash.exe</a>を起動して正しく動作することを確認して下さい。
+                        </td>
+                        <td>
+                            最も推奨するのは<a href="http://brew.sh/index_ja.html">Homebrew</a>をインストールし、シェルで<span class="code">brew install git</span>と入力することでGitをインストールする方法ですが、<a href="http://code.google.com/p/git-osx-installer">Git for OS Xのページ</a>の「Downloads」から最新版のGit for OS Xのインストーラをダウンロードし、そのインストーラを実行することでもインストールすることができます。<br />
+                            インストールが完了したら、適当なシェル(シェルがわからなければ、<span class="code">Terminal.app</span>を使用して下さい)を開き、<span class="code">git --version</span>と入力して<span class="code">git version x.x.x.x</span>というようなバージョン情報が表示されることを確認して下さい。
+                        </td>
+                    </tr>
+                </table>
 
-                <h4>Gitでの管理を始める</h3>
+                <h4>Gitの設定</h4>
+                <p>Gitのインストールが完了したら、使いはじめるために最低限の情報としてWindowsの場合は<span class="code">GitBash.exe</span>、Mac OS Xの場合は適当なシェルを開いて以下の<span class="code">$</span>以降のコマンドを<span class="code">Your Name</span>を自分の名前、<span class="code">your-email@exsample.com</span>を自分のメールアドレスで入力します。(以後は特に断りがなくとも、「コマンドを入力する」と言った場合には必ず<span class="code">GitBash.exe</span>や適当なシェル上での操作を表します。)</p>
+                <div class="code">
+                    $ git config --global user.name "Your Name"<br />
+                    $ git config --global user.email your-email@exsample.com<br />
+                </div>
 
                 <h3 class="caption-black headline">GitHubによるソースコードの共有</h3>
-                <h4>GitHubアカウントの取得・公開鍵の紐付け</h4>
+                <p>GitHubはGitでバージョン管理を行っているWebページやプログラムを共有するための領域が無償で手に入るほか、問題点の指摘や自分が行った修正の適用をWebベースで行えるWebアプリケーションです。</p>
+
+                <h4>GitHubアカウントの取得・公開鍵の作成と紐付け</h4>
+                <p>まずは<a href="https://github.com">GitHubのWebページ</a>よりアカウントの取得を行います。<br />
+                アカウントの取得が完了したら、GitHubと手元のコンピュータ(手元のコンピュータの環境をローカル環境と呼びます)とでファイルをやりとりするために、以下の2つのコマンドを入力することで公開鍵を作成します。</p>
+                <div class="code">
+                    $ mkdir ~/.ssh<br />
+                    $ ssh-keygen -t rsa -f ~/.ssh/github_key<br />
+                    Generating public/private rsa key pair.<br />
+                    Enter passphrase (empty for no passphrase):<br />
+                    Enter same passphrase again:<br />
+                    Your identification has been saved in $HOME/.ssh/github_key.<br />
+                    Your public key has been saved in $HOME/.ssh/github_key.pub.<br />
+                    The key fingerprint is:<br />
+                    62:1a:cb:16:e0:c1:79:fe:a9:d7:96:0b:57:47:60:04 user@exsample.com<br />
+                    The key's randomart image is:<br />
+                    +--[ RSA 2048]----+<br />
+                    |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eo+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    |&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    |&nbsp;&nbsp;=&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    |&nbsp;.&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    |&nbsp;&nbsp;.&nbsp;+&nbsp;o&nbsp;S&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    |&nbsp;&nbsp;&nbsp;.&nbsp;B&nbsp;o&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    |&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    |&nbsp;&nbsp;&nbsp;.&nbsp;..o+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    |&nbsp;&nbsp;&nbsp;&nbsp;..&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br />
+                    +-----------------+<br />
+                    $
+                </div>
+                <p>2つ目のコマンドを打ち込んだ後に2回パスワードの入力を求められますが、特に何も入力せずにEnterキー(returnキー)を押して先に進んで下さい。<br />
+                キーの生成が完了したら、作成した公開鍵をGitHubアカウントと結びつけます。</p>
+                <table class="os-branch">
+                    <tr>
+                        <td>Windowsの場合</td>
+                        <td>Mac OS Xの場合</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            以下のコマンドを入力して公開鍵をクリップボードにコピーします。<br />
+                            <span class="code">clip &lt; ~/.ssh/github_key.pub</span>
+                        </td>
+                        <td>
+                            以下のコマンドを入力して<span class="code">TextEdit.app</span>で公開鍵を開き、テキスト全体を選択してクリップボードにコピーします。<br />
+                            <span class="code">open -a /Applications/TextEdit.app ~/.ssh/github_key.pub</span>
+                        </td>
+                    </tr>
+                </table>
+                <p>クリップボードへのコピーが完了したら<a href="https://github.com/settings/ssh">GitHubのアカウント設定ページ</a>から「Add SSH key」ボタンを押し、「Title」に適当な名前(「MacBook Pro」など、どのコンピュータの鍵か分かりやすいものが良い)を入力した後に「Key」へクリップボード中の公開鍵を貼り付けます。「Add key」ボタンを押して鍵を登録すれば、アカウントと公開鍵の紐付けは完了です。<br />
+                なお、すでにアカウントを取得して公開鍵の登録を終えている場合には、そのアカウントと公開鍵を使用することができますので、上記の操作は必要ありません。</p>
 
                 <h4>KBC実行委員会のGitHub Organizationへ加わる</h4>
+                <p>KBC実行委員会のWebページを編集してGitHubに送るためには、KBC実行委員会のGitHub Organizationに加わる必要があります。<br />
+                これはOrganizationのオーナーとなっているメンバーしか行うことができませんので、すでにオーナーとなっているメンバーに自分のGitHubアカウント名を教え、Organizationに加えてもらって下さい。</p>
 
                 <h4>最新版のWebページを取得</h4>
-
-                <h3 class="caption-black headline">ページの作成・編集</h3>
-
-                <h4>Gitを活用した開発</h4>
+                <p>ここまでくればKBC実行委員会のWebページの最新版を取得することができます。以下のコマンドを入力してGitHubを用いて共有されているKBC実行委員会のWebページ(こうしたGitHubを用いて共有されているWebページやプログラムのひと塊をレポジトリと呼びます)をコピーしましょう。<span class="code">&lt;DocumentRootへのパス&gt;</span>は自分が<a href="#setDocumentRoot">ApacheのDocumentRootの変更</a>で設定したDocumentRoot(<span class="code">C:/xampp/htdocs/kbc</span>など)に適宜読み替えて下さい。</p>
+                <div class="code">
+                    $ cd &lt;DocumentRootへのパス&gt;<br />
+                    $ cd ..<br />
+                    $ rm -r kbc<br />
+                    $ git clone git@github.com:KBC-Keio/webpage.git kbc<br />
+                    $
+                </div>
+                <p>XAMPPでApacheを再起動し、<a href="http://localhost">http://localhost</a>にアクセスすれば、ローカル環境にあるKBC実行委員会のWebページを閲覧できるはずです。このアドレスで見えているWebページにはもちろん、手元のファイルの編集が即座に反映されます。</p>
 
                 <h3 class="caption-black headline">編集したページの公開</h3>
+                <p>GitHubからコピーしたファイルを編集しても、その編集をKBC実行委員会のサーバに反映しない限り、実際に公開されているWebページには何の変化も起こりません。以下では手元のコンピュータでの変更をGitとGitHubを用いてGitHubのレポジトリへ反映させ、そのレポジトリの内容でKBC実行委員会のサーバの内容を上書きする方法を説明します。
 
                 <h4>ローカルでの変更の確定</h4>
+                <p>更新内容をGitHubのレポジトリへ反映するためには、その前にローカル環境での変更の通知(stage)と確定(commit)を行う必要があります。<br />
+                まずは<span class="code">git status</span>コマンドを用いて、余計なファイルが変更されていないことを確認しましょう。</p>
+                <div class="code">
+                    $ git status<br />
+                    On branch master<br />
+                    Your branch is up-to-date with 'origin/master'.<br />
+                    <br />
+                    Changes not staged for commit:<br />
+                    &nbsp;&nbsp;(use "git add &lt;file&gt;..." to update what will be committed)<br />
+                    &nbsp;&nbsp;(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)<br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modified:&nbsp;&nbsp;&nbsp;readme/environment.html<br />
+                    <br />
+                    no changes added to commit (use "git add" and/or "git commit -a")<br />
+                    $
+                </div>
+                <p>上のコマンド実行結果では<span class="code">modified:&nbsp;&nbsp;&nbsp;readme/environment.html</span>という表記から、前回の変更の確定以降、現在閲覧中のこのページのHTMLファイル1つのみが変更されていることが分かります。<br />
+                実行結果にある通り、<span class="code">git add</span>コマンドを用いることでこの変更を通知することができます。</p>
+                <div class="code">
+                    $ git add readme/environment.html<br />
+                    $ git status<br />
+                    On branch master<br />
+                    Your branch is up-to-date with 'origin/master'.<br />
+                    <br />
+                    Changes to be committed:<br />
+                    &nbsp;&nbsp;(use "git reset HEAD &lt;file&gt;..." to unstage)<br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modified:&nbsp;&nbsp;&nbsp;readme/environment.html<br />
+                    <br />
+                    $
+                </div>
+                <p>変更を通知するファイルの名前を指定して<span class="code">git add</span>コマンドを実行した後に再び<span class="code">git status</span>コマンドを実行すると、そのメッセージが変わっていることから変更の通知に成功したことが分かります。<br />
+                ここで通知した変更は、<span class="code">git commit</span>コマンドを用いることで確定させることができます。</p>
+                <div class="code">
+                    $ git commit -m '開発環境の構築ページを更新'<br />
+                    [master xxxxxxx] 開発環境の構築ページを更新<br />
+                    &nbsp;1 file changed, x insertion(+), x deletion(-)<br />
+                    $ git status<br />
+                    On branch master<br />
+                    Your branch is up-to-date with 'origin/master'.<br />
+                    <br />
+                    nothing to commit, working directory clean<br />
+                    $
+                    <br />
+                </div>
+                <p>確定した変更は<span class="code">git status</span>コマンドで表示されなくなります。<span class="code">-m</span>オプションはこの変更の確定(gitではコミットと呼びます)に付随させるメッセージを指定するためのものです。メッセージはコミット時に必ず必要で、行なった変更の内容の概要を具体的に記述します。環境によってはメッセージが文字化けしてしまうことがあるので、その場合はシェルの文字コード指定を見直すか、メッセージを全て英数字で書くようにしましょう。</p>
 
                 <h4>他のメンバーが行った変更の取り込み</h4>
+                <p>自分のコミットをGitHubのレポジトリへ反映する前に、変更履歴の整合性を持たせるために、他の人のGitHubレポジトリへ反映されている変更を取り込む必要があります。それには以下のように<span class="code">git fetch</span>コマンドで現在のGitHubレポジトリの内容のコピーをローカル環境に作成し、<span class="code">git merge</span>コマンドでそのコピーとローカル環境の変更情報の差分を合成します。</p>
+                <div class="code">
+                    $ git fetch<br />
+                    remote: Counting objects: xx, done.<br />
+                    remote: Compressing objects: 100% (xx/xx), done.<br />
+                    remote: Total xx (delta x), reused xx (delta x)<br />
+                    Unpacking objects: 100% (xx/xx), done.<br />
+                    From github.com:KBC-Keio/webpage<br />
+                    &nbsp;&nbsp;&nbsp;xxxxxxx..xxxxxx&nbsp;&nbsp;master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; origin/master<br />
+                    $ git merge origin/master<br />
+                    Updating xxxxxxx..xxxxxxx<br />
+                    Fast-forward<br />
+                    &nbsp;readme/environment.html |&nbsp;&nbsp;x +++<br />
+                    xx files changed, xx insertions(+), xx deletions(-)<br />
+                    $
+                </div>
+                <p>実際に<span class="code">git merge</span>を行った場合には変更されたファイルの一覧がすべて表示されます。<br />
+                また、他のメンバーが自分が変更を行なったのと同じ箇所を変更していた場合には、変更内容の衝突(これをコンフリクトと呼びます)が発生することがあります。<br />
+                その場合は次の編集やGitHubレポジトリへの変更の適用を行う前に発生したコンフリクトを解決する必要がありますので、表示されているメッセージや<span class="code">git status</span>コマンドで表示されるメッセージをよく読んで対処して下さい。<br />
+                コンフリクトを頻繁に発生させないためには、自分が編集を行う前やコミットを行なった後にこまめに他のメンバーの変更を取り込むことが大切です。</p>
 
                 <h4>サーバへの公開</h4>
-
+                <p>コミットと他のメンバーの変更の取り込みが完了したら、いよいよGitHubレポジトリへ変更を適用し、KBC実行委員会のサーバへ変更を公開します。<br />
+                GitHubレポジトリへの変更の適用は以下のように<span class="code">git push</span>コマンドを用いることで行うことができます。</p>
+                <div class="code">
+                    $ git push origin master:master<br />
+                    Counting objects: x, done.<br />
+                    Delta compression using up to x threads.<br />
+                    Compressing objects: 100% (x/x), done.<br />
+                    Writing objects: 100% (x/x), xxx bytes | 0 bytes/s, done.<br />
+                    Total x (delta x), reused x (delta x)<br />
+                    To git@github.com:KBC-Keio/webpage.git<br />
+                    &nbsp;&nbsp;&nbsp;xxxxxxx..xxxxxxx  master -&gt; master<br />
+                    $
+                </div>
+                <p>適用が成功すれば、<a href="https://github.com/KBC-Keio/webpage">GitHubのレポジトリページ</a>でも行なった変更を確認できるようになります。<br />
+                続けてKBC実行委員会のサーバで変更を公開するためには、以下のコマンドを入力することでSSHという通信方式でKBC実行委員会のサーバのへログインし、そのシェルを操作してGitHubレポジトリの変更を取り込みます。<br />
+                SSHでのログイン時にはパスワードの入力が必要になりますが、これはメンバー内で共有されている資料の中に記載されているものがありますので、そちらを参照して下さい。</p>
+                <div class="code">
+                    $ ssh keio-contest-org@keio-contest-org.sakura.ne.jp<br />
+                    keio-contest-org@keio-contest-org.sakura.ne.jp's password:<br />
+                    Last login: xxx xxx&nbsp;&nbsp;x xx:xx:xx 20xx from exsample.com<br />
+                    FreeBSD 9.1-RELEASE-p8 (SAKURA15) #0: Thu Nov 28 21:49:40 JST 2013<br />
+                    <br />
+                    Welcome to FreeBSD!<br />
+                    <br />
+                    % cd www/kbc<br />
+                    % git fetch<br />
+                    remote: Counting objects: xx, done.<br />
+                    remote: Compressing objects: 100% (xx/xx), done.<br />
+                    remote: Total xx (delta x), reused xx (delta x)<br />
+                    Unpacking objects: 100% (xx/xx), done.<br />
+                    From github.com:KBC-Keio/webpage<br />
+                    &nbsp;&nbsp;&nbsp;xxxxxxx..xxxxxx&nbsp;&nbsp;master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; origin/master<br />
+                    % git merge origin/master<br />
+                    Updating xxxxxxx..xxxxxxx<br />
+                    Fast-forward<br />
+                    &nbsp;readme/environment.html |&nbsp;&nbsp;x +++<br />
+                    xx files changed, xx insertions(+), xx deletions(-)<br />
+                    % logout<br />
+                    Connection to keio-contest-org.sakura.ne.jp closed.<br />
+                    $
+                </div>
+                <p>ここまでの操作が完了すればWebページの変更が反映されているはずですので、ブラウザで変更したページを見て確認を行って下さい。<br />
+                なお、変更を確認できない場合にはブラウザのキャッシュが原因である場合がありますので、ページを再読込することで変更を確認できるようになる場合があります。</p>
             </div>
         </div>
     </div>

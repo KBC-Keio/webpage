@@ -22,12 +22,24 @@ table.os-branch{
 table.os-branch tr td{
 }
 
-.code{
+span.code{
+    font-family: "Droid Sans Mono", sans-serif;
     font-size: 8pt;
     color: #111;
-    background-color: #bbb;
-    padding: 3px;
-    margin: 5px;
-    border-radius: 5px;
+    background-color: #ccc;
+    padding: 1px;
+    margin: 0 3px;
+    border-radius: 3px;
+    word-break: keep-all;
+}
+
+div.code{
+    font-family: "Droid Sans Mono", sans-serif;
+    font-size: 8pt;
+    color: #111;
+    background-color: #ccc;
+    padding: 10px;
+    margin: 0 20px;
+    border-radius: 3px;
     word-break: keep-all;
 }
