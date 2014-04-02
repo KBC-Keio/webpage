@@ -78,11 +78,11 @@
             "month": 4,
             "day": 4,
             "hour": 13,
-            "minute": 30
+            "minute": 0
         },
         "details": [
-            { "title": "日時", "content": "2014年4月4日(金) 11:45~13:30" },
-            { "title": "場所", "content": "未定(SFCの教室)" },
+            { "title": "日時", "content": "2014年4月4日(金) 11:45~13:00" },
+            { "title": "場所", "content": "SFC ε22教室" },
             { "title": "集合", "content": "SFCメディアセンター前に11:30集合" },
             { "title": "参加費", "content": "無料" }
         ]
