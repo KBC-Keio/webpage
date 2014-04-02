@@ -10,7 +10,7 @@
  */
 .kbc-event{
     background-color: #ddd;
-    padding: 0;
+    padding: 0 0 30px 0;
     margin: 50px 0;
     border-radius: 8px;
     box-shadow: -1px -1px 3px #ccc inset, 1px 1px 3px #ccc inset;
@@ -21,7 +21,7 @@
     margin: 0;
 }
 .kbc-event .event-contents{
-    padding: 10px 0 0 20px;
+    padding: 10px 0 15px 20px;
     display: table;
 }
 .kbc-event .event-inner-contents{
@@ -43,7 +43,7 @@
     text-align: center;
 }
 .kbc-event a.btn{
-    margin: 15px 0 30px 0;
+    margin: 15px 0 0 0;
 }
 .kbc-event table{
     font-size: 10px;
@@ -53,13 +53,4 @@
 }
 .kbc-event td{
     border-bottom: 1px dotted #aaa;
-}
-
-.more-area{
-    width: 100%;
-    text-align: center;
-    margin: 40px 0;
-}
-.more-btn{
-    width: 100%;
 }

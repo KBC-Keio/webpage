@@ -61,16 +61,31 @@ $(function(){
             });
         })
 
+        var recent = function(){
+            return $('a[href="#new"]').parent().hasClass('active');
+        };
+
         var appendSidemenu = function(card){
             var classes = 'event-headline';
-            var recent = $('a[href="#new"]').parent().hasClass('active');
-            if(recent && card.past){
+            if(recent() && card.past){
                 classes += ' hide';
             }
             kbc.controller.appendSidemenu(card.$headline, classes);
         };
         recentPagination.next(3, appendSidemenu);
         pastPagination.next(3, appendSidemenu);
+
+        $(window).on('scroll', function(){
+            var scrollHeight = $(document).height();
+            var scrollPosition = $(window).height() + $(window).scrollTop();
+            if ((scrollHeight - scrollPosition) / scrollHeight == 0) {
+                if(recent()){
+                    recentPagination.next(3, appendSidemenu);
+                } else{
+                    pastPagination.next(3, appendSidemenu);
+                }
+            }
+        });
     };
 
 
@@ -94,7 +109,7 @@ $(function(){
                 if(!this.cards || this.cards.length == 0){
                     this.restock(append.bind(this));
                 } else{
-                    append();
+                    append.bind(this)();
                 }
             }
         },

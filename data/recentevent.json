@@ -1,8 +1,62 @@
 [
     {
+        "name": "新入生対象ワークショップ",
+        "image": "/img/event/8th/leverage/final.jpg",
+        "description": "2014年度の新入生を対象としたワークショップです。",
+        "timelimit": {
+            "year": 2014,
+            "month": 4,
+            "day": 8,
+            "hour": 18,
+            "minute": 30
+        },
+        "details": [
+            { "title": "日時", "content": "2014年4月8日(月) 16:30~18:30" },
+            { "title": "場所", "content": "かまぼこハウス" },
+            { "title": "集合", "content": "SFCメディアセンター前に16:15集合" },
+            { "title": "参加費", "content": "無料" }
+        ]
+    },
+    {
+        "name": "新入生対象説明会",
+        "image": "/img/event/8th/leverage/final.jpg",
+        "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会です。",
+        "timelimit": {
+            "year": 2014,
+            "month": 4,
+            "day": 4,
+            "hour": 18,
+            "minute": 0
+        },
+        "details": [
+            { "title": "日時", "content": "2014年4月4日(金) 16:00~18:00" },
+            { "title": "場所", "content": "かまぼこハウス" },
+            { "title": "集合", "content": "SFCメディアセンター前に15:45集合" },
+            { "title": "参加費", "content": "無料" }
+        ]
+    },
+    {
+        "name": "4団体合同新歓",
+        "image": "/img/event/8th/leverage/final.jpg",
+        "description": "KBC実行委員会・AISEC・OVAL・SALが合同で開催する新入生歓迎会です。",
+        "timelimit": {
+            "year": 2014,
+            "month": 4,
+            "day": 4,
+            "hour": 13,
+            "minute": 30
+        },
+        "details": [
+            { "title": "日時", "content": "2014年4月4日(金) 11:45~13:30" },
+            { "title": "場所", "content": "未定(SFCの教室)" },
+            { "title": "集合", "content": "SFCメディアセンター前に11:30集合" },
+            { "title": "参加費", "content": "無料" }
+        ]
+    },
+    {
         "name": "新入生特別起業家講演会",
         "image": "/img/event/8th/leverage/final.jpg",
-        "description": "Leverage最終報告会では9月より3ヶ月間に渡ってKBCの支援を受けてきた5組の学生起業家チームがその事業推進のすべてを露わにします！<br />定員に限りがございますので、お早めにお申込み下さい。",
+        "description": "KBCやその周りの起業家さんたちの活動について知れる講演会です。KBC実行委員会の活動やSFCの周りの起業家さんに興味のある方はぜひご参加ください!",
         "timelimit": {
             "year": 2014,
             "month": 4,
@@ -13,7 +67,7 @@
         "details": [
             { "title": "日時", "content": "2014年4月2日(水) 16:00~18:00" },
             { "title": "場所", "content": "かまぼこハウス" },
-            { "title": "集合", "content": "15:45 SFCメディアセンター前" },
+            { "title": "集合", "content": "SFCメディアセンター前に15:45集合" },
             { "title": "参加費", "content": "無料" }
         ]
     }
