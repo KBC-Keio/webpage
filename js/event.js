@@ -46,13 +46,9 @@ $(function(){
         });
 
         var recentPagination = new EventPagination($('#new'), recentEventJsons, function(cards){
-            for(var i; i < cards.length; i++){
-                if(cards[i].past){
-                    this.jsons = undefined;
-                    return;
-                }
-            }
-            return cards;
+            return cards.filter(function(card){
+                return !card.past;
+            });
         });
 
         var pastPagination = new EventPagination($('#past'), recentEventJsons.concat(pastEventJsons), function(cards){
@@ -71,6 +67,7 @@ $(function(){
                 classes += ' hide';
             }
             kbc.controller.appendSidemenu(card.$headline, classes);
+            $('#no-event').addClass('hide');
         };
         recentPagination.next(3, appendSidemenu);
         pastPagination.next(3, appendSidemenu);
@@ -117,7 +114,7 @@ $(function(){
             var parseEventCards = function(json, callback){
                 var parseDate = function(limit){
                     if(limit.month){
-                        limit.month++;
+                        limit.month--;
                     }
                     return new Date(limit.year, limit.month, limit.day, limit.hour, limit.minute);
                 };
