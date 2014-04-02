@@ -19,5 +19,39 @@
             "url": "/event/8th/leverage.html",
             "text": "イベントの詳細ページへ"
         }
+    },
+    {
+        "name": "応募書類セミナー for Leverage",
+        "image": "/img/event/8th/seminar.jpg",
+        "description": "KBC Business Leverageの応募書類を作成するにあたっての要点を抑えられるセミナーです。トーマツベンチャーサポートの萩原氏を講師に、一般公開よりも一足早く応募書類を用いてLeverageに応募するためのいろはを学べるチャンスです!",
+        "timelimit": {
+            "year": 2013,
+            "month": 7,
+            "day": 13,
+            "hour": 18,
+            "minute": 30
+        },
+        "details": [
+            { "title": "日時", "content": "2013年7月13日(土)" },
+            { "title": "場所", "content": "慶應義塾大学日吉キャンパス" },
+            { "title": "参加費", "content": "無料" }
+        ]
+    },
+    {
+        "name": "KBC Entrepreneur Meeting",
+        "image": "/img/event/8th/entrepreneur_meeting.jpg",
+        "description": "事業アイディアを持ち、これから行動を始めようと考えている学生起業家のためのメンタリングイベントです。自分の事業をブラッシュアップしたい方、ぜひお越しください!",
+        "timelimit": {
+            "year": 2013,
+            "month": 6,
+            "day": 1,
+            "hour": 18,
+            "minute": 30
+        },
+        "details": [
+            { "title": "日時", "content": "2013年6月1日(土)" },
+            { "title": "場所", "content": "慶應義塾大学日吉キャンパス" },
+            { "title": "参加費", "content": "無料" }
+        ]
     }
 ]
