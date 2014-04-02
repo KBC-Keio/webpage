@@ -1,0 +1,23 @@
+[
+    {
+        "name": "KBC Business Leverage 最終審査会観覧",
+        "image": "/img/event/8th/leverage/final.jpg",
+        "description": "Leverage最終報告会では9月より3ヶ月間に渡ってKBCの支援を受けてきた5組の学生起業家チームがその事業推進のすべてを露わにします！<br />定員に限りがございますので、お早めにお申込み下さい。",
+        "timelimit": {
+            "year": 2013,
+            "month": 12,
+            "day": 23,
+            "hour": 18,
+            "minute": 30
+        },
+        "details": [
+            { "title": "日時", "content": "2013年12月23日(月・祝) 13:00~18:30" },
+            { "title": "場所", "content": "慶應義塾大学日吉キャンパス 藤原洋記念ホール" },
+            { "title": "参加費", "content": "無料 (懇親会参加の場合は別途参加費がかかります)" }
+        ],
+        "button": {
+            "url": "/event/8th/leverage.html",
+            "text": "イベントの詳細ページへ"
+        }
+    }
+]

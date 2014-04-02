@@ -1,0 +1,20 @@
+[
+    {
+        "name": "新入生特別起業家講演会",
+        "image": "/img/event/8th/leverage/final.jpg",
+        "description": "Leverage最終報告会では9月より3ヶ月間に渡ってKBCの支援を受けてきた5組の学生起業家チームがその事業推進のすべてを露わにします！<br />定員に限りがございますので、お早めにお申込み下さい。",
+        "timelimit": {
+            "year": 2014,
+            "month": 4,
+            "day": 2,
+            "hour": 18,
+            "minute": 0
+        },
+        "details": [
+            { "title": "日時", "content": "2014年4月2日(水) 16:00~18:00" },
+            { "title": "場所", "content": "かまぼこハウス" },
+            { "title": "集合", "content": "15:45 SFCメディアセンター前" },
+            { "title": "参加費", "content": "無料" }
+        ]
+    }
+]

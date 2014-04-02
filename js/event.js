@@ -13,16 +13,16 @@
  * HTMLの要素読み込み後に即時実行されるメソッド
  */
 $(function(){
-    kbc.event.initialize(1, "/event/recentevent.json", "/event/pastevent.json");
+    kbc.event.initialize(['/data/recentevent.json'], ['/data/pastevent.json']);
 });
 
 
 
 /*
- * window.event
+ * window.kbc.event
  */
 (function(window, library, namespace, undefined){
-"use strict"
+'use strict'
     var lib = window[library];
     if(!lib){
         lib = {};
@@ -34,98 +34,192 @@ $(function(){
         lib[namespace] = ns;
     }
 
-    var EventDescriptor = function($elem, filter, book){
-        this.$elem = $elem;
-        this.filter = filter;
-        this.book = book;
-        this.curPage = 0;
-        this.curLine = 0;
-    };
-    EventDescriptor.prototype = {
-        appendLine: function(num, defaultClasses){
-            if(this.curPage >= this.book.length){
-                return;
-            }
-            var dist = this.curLine + num;
-            $.getJSON(this.book[this.curPage], (function(lines){
-                while(this.curLine < dist){
-                    if(lines.length <= this.curLine){
-                        this.curPage++;
-                        num = dist - this.curLine;
-                        this.curLine = 0;
-                        this.appendLine(num, defaultClasses);
-                        return;
-                    }
-                    var line = lines[this.curLine];
-                    if(this.filter(line)){
-                        var classes = "event-headline";
-                        if(defaultClasses){
-                            classes += " " + defaultClasses;
-                        }
-                        kbc.view.event(this.$elem, line, classes);
-                    } else{
-                        dist++;
-                    }
-                    this.curLine++;
+
+
+    /*
+     * recentEventJsons = [String]
+     * pastEventJsons = [String]
+     */
+    ns.initialize = function(recentEventJsons, pastEventJsons){
+        $('a[data-toggle="tab"]').click(function(){
+            $('.kbc-nav-list>.event-headline').toggleClass('hide');
+        });
+
+        var recentPagination = new EventPagination($('#new'), recentEventJsons, function(cards){
+            for(var i; i < cards.length; i++){
+                if(cards[i].past){
+                    this.jsons = undefined;
+                    return;
                 }
-            }).bind(this));
-        }
-    };
-
-    ns.initialize = function(newPageNo, jsons){
-        var newJsons = new Array();
-        var pastJsons = new Array();
-        for(var i = 1; i < arguments.length; i++){
-            if(i <= newPageNo){
-                newJsons.push(arguments[i]);
             }
-            pastJsons.push(arguments[i]);
-        }
-
-        var newEvent = new EventDescriptor($("#new"), function(event){
-            return !isPast(event.date);
-        }, newJsons);
-        var pastEvent = new EventDescriptor($("#past"), function(event){
-            return isPast(event.date);
-        }, pastJsons);
-
-        newEvent.appendLine(3);
-        pastEvent.appendLine(3, "hide");
-
-        $("#new-btn").click(function(){
-            newEvent.appendLine(3);
-        });
-        $("#past-btn").click(function(){
-            pastEvent.appendLine(3);
+            return cards;
         });
 
-        $("a[data-toggle=\"tab\"]").click(function(){
-            $(".kbc-nav-list>.event-headline").toggleClass("hide");
-            $(".more-btn").toggleClass("hide");
-        });
+        var pastPagination = new EventPagination($('#past'), recentEventJsons.concat(pastEventJsons), function(cards){
+            return cards.filter(function(card){
+                return card.past;
+            });
+        })
+
+        var appendSidemenu = function(card){
+            var classes = 'event-headline';
+            var recent = $('a[href="#new"]').parent().hasClass('active');
+            if(recent && card.past){
+                classes += ' hide';
+            }
+            kbc.controller.appendSidemenu(card.$headline, classes);
+        };
+        recentPagination.next(3, appendSidemenu);
+        pastPagination.next(3, appendSidemenu);
     };
 
-    var isPast = function(theDate){
-        var today = new Date();
-        var year = today.getFullYear(),
-            month = today.getMonth() + 1,
-            date = today.getDate();
 
-        if(theDate.year < year){
-            return true;
-        } else if(theDate.year > year){
-            return false;
-        }
-        if(theDate.month < month){
-            return true;
-        } else if(theDate.month > month){
-            return false;
-        }
-        if(theDate.date < date){
-            return true;
-        } else if(theDate.month > date){
-            return false;
-        }
-        return false;
+    var EventPagination = function($field, jsons, filter){
+        this.$field = $field;
+        this.jsons = jsons;
+        this.filter = filter;
     };
-}(this, "kbc", "event"));
+    EventPagination.prototype = {
+        next: function(n, callback){
+            var append = function(){
+                var card = this.cards.shift();
+                card.render(this.$field);
+                if(typeof(callback) == 'function'){
+                    callback(card);
+                }
+                this.next(--n, callback);
+            };
+
+            if(n > 0){
+                if(!this.cards || this.cards.length == 0){
+                    this.restock(append.bind(this));
+                } else{
+                    append();
+                }
+            }
+        },
+        restock: function(callback){
+            var parseEventCards = function(json, callback){
+                var parseDate = function(limit){
+                    if(limit.month){
+                        limit.month++;
+                    }
+                    return new Date(limit.year, limit.month, limit.day, limit.hour, limit.minute);
+                };
+
+                /*
+                 * raws = [
+                 *     {
+                 *         name: String,
+                 *         image: String,
+                 *         descripstion: String,
+                 *         timelimit: {
+                 *             year: Number,
+                 *             month: Number,
+                 *             day: Number,
+                 *             (hour: Number,)
+                 *             (minute: Number)
+                 *         },
+                 *         details: [
+                 *             {
+                 *                 title: String,
+                 *                 content: String
+                 *             }
+                 *         ],
+                 *         button: {
+                 *             url: String,
+                 *             text: String
+                 *         }
+                 *     }
+                 * ]
+                 */
+                $.getJSON(json, function(raws){
+                    var cards = new Array();
+                    for(var i = 0; i < raws.length; i++){
+                        var raw = raws[i];
+                        var card = new EventCard(raw.name, raw.image, raw.description, parseDate(raw.timelimit));
+                        if(raw.details){
+                            card.setDetail(raw.details);
+                        }
+                        if(raw.button){
+                            card.setButton(raw.button.url, raw.button.text);
+                        }
+                        cards.push(card);
+                    }
+                    callback(cards);
+                });
+            };
+
+            if(this.jsons && this.jsons.length > 0){
+                parseEventCards(this.jsons.shift(), (function(cards){
+                    this.cards = this.filter(cards);
+                    if(this.cards && this.cards.length > 0){
+                        callback();
+                    } else if(this.jsons.length > 0){
+                        this.restock(callback);
+                    }
+                }).bind(this));
+            }
+        }
+    };
+
+
+
+    var today = new Date();
+    /*
+     * name = String
+     * image = String
+     * description = String
+     * timeLimit = Date
+     */
+    var EventCard = function(name, image, description, timeLimit){
+        this.$headline = $('<h2>').append(name);
+        this.$body = $('<div class="kbc-event">')
+                     .append(this.$headline)
+                     .append($('<hr>'));
+        this.$contents = $('<div class="event-contents">')
+                         .append($('<img>').attr('src', image));
+        this.$description = $('<div class="event-inner-contents">')
+                            .append($('<p>').append(description));
+
+        if(today < timeLimit){
+            this.past = false;
+        } else{
+            this.past = true;
+        }
+    };
+    EventCard.prototype = {
+        render: function($elem){
+            this.$body.append(this.$contents.append(this.$description));
+            if(this.$button){
+                this.$body.append(this.$button);
+            }
+            $elem.append(this.$body);
+        },
+        /*
+         * details = [
+         *     {
+         *         title: String,
+         *         content: String
+         *     }
+         * ]
+         */
+        setDetail: function(details){
+            var $detail = $('<table>');
+            for(var i = 0; i < details.length; i++){
+                var detail = details[i];
+                $detail.append($('<tr>')
+                               .append($('<td>').append(detail.title))
+                               .append($('<td>').append(detail.content)))
+            }
+            this.$description.append($detail);
+        },
+        setButton: function(url, text){
+            this.$button = $('<div class="event-btn">')
+                           .append($('<a class="btn btn-info">')
+                                   .attr('href', url)
+                                   .append(text));
+
+        }
+    };
+}(this, 'kbc', 'event'));

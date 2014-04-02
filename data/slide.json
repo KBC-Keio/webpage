@@ -1,0 +1,7 @@
+{
+    "elem": ".kbc-slide",
+    "slides": [
+        { "url": "/about.html", "image": "/img/slide/recruitment.png" },
+        { "url": "/about.html", "image": "/img/slide/sample1.png" }
+    ]
+}
