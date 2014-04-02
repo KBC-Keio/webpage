@@ -1,9 +1,9 @@
 /*
  * title       : KBC Bootstrap Event
  * description : イベントページを表示するためのJavaScriptコード群。event.htmlで読み込みます。基本的に本ファイルの内容は一切書き換えてはいけません。JavaScriptおよびjQuery、Twitter Bootstrapを十分に理解していないメンバーが書き換えた場合にはイベントページが正しく表示されなくなる恐れがあります。
- * dependency  : jQuery 1.10.2, Twitter Bootstrap 3.0.0, KBC Bootstrap 1.0.0
- * version     : 1.0.0
- * date        : 2013年11月2日
+ * dependency  : jQuery 1.10.2, Twitter Bootstrap 3.1.1, KBC Bootstrap 1.1.0
+ * version     : 1.1.0
+ * date        : 2014年4月2日
  * author      : 第9期実行委員 出水厚輝
  */
 
@@ -75,7 +75,7 @@ $(function(){
         $(window).on('scroll', function(){
             var scrollHeight = $(document).height();
             var scrollPosition = $(window).height() + $(window).scrollTop();
-            if ((scrollHeight - scrollPosition) / scrollHeight == 0) {
+            if(scrollHeight - scrollPosition < 100) {
                 if(recent()){
                     recentPagination.next(3, appendSidemenu);
                 } else{

@@ -1,7 +1,7 @@
 [
     {
         "name": "新入生対象ワークショップ",
-        "image": "/img/event/8th/leverage/final.jpg",
+        "image": "/img/event/9th/welcome_workshop.jpg",
         "description": "2014年度の新入生を対象としたワークショップです。",
         "timelimit": {
             "year": 2014,
@@ -18,8 +18,42 @@
         ]
     },
     {
-        "name": "新入生対象説明会",
-        "image": "/img/event/8th/leverage/final.jpg",
+        "name": "新入生向け説明会@日吉",
+        "image": "/img/event/9th/welcome_briefing_hiyoshi.jpg",
+        "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会の日吉第3回開催です。現役メンバーによる説明はもちろん、OBやKBCの活動を支えてくださっている起業支援家の方もお招きしていますので、「起業したい」と考えている方でもぜひお越しください!",
+        "timelimit": {
+            "year": 2014,
+            "month": 4,
+            "day": 5,
+            "hour": 13,
+            "minute": 0
+        },
+        "details": [
+            { "title": "日時", "content": "2014年4月5日(土) 12:00~13:00" },
+            { "title": "場所", "content": "日吉キャンパス J426教室" },
+            { "title": "参加費", "content": "無料" }
+        ]
+    },
+    {
+        "name": "新入生向け説明会@日吉",
+        "image": "/img/event/9th/welcome_briefing_hiyoshi.jpg",
+        "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会の日吉第2回開催です。現役メンバーによる説明はもちろん、OBやKBCの活動を支えてくださっている起業支援家の方もお招きしていますので、「起業したい」と考えている方でもぜひお越しください!",
+        "timelimit": {
+            "year": 2014,
+            "month": 4,
+            "day": 5,
+            "hour": 12,
+            "minute": 0
+        },
+        "details": [
+            { "title": "日時", "content": "2014年4月5日(土) 11:00~12:00" },
+            { "title": "場所", "content": "日吉キャンパス J424教室" },
+            { "title": "参加費", "content": "無料" }
+        ]
+    },
+    {
+        "name": "新入生対象説明会@SFC",
+        "image": "/img/event/9th/welcome_briefing_sfc.jpg",
         "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会です。",
         "timelimit": {
             "year": 2014,
@@ -36,9 +70,9 @@
         ]
     },
     {
-        "name": "4団体合同新歓",
-        "image": "/img/event/8th/leverage/final.jpg",
-        "description": "KBC実行委員会・AISEC・OVAL・SALが合同で開催する新入生歓迎会です。",
+        "name": "学生団体合同ウェルカムパーティー",
+        "image": "/img/event/9th/welcome_joint_fair.jpg",
+        "description": "KBC実行委員会・AISEC・OVAL・SALが合同で開催する新入生歓迎会です。「ビジネスやグローバルに興味があるけど、どの学生団体がいいのかわからない」という方、ぜひお越しください!",
         "timelimit": {
             "year": 2014,
             "month": 4,
@@ -54,20 +88,38 @@
         ]
     },
     {
-        "name": "新入生特別起業家講演会",
-        "image": "/img/event/8th/leverage/final.jpg",
-        "description": "KBCやその周りの起業家さんたちの活動について知れる講演会です。KBC実行委員会の活動やSFCの周りの起業家さんに興味のある方はぜひご参加ください!",
+        "name": "新入生向け起業家トークパーティ",
+        "image": "/img/event/9th/welcome_talk_party.jpg",
+        "description": "新入生の皆さんにKBCにとっての最重要ワードである「起業」や「インキュベーション」について知っていただけるトークパーティです。実際に事業を進められている起業家の方お二人と起業支援家の方をお招きし、対談を行って頂く予定です。",
         "timelimit": {
             "year": 2014,
             "month": 4,
-            "day": 2,
-            "hour": 18,
+            "day": 3,
+            "hour": 19,
             "minute": 0
         },
         "details": [
-            { "title": "日時", "content": "2014年4月2日(水) 16:00~18:00" },
+            { "title": "日時", "content": "2014年4月3日(木) 16:00~19:00 (16:00開場)" },
             { "title": "場所", "content": "かまぼこハウス" },
             { "title": "集合", "content": "SFCメディアセンター前に15:45集合" },
+            { "title": "参加費", "content": "無料" },
+            { "title": "講演者", "content": "<a href=\"http://dricos.jp\">ドリコス株式会社</a> 代表取締役 大久保直樹氏<br /><a href=\"http://aissy.co.jp\">AISSY株式会社</a> 代表取締役社長 鈴木隆一氏<br />慶應義塾大学SFC インキュベーションマネージャー 廣川克也氏" }
+        ]
+    },
+    {
+        "name": "新入生向け説明会@日吉",
+        "image": "/img/event/9th/welcome_briefing_hiyoshi.jpg",
+        "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会です。現役メンバーによる説明はもちろん、OBやKBCの活動を支えてくださっている起業支援家の方もお招きしていますので、「起業したい」と考えている方でもぜひお越しください!",
+        "timelimit": {
+            "year": 2014,
+            "month": 4,
+            "day": 4,
+            "hour": 13,
+            "minute": 0
+        },
+        "details": [
+            { "title": "日時", "content": "2014年4月3日(木) 12:00~13:00" },
+            { "title": "場所", "content": "日吉キャンパス J441教室" },
             { "title": "参加費", "content": "無料" }
         ]
     }

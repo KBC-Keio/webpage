@@ -46,11 +46,16 @@
     margin: 15px 0 0 0;
 }
 .kbc-event table{
-    font-size: 10px;
+    font-size: 11px;
     border-collapse: separate;
     border-spacing: 12px;
     margin: 0 0 10px 10px;
 }
 .kbc-event td{
     border-bottom: 1px dotted #aaa;
+}
+
+#no-event{
+    font-size: 14pt;
+    text-align: center;
 }
