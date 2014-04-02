@@ -71,7 +71,7 @@ $(function(){
                              .append($('<span class="icon-next">'))))
 
         $('#kbc-slide').carousel({
-            interval: 5000,
+            interval: 10000,
             pause: 'hover',
             wrap: true
         });
