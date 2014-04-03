@@ -46,9 +46,10 @@ $(function(){
         });
 
         var recentPagination = new EventPagination($('#new'), recentEventJsons, function(cards){
+            // TODO reverse all json
             return cards.filter(function(card){
                 return !card.past;
-            });
+            }).reverse();
         });
 
         var pastPagination = new EventPagination($('#past'), recentEventJsons.concat(pastEventJsons), function(cards){
