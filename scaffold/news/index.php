@@ -2,21 +2,25 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>イベント情報 | KBC実行委員会</title>
-    <meta name="description" content="現在予定しているイベントや起業支援プログラムの情報です。過去のイベントの情報も確認することができます。" />
+    <title>News Scaffold | KBC実行委員会</title>
+    <meta name="description" content="トップページにあるニュースの内容を編集するためのページです。" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/logo/kbc_fabicon.ico" />
     <meta name="keywords" content="慶應義塾,慶応義塾,スタートアップ,ベンチャー,起業,KBC,ビジネスコンテスト,シードアクセラレーター" />
     <meta name="copyright" content="KBC実行委員会" />
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/logo/kbc_fabicon.ico" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/css/event/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/scaffold/news/index.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
-    <script type="text/javascript" src="/js/event/index.js"></script>
+    <script type="text/javascript" src="/js/news.js"></script>
+    <script type="text/javascript" src="/js/scaffold/news/index.js"></script>
     <script type="text/javascript">
         $(function(){
-            kbc.event.initialize('/data/recentevent.json', ['/data/pastevent.json']);
+            $.getJSON('/data/news.json', function(config){
+                kbc.scaffoldNewsIndex.initialize($('#news-edit-table'), config.news);
+            });
         });
     </script>
 </head>
@@ -29,7 +33,8 @@
     <div class="kbc-breadcrumb">
         <ul class="breadcrumb">
             <li><a href="/">ホーム</a></li>
-            <li class="active">イベント情報</li>
+            <li><a href="/scaffold/">SCAFFOLD</a></li>
+            <li class="active">News Scaffold</li>
         </ul>
     </div>
 
@@ -38,17 +43,17 @@
         <div class="kbc-container">
             <div class="kbc-sidemenu"></div>
             <div class="kbc-container-inner">
-                <h2 class="caption-green headline">イベント情報</h2>
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#new" data-toggle="tab">今後のイベント</a></li>
-                    <li><a href="#past" data-toggle="tab">過去のイベント</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane fade active in" id="new">
-                        <p id="no-event">現在予定されているイベントはありません。</p>
-                    </div>
-                    <div class="tab-pane fade" id="past"></div>
+
+                <h2 class="caption-black headline">News Scaffold</h2>
+                <p>このページではトップページ下部のニュース一覧を更新することができます。</p>
+
+                <div class="center-align">
+                    <a href="new.php" class="btn btn-primary">新しいニュースを追加する</a>
                 </div>
+
+                <h3 class="caption-black headline">ニュースの編集・削除</h3>
+                <table id="news-edit-table"></table>
+
             </div>
         </div>
     </div>

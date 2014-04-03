@@ -10,15 +10,6 @@
 
 
 /*
- * HTMLの要素読み込み後に即時実行されるメソッド
- */
-$(function(){
-    kbc.event.initialize(['/data/recentevent.json'], ['/data/pastevent.json']);
-});
-
-
-
-/*
  * window.kbc.event
  */
 (function(window, library, namespace, undefined){
@@ -37,22 +28,22 @@ $(function(){
 
 
     /*
-     * recentEventJsons = [String]
+     * recentEventJson = String
      * pastEventJsons = [String]
      */
-    ns.initialize = function(recentEventJsons, pastEventJsons){
+    ns.initialize = function(recentEventJson, pastEventJsons){
         $('a[data-toggle="tab"]').click(function(){
             $('.kbc-nav-list>.event-headline').toggleClass('hide');
         });
 
-        var recentPagination = new EventPagination($('#new'), recentEventJsons, function(cards){
-            // TODO reverse all json
+        var recentPagination = new EventPagination($('#new'), [recentEventJson], function(cards){
             return cards.filter(function(card){
                 return !card.past;
             }).reverse();
         });
 
-        var pastPagination = new EventPagination($('#past'), recentEventJsons.concat(pastEventJsons), function(cards){
+        pastEventJsons.unshift(recentEventJson);
+        var pastPagination = new EventPagination($('#past'), pastEventJsons, function(cards){
             return cards.filter(function(card){
                 return card.past;
             });

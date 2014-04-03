@@ -15,6 +15,16 @@
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
     <script type="text/javascript" src="/js/slide.js"></script>
     <script type="text/javascript" src="/js/news.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $.getJSON('/data/slide.json', function(config){
+                kbc.slide.initialize($(config.elem), config.slides);
+            });
+            $.getJSON('/data/news.json', function(config){
+                kbc.news.initialize($(config.elem), config.news);
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="kbc-body">

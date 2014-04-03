@@ -10,17 +10,6 @@
 
 
 /*
- * HTMLの要素読み込み後に即時実行されるメソッド
- */
-$(function(){
-    $.getJSON('/data/news.json', function(config){
-        kbc.news.initialize($(config.elem), config.news);
-    });
-});
-
-
-
-/*
  * window.kbc.slide
  */
 (function(window, library, namespace, undefined){
@@ -52,16 +41,19 @@ $(function(){
      */
     ns.initialize = function($elem, news){
         for(var i = 0; i < news.length; i++){
-            var n = news[i];
-            var timestamp = '(' + n.date.year + '.' + n.date.month + '.' + n.date.day + ' updated)';
-            $elem.append($('<h4>')
-                         .append(n.title)
-                         .append($('<span class="kbc-timestamp">')
-                                 .append(timestamp)))
-                 .append($('<div class="kbc-thumbnail mini left">')
-                         .append($('<span>')
-                                 .append($('<img>').attr('src', n.image)))
-                         .append($('<p>').append(n.description)));
+            ns.append($elem, news[i]);
         }
+    };
+
+    ns.append = function($elem, news){
+        var timestamp = '(' + news.date.year + '.' + news.date.month + '.' + news.date.day + ' updated)';
+        $elem.append($('<h4>')
+                     .append(news.title)
+                     .append($('<span class="kbc-timestamp">')
+                             .append(timestamp)))
+             .append($('<div class="kbc-thumbnail mini left">')
+                     .append($('<span>')
+                             .append($('<img>').attr('src', news.image)))
+                     .append($('<p>').append(news.description)));
     };
 }(this, 'kbc', 'news'));

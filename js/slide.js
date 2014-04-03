@@ -10,17 +10,6 @@
 
 
 /*
- * HTMLの要素読み込み後に即時実行されるメソッド
- */
-$(function(){
-    $.getJSON('/data/slide.json', function(config){
-        kbc.slide.initialize($(config.elem), config.slides);
-    });
-});
-
-
-
-/*
  * window.kbc.slide
  */
 (function(window, library, namespace, undefined){

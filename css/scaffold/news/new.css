@@ -1,0 +1,15 @@
+input[name="title"]{
+    width: 90%;
+}
+
+input[type="number"]{
+    width: 100px;
+    height: 24pt;
+    text-align: center;
+    margin-right: 10px;
+}
+
+textarea{
+    width: 90%;
+    height: 150px;
+}
