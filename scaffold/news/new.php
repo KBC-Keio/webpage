@@ -16,10 +16,10 @@
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
     <script type="text/javascript" src="/js/news.js"></script>
+    <script type="text/javascript" src="/js/scaffold/news/new.js"></script>
     <script type="text/javascript">
         $(function(){
-            $.getJSON('/data/news.json', function(config){
-            });
+            kbc.scaffoldNewsNew.initialize();
         });
     </script>
 </head>
@@ -60,11 +60,13 @@
 
                     <h4>サムネイル</h4>
                     <div class="file">
-                        ファイルを選択
+                        <span>ファイルを選択</span>
                         <input type="file" name="image" />
                     </div>
 
-                    <input type="submit" class="btn btn-primary" />
+                    <input type="button" value="プレビュー" class="btn btn-success" />
+                    <div id="news-preview" class="hide"></div>
+                    <input type="submit" value="新しいニュースの追加" class="btn btn-primary hide" />
                 </form>
 
             </div>

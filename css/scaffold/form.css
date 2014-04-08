@@ -6,6 +6,9 @@ input,textarea,.file{
 input[type="text"],input[type="number"]{
     height: 24pt;
 }
+label{
+    font-weight: normal;
+}
 
 .file{
     display: inline-block;
