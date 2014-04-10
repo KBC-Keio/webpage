@@ -28,6 +28,9 @@
         $handle = fopen($file, 'w');
         fwrite($handle, json_encode($news_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
         fclose($handle);
+
+        header("Location: /scaffold/news/");
+        exit;
     }
 ?>
 <!DOCTYPE html>
