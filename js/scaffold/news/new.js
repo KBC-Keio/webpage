@@ -17,7 +17,9 @@
     ns.initialize = function(){
         $('input[type="button"]').click(ns.preview);
         $('input[type="file"]').on('change', function(){
-            $('.file>span').html(this.files[0].name);
+            var name = this.files[0].name;
+            $('.file>span').html(name);
+            $('#file-name>input[type="text"]').val(name);
         });
         var today = new Date();
         $('input[name="year"]').val(today.getFullYear());
@@ -25,6 +27,7 @@
         $('input[name="day"]').val(today.getDate());
     };
 
+    // TODO プレビューはAngularでリアルタイムに行って、画像アップロードは最終的なときだけにする
     ns.preview = function(){
         var news = {
             title: $('input[name="title"]').val(),
@@ -37,10 +40,12 @@
         };
 
         var data = new FormData();
-        var image = $('input[name="image"]')[0].files[0];
+        var image = $('input[type="file"]')[0].files[0];
+        var name = $('#file-name>input[type="text"]').val();
+        console.log(name);
         data.append('image', image);
-        data.append('name', image.name);
         data.append('dir', '/img/news/');
+        data.append('name', name);
         $.ajax('/scaffold/image/index.php', {
             type: 'POST',
             data: data,
@@ -48,6 +53,7 @@
             contentType: false,
             success: function(data){
                 if(data.result){
+                    $('input[name="image-path"]').val(data.path);
                     news.image = data.path;
                     kbc.news.append($('#news-preview'), news);
                     $('input[type="button"]').addClass('hide');

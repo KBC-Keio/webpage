@@ -2,6 +2,26 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "ｆｇｈｊｋｌ",
+            "date": {
+                "year": 2014,
+                "month": 4,
+                "day": 10
+            },
+            "image": "/img/news/1207_2.jpg",
+            "description": "ｚｘｒｄｃｆｔｇｖｂｈｊんｍｋｌ，"
+        },
+        {
+            "title": "ほげ",
+            "date": {
+                "year": 2014,
+                "month": 4,
+                "day": 10
+            },
+            "image": "/img/news/812.jpg",
+            "description": "ふが"
+        },
+        {
             "title": "2014年度新メンバーの募集を開始しました",
             "date": {
                 "year": 2014,

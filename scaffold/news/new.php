@@ -46,9 +46,9 @@
 
                 <h2 class="caption-black headline">新しいニュースの追加</h2>
 
-                <form method="POST" action="/scaffold/news.php">
+                <form method="POST" action="/scaffold/news/index.php">
                     <h4>ニュースタイトル</h4>
-                    <input type="text" name="title" />
+                    <input type="text" name="title" id="title" />
 
                     <h4>ニュース更新日</h4>
                     <label><input type="number" name="year" />年</label>
@@ -61,8 +61,13 @@
                     <h4>サムネイル</h4>
                     <div class="file">
                         <span>ファイルを選択</span>
-                        <input type="file" name="image" />
+                        <input type="file" />
                     </div>
+                    <label id="file-name">
+                        アップロード時のファイル名
+                        <input type="text" />
+                        <input type="hidden" name="image-path" />
+                    </label>
 
                     <input type="button" value="プレビュー" class="btn btn-success" />
                     <div id="news-preview" class="hide"></div>

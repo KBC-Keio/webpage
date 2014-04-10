@@ -1,3 +1,35 @@
+<?php
+    // create
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $title = $_POST['title'];
+        $year = intval($_POST['year']);
+        $month = intval($_POST['month']);
+        $day = intval($_POST['day']);
+        $content = $_POST['content'];
+        $image = $_POST['image-path'];
+
+        // TODO 例外処理
+
+        $file = $_SERVER['DOCUMENT_ROOT'].'/data/news.json';
+        $handle = fopen($file, 'r');
+        $news_data = json_decode(fread($handle, filesize($file)));
+        fclose($handle);
+
+        array_unshift($news_data->news, array(
+            "title" => $title,
+            "date" => array(
+                "year" => $year,
+                "month" => $month,
+                "day" => $day
+            ),
+            "image" => $image,
+            "description" => $content
+        ));
+        $handle = fopen($file, 'w');
+        fwrite($handle, json_encode($news_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+        fclose($handle);
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>

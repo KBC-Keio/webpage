@@ -1,4 +1,4 @@
-input[name="title"]{
+#title{
     width: 90%;
 }
 
@@ -12,6 +12,14 @@ input[type="number"]{
 input[type="button"]{
     display: block;
     margin: 50px auto 0 auto;
+}
+
+#file-name{
+    display: block;
+    margin-left: 20px;
+}
+#file-name>input[type="text"]{
+    width: 150px;
 }
 
 textarea{
