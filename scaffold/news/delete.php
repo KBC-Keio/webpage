@@ -1,11 +1,12 @@
 <?php
+    define('ROOT_PATH', dirname(dirname(__DIR__)));
     // delete
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $index = $_POST['index'];
 
         // TODO 例外処理
 
-        $file = $_SERVER['DOCUMENT_ROOT'].'/data/news.json';
+        $file = ROOT_PATH.'/data/news.json';
         $handle = fopen($file, 'r');
         $news_data = json_decode(fread($handle, filesize($file)));
         fclose($handle);

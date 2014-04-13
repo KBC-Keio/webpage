@@ -1,4 +1,5 @@
 <?php
+    define('ROOT_PATH', dirname(dirname(__DIR__)));
     // delete
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $dir = $_POST['dir'];
@@ -6,7 +7,7 @@
 
         // TODO 例外処理
 
-        $res = unlink($dir.$name);
+        $res = unlink(ROOT_PATH.$dir.$name);
 
         header('Content-Type: application/json');
         echo json_encode(array('result' => $res));
