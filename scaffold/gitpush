@@ -1,0 +1,5 @@
+#!/bin/csh
+
+cd ..
+git commit -a -m 'Scaffoldによる変更'
+git push
