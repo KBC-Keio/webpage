@@ -17,20 +17,20 @@
         fclose($handle);
 
         array_unshift($news_data->news, array(
-            "title" => $title,
-            "date" => array(
-                "year" => $year,
-                "month" => $month,
-                "day" => $day
+            'title' => $title,
+            'date' => array(
+                'year' => $year,
+                'month' => $month,
+                'day' => $day
             ),
-            "image" => $image,
-            "description" => $description
+            'image' => $image,
+            'description' => $description
         ));
         $handle = fopen($file, 'w');
         fwrite($handle, json_encode($news_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
         fclose($handle);
 
-        header("Location: /scaffold/news/");
+        header('Location: /scaffold/news/');
         exit;
     }
 ?>

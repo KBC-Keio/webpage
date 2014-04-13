@@ -35,13 +35,17 @@
 
     ns.editNews = function(){
         var $news = $(this).parent().parent();
-        console.log($news);
         window.alert($news.attr('data-index') + ' will be edited.');
     };
 
     ns.deleteNews = function(){
-        var $news = $(this).parent().parent();
-        window.alert($news.attr('data-index') + ' will be deleted.');
+        if(window.confirm('削除してしまうとScaffoldで復元することはできませんが、よろしいですか?')){
+            var index = $(this).parent().parent().attr('data-index');
+            $('<form method="POST" action="/scaffold/news/delete.php"></form>')
+                .append($('<input type="hidden" name="index" />').val(index))
+                .appendTo(document.body)
+                .submit();
+        }
     };
 
 }(this, 'kbc', 'scaffoldNewsIndex'));

@@ -16,33 +16,38 @@
 
     ns.initialize = function(){
         $('form').on('submit', function(){
-            var $image = $('input[name="image"]');
-            var file = $('input[type="file"]')[0].files[0];
             var error;
+            if(window.confirm('プレビューの内容でニュースを作成しますが、よろしいですか?')){
+                var $image = $('input[name="image"]');
+                var file = $('input[type="file"]')[0].files[0];
 
-            if(file){
-                var data = new FormData();
-                data.append('image', files);
-                data.append('name', $('#file-name>input[type="text"]').val());
-                data.append('dir', '/img/news/');
+                if(file){
+                    var data = new FormData();
+                    data.append('image', files);
+                    data.append('name', $('#file-name>input[type="text"]').val());
+                    data.append('dir', '/img/news/');
 
-                $.ajax('/scaffold/image/index.php', {
-                    type: 'POST',
-                    async: false,
-                    data: data,
-                    processData: false,
-                    contentType: false,
-                    success: function(data){
-                        if(data.result){
-                            $image.val(data.path);
+                    $.ajax('/scaffold/image/index.php', {
+                        type: 'POST',
+                        async: false,
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        success: function(data){
+                            if(data.result){
+                                $image.val(data.path);
+                            }
+                        },
+                        error: function(xhr, text, msg){
+                            error = xhr.responseText + text + msg;
+                            window.alert('サーバエラーが発生しました\n' + error);
                         }
-                    },
-                    error: function(xhr, text, msg){
-                        error = xhr.responseText + text + msg;
-                    }
-                });
+                    });
+                } else{
+                    $image.val(ns.noImagePath);
+                }
             } else{
-                $image.val(ns.noImagePath);
+                error = true;
             }
 
             if(error){
