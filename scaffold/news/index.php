@@ -31,7 +31,7 @@
         fwrite($handle, json_encode($news_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
         fclose($handle);
 
-        var_dump(exec('cd ..; ./gitpush'));
+        exec('cd ..; ./gitpush');
 
         header('Location: /scaffold/news/');
         exit;
