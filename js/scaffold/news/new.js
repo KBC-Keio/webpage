@@ -15,56 +15,87 @@
     }
 
     ns.initialize = function(){
-        $('input[type="button"]').click(ns.preview);
-        $('input[type="file"]').on('change', function(){
-            var name = this.files[0].name;
-            $('.file>span').html(name);
-            $('#file-name>input[type="text"]').val(name);
-        });
-        var today = new Date();
-        $('input[name="year"]').val(today.getFullYear());
-        $('input[name="month"]').val(today.getMonth() + 1);
-        $('input[name="day"]').val(today.getDate());
-    };
+        $('form').on('submit', function(){
+            var $image = $('input[name="image"]');
+            var file = $('input[type="file"]')[0].files[0];
+            var error;
 
-    // TODO プレビューはAngularでリアルタイムに行って、画像アップロードは最終的なときだけにする
-    ns.preview = function(){
-        var news = {
-            title: $('input[name="title"]').val(),
-            date: {
-                year: $('input[name="year"]').val(),
-                month: $('input[name="month"]').val(),
-                day: $('input[name="day"]').val()
-            },
-            description: $('textarea').val()
-        };
+            if(file){
+                var data = new FormData();
+                data.append('image', files);
+                data.append('name', $('#file-name>input[type="text"]').val());
+                data.append('dir', '/img/news/');
 
-        var data = new FormData();
-        var image = $('input[type="file"]')[0].files[0];
-        var name = $('#file-name>input[type="text"]').val();
-        console.log(name);
-        data.append('image', image);
-        data.append('dir', '/img/news/');
-        data.append('name', name);
-        $.ajax('/scaffold/image/index.php', {
-            type: 'POST',
-            data: data,
-            processData: false,
-            contentType: false,
-            success: function(data){
-                if(data.result){
-                    $('input[name="image-path"]').val(data.path);
-                    news.image = data.path;
-                    kbc.news.append($('#news-preview'), news);
-                    $('input[type="button"]').addClass('hide');
-                    $('#news-preview').removeClass('hide');
-                    $('input[type="submit"]').removeClass('hide');
-                }
-            },
-            error: function(xhr, text, error){
-                console.log(xhr.responseText, text, error);
+                $.ajax('/scaffold/image/index.php', {
+                    type: 'POST',
+                    async: false,
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    success: function(data){
+                        if(data.result){
+                            $image.val(data.path);
+                        }
+                    },
+                    error: function(xhr, text, msg){
+                        error = xhr.responseText + text + msg;
+                    }
+                });
+            } else{
+                $image.val(ns.noImagePath);
+            }
+
+            if(error){
+                return false;
+            } else{
+                return true;
             }
         });
     };
 
+    ns.noImagePath = '/img/news/no_image.png';
+
 }(this, 'kbc', 'scaffoldNewsNew'));
+
+
+
+var m = angular.module('ScaffoldNews', ['angularFileUpload']);
+
+m.filter('preview', function(){
+    return function(news){
+        var $preview = $('#news-preview');
+        $preview.empty();
+        kbc.news.append($preview, news);
+        return '';
+    };
+});
+
+m.controller('FormController', function($scope){
+
+    var today = new Date();
+    $scope.news = {
+        date: {
+            year: today.getFullYear(),
+            month: today.getMonth() + 1,
+            day: today.getDate()
+        },
+        image: window.kbc.scaffoldNewsNew.noImagePath
+    };
+
+    $scope.imageName = 'クリックしてファイルを選択';
+    $scope.onFileSelect = function($files){
+        var file = $files[0];
+        $scope.uploadName = file.name;
+        $scope.imageName = file.name;
+
+        var reader = new FileReader();
+        reader.onload = function(event){
+            $scope.$apply(function(){
+                $scope.news.image = event.target.result;
+                $scope.uploaded = true;
+            });
+        };
+        reader.readAsDataURL(file);
+    };
+
+}).$inject = ['$scope'];

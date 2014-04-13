@@ -57,9 +57,10 @@
             var classes = 'event-headline';
             if(recent() && card.past){
                 classes += ' hide';
+            } else if(!card.past){
+                $('#no-event').addClass('hide');
             }
             kbc.controller.appendSidemenu(card.$headline, classes);
-            $('#no-event').addClass('hide');
         };
         recentPagination.next(3, appendSidemenu);
         pastPagination.next(3, appendSidemenu);

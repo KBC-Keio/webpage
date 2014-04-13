@@ -21,6 +21,7 @@
 
             var $editButton = $('<span class="glyphicon glyphicon-pencil"></span>');
             $editButton.click(ns.editNews);
+
             var $deleteButton = $('<span class="glyphicon glyphicon-remove"></span>');
             $deleteButton.click(ns.deleteNews);
 

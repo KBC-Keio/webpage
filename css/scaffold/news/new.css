@@ -31,3 +31,8 @@ textarea{
     border: 1px solid #777;
     margin: 50px 0;
 }
+
+input.ng-invalid,textarea.ng-invalid{
+    border-color: #c0392b;
+    box-shadow: 0 0 5px #c0392b;
+}

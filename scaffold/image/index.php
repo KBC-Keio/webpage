@@ -7,6 +7,8 @@
 
         // TODO 例外処理
 
+        // TODO サイズ変更
+
         $res = move_uploaded_file($image['tmp_name'], $_SERVER['DOCUMENT_ROOT'].$dir.$name);
 
         header('Content-Type: application/json');

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" ng-app="ScaffoldNews">
 <head>
     <meta charset="UTF-8">
     <title>新しいニュースの追加 | KBC実行委員会</title>
@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="/css/scaffold/form.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/angular-file-upload/angular-file-upload.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
     <script type="text/javascript" src="/js/news.js"></script>
     <script type="text/javascript" src="/js/scaffold/news/new.js"></script>
@@ -46,32 +48,54 @@
 
                 <h2 class="caption-black headline">新しいニュースの追加</h2>
 
-                <form method="POST" action="/scaffold/news/index.php">
+                <form method="POST" action="/scaffold/news/index.php" name="form"
+                    ng-controller="FormController">
+
                     <h4>ニュースタイトル</h4>
-                    <input type="text" name="title" id="title" />
+                    <input type="text" name="title" id="title"
+                        ng-model="news.title" required />
 
                     <h4>ニュース更新日</h4>
-                    <label><input type="number" name="year" />年</label>
-                    <label><input type="number" name="month" />月</label>
-                    <label><input type="number" name="day" />日</label>
+                    <label>
+                        <input type="number" name="year"
+                            ng-pattern="/^[0-9]*$/" ng-model="news.date.year" required />
+                        年
+                    </label>
+                    <label>
+                        <input
+                            type="number" name="month"
+                            ng-pattern="/^[0-9]*$/" ng-model="news.date.month" required />
+                        月
+                    </label>
+                    <label>
+                        <input type="number" name="day"
+                            ng-pattern="/^[0-9]*$/" ng-model="news.date.day" required />
+                        日
+                    </label>
 
                     <h4>ニュース内容</h4>
-                    <textarea name="content"></textarea>
+                    <textarea name="description" ng-model="news.description" required>
+                    </textarea>
 
                     <h4>サムネイル</h4>
                     <div class="file">
-                        <span>ファイルを選択</span>
-                        <input type="file" />
+                        <span>{{ imageName }}</span>
+                        <input type="file" ng-file-select="onFileSelect($files)" />
                     </div>
-                    <label id="file-name">
+                    <label id="file-name" ng-show="uploaded">
                         アップロード時のファイル名
-                        <input type="text" />
-                        <input type="hidden" name="image-path" />
+                        <input type="text" ng-model="uploadName" />
+                        <input type="hidden" name="image" ng-model="uploadName" />
                     </label>
 
-                    <input type="button" value="プレビュー" class="btn btn-success" />
-                    <div id="news-preview" class="hide"></div>
-                    <input type="submit" value="新しいニュースの追加" class="btn btn-primary hide" />
+                    <!-- Preview field -->
+                    <div id="news-preview" ng-show="form.$valid">
+                        {{ news | preview }}
+                    </div>
+
+                    <input type="submit" value="新しいニュースの追加" class="btn btn-primary"
+                        ng-disabled="form.$invalid" />
+
                 </form>
 
             </div>

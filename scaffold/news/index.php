@@ -5,12 +5,13 @@
         $year = intval($_POST['year']);
         $month = intval($_POST['month']);
         $day = intval($_POST['day']);
-        $content = $_POST['content'];
-        $image = $_POST['image-path'];
+        $description = $_POST['description'];
+        $image = $_POST['image'];
 
         // TODO 例外処理
 
         $file = $_SERVER['DOCUMENT_ROOT'].'/data/news.json';
+
         $handle = fopen($file, 'r');
         $news_data = json_decode(fread($handle, filesize($file)));
         fclose($handle);
@@ -23,7 +24,7 @@
                 "day" => $day
             ),
             "image" => $image,
-            "description" => $content
+            "description" => $description
         ));
         $handle = fopen($file, 'w');
         fwrite($handle, json_encode($news_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
