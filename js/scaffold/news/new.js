@@ -1,5 +1,5 @@
 /*
- * window.kbc.scaffoldNewsIndex
+ * window.kbc.scaffoldNewsNew
  */
 (function(window, library, namespace, undefined){
 'use strict'

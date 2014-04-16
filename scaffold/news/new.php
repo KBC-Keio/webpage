@@ -10,8 +10,8 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/news/new.css" />
     <link rel="stylesheet" type="text/css" href="/css/scaffold/form.css" />
+    <link rel="stylesheet" type="text/css" href="/css/scaffold/news/new.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angularjs/angular.min.js"></script>
@@ -51,31 +51,7 @@
                 <form method="POST" action="/scaffold/news/index.php" name="form"
                     ng-controller="FormController">
 
-                    <h4>ニュースタイトル</h4>
-                    <input type="text" name="title" id="title"
-                        ng-model="news.title" required />
-
-                    <h4>ニュース更新日</h4>
-                    <label>
-                        <input type="number" name="year"
-                            ng-pattern="/^[0-9]*$/" ng-model="news.date.year" required />
-                        年
-                    </label>
-                    <label>
-                        <input
-                            type="number" name="month"
-                            ng-pattern="/^[0-9]*$/" ng-model="news.date.month" required />
-                        月
-                    </label>
-                    <label>
-                        <input type="number" name="day"
-                            ng-pattern="/^[0-9]*$/" ng-model="news.date.day" required />
-                        日
-                    </label>
-
-                    <h4>ニュース内容</h4>
-                    <textarea name="description" ng-model="news.description" required>
-                    </textarea>
+                    <?php include __DIR__.'/_form.php' ?>
 
                     <h4>サムネイル</h4>
                     <div class="file">
@@ -85,7 +61,7 @@
                     <label id="file-name" ng-show="uploaded">
                         アップロード時のファイル名
                         <input type="text" ng-model="uploadName" />
-                        <input type="hidden" name="image" ng-model="uploadName" />
+                        <input type="hidden" name="image" />
                     </label>
 
                     <!-- Preview field -->

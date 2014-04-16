@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" ng-app="ScaffoldNews">
 <head>
     <meta charset="UTF-8">
     <title>ニュースの編集 | KBC実行委員会</title>
@@ -10,16 +10,18 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/news/edit.css" />
     <link rel="stylesheet" type="text/css" href="/css/scaffold/form.css" />
+    <link rel="stylesheet" type="text/css" href="/css/scaffold/news/edit.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/angular-file-upload/angular-file-upload.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
     <script type="text/javascript" src="/js/news.js"></script>
     <script type="text/javascript" src="/js/scaffold/news/edit.js"></script>
     <script type="text/javascript">
         $(function(){
-            kbc.scaffoldNewsNew.initialize();
+            kbc.scaffoldNewsEdit.initialize();
         });
     </script>
 </head>
@@ -46,32 +48,23 @@
 
                 <h2 class="caption-black headline">ニュースの編集</h2>
 
-                <form method="POST" action="/scaffold/news/index.php">
-                    <h4>ニュースタイトル</h4>
-                    <input type="text" name="title" id="title" />
+                <form method="POST" action="/scaffold/news/index.php" name="form"
+                    ng-controller="FormController">
 
-                    <h4>ニュース更新日</h4>
-                    <label><input type="number" name="year" />年</label>
-                    <label><input type="number" name="month" />月</label>
-                    <label><input type="number" name="day" />日</label>
+                    <?php include __DIR__.'/_form.php' ?>
 
-                    <h4>ニュース内容</h4>
-                    <textarea name="content"></textarea>
-
-                    <h4>サムネイル</h4>
-                    <div class="file">
-                        <span>ファイルを選択</span>
-                        <input type="file" />
+                    <p>※ 現在のバージョンではサムネイルを変更することはできません。</p>
+                    <!-- Preview field -->
+                    <div id="news-preview" ng-show="form.$valid">
+                        {{ news | preview }}
                     </div>
-                    <label id="file-name">
-                        アップロード時のファイル名
-                        <input type="text" />
-                        <input type="hidden" name="image-path" />
-                    </label>
 
-                    <input type="button" value="プレビュー" class="btn btn-success" />
-                    <div id="news-preview" class="hide"></div>
-                    <input type="submit" value="新しいニュースの追加" class="btn btn-primary hide" />
+                    <input type="hidden" name="index"
+                        ng-model="index" />
+
+                    <input type="submit" value="ニュースを編集" class="btn btn-primary"
+                        ng-disabled="form.$invalid" />
+
                 </form>
 
             </div>
