@@ -2,16 +2,6 @@
     "elem": ".kbc-container-index",
     "news": [
         {
-            "title": "hoge",
-            "date": {
-                "year": 2014,
-                "month": 4,
-                "day": 16
-            },
-            "image": "",
-            "description": "fuga"
-        },
-        {
             "title": "2014年度新メンバーの募集を開始しました",
             "date": {
                 "year": 2014,
