@@ -19,8 +19,8 @@
             var $newsCell = $('<td>');
             kbc.news.append($newsCell, news[i]);
 
-            var $editButton = $('<span class="glyphicon glyphicon-pencil"></span>');
-            $editButton.click(ns.editNews);
+            var edit_href = '/scaffold/news/edit.php#?index=' + i;
+            var $editButton = $('<a class="glyphicon glyphicon-pencil"></a>').attr('href', edit_href);
 
             var $deleteButton = $('<span class="glyphicon glyphicon-remove"></span>');
             $deleteButton.click(ns.deleteNews);
@@ -31,11 +31,6 @@
                           .append($('<td class="news-edit"></td>').append($editButton))
                           .append($('<td class="news-delete"></td>').append($deleteButton)));
         }
-    };
-
-    ns.editNews = function(){
-        var $news = $(this).parent().parent();
-        window.alert($news.attr('data-index') + ' will be edited.');
     };
 
     ns.deleteNews = function(){

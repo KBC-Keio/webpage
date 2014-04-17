@@ -1,0 +1,17 @@
+input[type="button"]{
+    display: block;
+    margin: 50px auto 0 auto;
+}
+
+#file-name{
+    display: block;
+    margin-left: 20px;
+}
+#file-name>input[type="text"]{
+    width: 150px;
+}
+
+#news-preview{
+    border: 1px solid #777;
+    margin: 50px 0;
+}

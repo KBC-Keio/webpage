@@ -1,7 +1,7 @@
 <?php
     define('ROOT_PATH', dirname(dirname(__DIR__)));
-    // create
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $index = intval($_POST['index']);
         $title = $_POST['title'];
         $year = intval($_POST['year']);
         $month = intval($_POST['month']);
@@ -17,7 +17,7 @@
         $news_data = json_decode(fread($handle, filesize($file)));
         fclose($handle);
 
-        array_unshift($news_data->news, array(
+        $new = array(
             'title' => $title,
             'date' => array(
                 'year' => $year,
@@ -26,7 +26,18 @@
             ),
             'image' => $image,
             'description' => $description
-        ));
+        );
+
+        if($index){
+            // update
+            $news = (array)($news_data->news);
+            $news[$index - 1] = $new;
+            $news_data->news = $news;
+        } else{
+            // create
+            array_unshift($news_data->news, $new);
+        }
+
         $handle = fopen($file, 'w');
         fwrite($handle, json_encode($news_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
         fclose($handle);

@@ -52,6 +52,7 @@
                     ng-controller="FormController">
 
                     <?php include __DIR__.'/_form.php' ?>
+                    <input type="hidden" name="index" value="0" />
 
                     <h4>サムネイル</h4>
                     <div class="file">

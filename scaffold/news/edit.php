@@ -48,19 +48,18 @@
 
                 <h2 class="caption-black headline">ニュースの編集</h2>
 
-                <form method="POST" action="/scaffold/news/index.php" name="form"
+                <form method="POST" action="{{ '/scaffold/news/index.php#?index=' + index }}" name="form"
                     ng-controller="FormController">
 
+                    <input type="hidden" name="index" ng-value="index + 1" />
                     <?php include __DIR__.'/_form.php' ?>
 
+                    <input type="hidden" name="image" ng-value="news.image" />
                     <p>※ 現在のバージョンではサムネイルを変更することはできません。</p>
                     <!-- Preview field -->
                     <div id="news-preview" ng-show="form.$valid">
                         {{ news | preview }}
                     </div>
-
-                    <input type="hidden" name="index"
-                        ng-model="index" />
 
                     <input type="submit" value="ニュースを編集" class="btn btn-primary"
                         ng-disabled="form.$invalid" />
