@@ -23,7 +23,7 @@
 
                 if(file){
                     var data = new FormData();
-                    data.append('image', files);
+                    data.append('image', file);
                     data.append('name', $('#file-name>input[type="text"]').val());
                     data.append('dir', '/img/news/');
 
@@ -36,6 +36,8 @@
                         success: function(data){
                             if(data.result){
                                 $image.val(data.path);
+                            } else{
+                                window.alert('サーバエラーが発生しました\n' + data.error);
                             }
                         },
                         error: function(xhr, text, msg){

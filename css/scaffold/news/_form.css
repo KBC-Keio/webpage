@@ -1,0 +1,20 @@
+#title{
+    width: 90%;
+}
+
+input[type="number"]{
+    width: 100px;
+    height: 24pt;
+    text-align: center;
+    margin-right: 10px;
+}
+
+textarea{
+    width: 90%;
+    height: 150px;
+}
+
+input.ng-invalid,textarea.ng-invalid{
+    border-color: #c0392b;
+    box-shadow: 0 0 5px #c0392b;
+}
