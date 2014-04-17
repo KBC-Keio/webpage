@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "hgoehoge",
+            "date": {
+                "year": 2014,
+                "month": 4,
+                "day": 17
+            },
+            "image": "/img/news/oki_chisai.jpg",
+            "description": "fugafuga"
+        },
+        {
             "title": "2014年度新メンバーの募集を開始しました",
             "date": {
                 "year": 2014,
