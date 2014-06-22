@@ -1,5 +1,25 @@
 [
     {
+        "name": "Business Leverage 2.0 募集締め切り",
+        "image": "/img/event/9th/leverage.jpg",
+        "description": "KBC Business Leverage 2.0の申込締切日です。",
+        "timelimit": {
+            "year": 2014,
+            "month": 8,
+            "day": 6,
+            "hour": 23,
+            "minute": 59
+        },
+        "details": [
+            { "title": "募集期間", "content": "2014年6月23日 ~ 8月6日 23:59" },
+            { "title": "応募方法", "content": "応募ページより必要書類をダウンロードして書き込んだ上で、締切時間までにメールで提出してください。" }
+        ],
+        "button": {
+            "url": "/event/9th/leverage.html",
+            "text": "応募ページヘ"
+        }
+    },
+    {
         "name": "新入生対象ワークショップ",
         "image": "/img/event/9th/welcome_workshop.jpg",
         "description": "2014年度の新入生を対象としたワークショップです。",

@@ -170,6 +170,25 @@ table.kbc-timetable td{
 }
 
 /*
+ * 箇条書き
+ */
+ul.kbc-itemization{
+    list-style: none;
+    padding-left: 3.5em;
+}
+ul.kbc-itemization>li{
+    position: relative;
+    margin: 13px 0;
+}
+ul.kbc-itemization>li:before{
+    content: "＊";
+    position: absolute;
+    left: -2em;
+    color: #c0392b;
+    height: 100%;
+}
+
+/*
  * パンくずリストのデザインを変更
  */
 .kbc-breadcrumb{
