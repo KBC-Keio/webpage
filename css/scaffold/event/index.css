@@ -1,0 +1,26 @@
+.center-align{
+    text-align: center;
+}
+
+table#news-edit-table{
+    border-collapse: collapse;
+    margin: 0;
+}
+table#news-edit-table .news-edit,.news-delete{
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+}
+table#news-edit-table .news-delete>.glyphicon,.news-edit>.glyphicon{
+    color: #fff;
+    padding: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+table#news-edit-table .news-delete>.glyphicon{
+    background-color: #c0392b;
+}
+table#news-edit-table .news-edit>.glyphicon{
+    background-color: #27ae60;
+}
