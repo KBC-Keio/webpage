@@ -9,9 +9,9 @@
                 "<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkeio-contest.org&amp;width&amp;height=20&amp;colorscheme=light&amp;layout=button_count&amp;action=recommend&amp;show_faces=false&amp;send=true\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:150px; height:20px;\" allowTransparency=\"true\"></iframe>"
             ],
             "nav": [
-                { "url": "/about.html", "text": "KBC実行委員会とは" },
-                { "url": "/event/index.html", "text": "イベント情報" },
-                { "url": "/sponsorship.html", "text": "スポンサーシップ" }
+                { "url": "/about", "text": "KBC実行委員会とは" },
+                { "url": "/event", "text": "イベント情報" },
+                { "url": "/sponsorship", "text": "スポンサーシップ" }
             ]
         }
     },
@@ -21,8 +21,8 @@
             "year": 2014,
             "nav": [
                 { "url": "#pagetop", "text": "ページ上部へ戻る" },
-                { "url": "/index.html", "text": "トップページ" },
-                { "url": "/sponsorship.html", "text": "お問い合わせ" }
+                { "url": "/", "text": "トップページ" },
+                { "url": "/sponsorship", "text": "お問い合わせ" }
             ]
         }
     },
