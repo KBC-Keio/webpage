@@ -32,7 +32,7 @@
     });
 
     m.factory('KbcImageApi', function(){
-        var ajaxImageApi = function(url, method, data, successCallback, errorCallback){
+        var ajaxImageApi = function(url, method, data, callback){
             var formData = new FormData();
             for(var i in data){
                 formData.append(i, data[i]);
@@ -45,31 +45,29 @@
                 contentType: false,
                 success: function(data){
                     if(data.result){
-                        successCallback(data);
-                    } else if(typeof(errorCallback) == 'function'){
-                        errorCallback(data.error);
+                        callback(undefined, data);
+                    } else{
+                        callback(data.error);
                     }
                 },
                 error: function(xhr, text, msg){
-                    if(typeof(errorCallback) == 'function'){
-                        errorCallback(xhr.responseText + text + msg, xhr, text, msg);
-                    }
+                    callback(xhr.responseText + text + msg);
                 }
             });
         };
 
         return {
-            create: function(image, dir, successCallback, errorCallback){
+            create: function(image, dir, callback){
                 ajaxImageApi('/scaffold/image/index.php', 'POST', {
                     image: image,
                     dir: dir
-                }, successCallback, errorCallback);
+                }, callback);
             },
-            destroy: function(dir, name , successCallback, errorCallback){
+            destroy: function(dir, name , callback){
                 ajaxImageApi('/scaffold/image/destroy.php', 'POST', {
                     dir: dir,
                     name: name
-                }, successCallback, errorCallback);
+                }, callback);
             }
         };
     });
