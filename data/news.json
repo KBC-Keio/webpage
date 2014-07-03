@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "bar",
+            "date": {
+                "year": 2014,
+                "month": 7,
+                "day": 3
+            },
+            "image": "/img/news/39915166f84ecea6a888caee9fb6ff2bda41a9dc.jpg",
+            "description": "piyo"
+        },
+        {
             "title": "hoge",
             "date": {
                 "year": 2014,
