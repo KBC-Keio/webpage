@@ -22,6 +22,7 @@
             $.getJSON('/data/news.json', function(config){
                 var loaded = config.news[index];
                 $rootScope.$apply(function(){
+                    console.log(loaded);
                     self.index = index;
                     self.title = loaded.title;
                     self.date = loaded.date;
@@ -84,7 +85,9 @@
         $scope.submit = function(){
             if($window.confirm('プレビューの内容でニュースを作成しますが、よろしいですか?')){
                 if(!$scope.imagePath){
-                    $scope.imagePath = News.image;
+                    $scope.$apply(function(){
+                        $scope.imagePath = News.image;
+                    });
                 }
                 return true;
             } else{
@@ -111,7 +114,9 @@
         $scope.submit = function(){
             if($window.confirm('プレビューの内容でニュースを編集しますが、よろしいですか?')){
                 if(!$scope.imagePath){
-                    $scope.imagePath = News.image;
+                    $scope.$apply(function(){
+                        $scope.imagePath = News.image;
+                    });
                 }
                 return true;
             } else{
