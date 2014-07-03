@@ -1,7 +1,7 @@
 [
     {
         "name": "KBC Business Leverage 最終審査会観覧",
-        "image": "/img/event/8th/leverage/final.jpg",
+        "image": "/event/8th/leverage/img/final.jpg",
         "description": "Leverage最終報告会では9月より3ヶ月間に渡ってKBCの支援を受けてきた5組の学生起業家チームがその事業推進のすべてを露わにします！<br />定員に限りがございますので、お早めにお申込み下さい。",
         "timelimit": {
             "year": 2013,
@@ -16,13 +16,13 @@
             { "title": "参加費", "content": "無料 (懇親会参加の場合は別途参加費がかかります)" }
         ],
         "button": {
-            "url": "/event/8th/leverage.html",
+            "url": "/event/8th/leverage",
             "text": "イベントの詳細ページへ"
         }
     },
     {
         "name": "応募書類セミナー for Leverage",
-        "image": "/img/event/8th/seminar.jpg",
+        "image": "/event/8th/seminar/img/seminar.jpg",
         "description": "KBC Business Leverageの応募書類を作成するにあたっての要点を抑えられるセミナーです。トーマツベンチャーサポートの萩原氏を講師に、一般公開よりも一足早く応募書類を用いてLeverageに応募するためのいろはを学べるチャンスです!",
         "timelimit": {
             "year": 2013,
@@ -39,7 +39,7 @@
     },
     {
         "name": "KBC Entrepreneur Meeting",
-        "image": "/img/event/8th/entrepreneur_meeting.jpg",
+        "image": "/event/8th/entrepreneur_meeting/img/entrepreneur_meeting.jpg",
         "description": "事業アイディアを持ち、これから行動を始めようと考えている学生起業家のためのメンタリングイベントです。自分の事業をブラッシュアップしたい方、ぜひお越しください!",
         "timelimit": {
             "year": 2013,

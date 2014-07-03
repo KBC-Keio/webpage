@@ -1,7 +1,7 @@
 [
     {
         "name": "Business Leverage 2.0 募集締め切り",
-        "image": "/img/event/9th/leverage.jpg",
+        "image": "/event/9th/leverage/img/leverage_thumb.jpg",
         "description": "KBC Business Leverage 2.0の申込締切日です。",
         "timelimit": {
             "year": 2014,
@@ -15,13 +15,13 @@
             { "title": "応募方法", "content": "応募ページより必要書類をダウンロードして書き込んだ上で、締切時間までにメールで提出してください。" }
         ],
         "button": {
-            "url": "/event/9th/leverage.html",
+            "url": "/event/9th/leverage",
             "text": "応募ページヘ"
         }
     },
     {
         "name": "新入生対象ワークショップ",
-        "image": "/img/event/9th/welcome_workshop.jpg",
+        "image": "/event/9th/welcome/img/welcome_workshop.jpg",
         "description": "2014年度の新入生を対象としたワークショップです。",
         "timelimit": {
             "year": 2014,
@@ -39,7 +39,7 @@
     },
     {
         "name": "新入生向け説明会@日吉",
-        "image": "/img/event/9th/welcome_briefing_hiyoshi.jpg",
+        "image": "/event/9th/welcome/img/welcome_briefing_hiyoshi.jpg",
         "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会の日吉第3回開催です。現役メンバーによる説明はもちろん、OBやKBCの活動を支えてくださっている起業支援家の方もお招きしていますので、「起業したい」と考えている方でもぜひお越しください!",
         "timelimit": {
             "year": 2014,
@@ -56,7 +56,7 @@
     },
     {
         "name": "新入生向け説明会@日吉",
-        "image": "/img/event/9th/welcome_briefing_hiyoshi.jpg",
+        "image": "/event/9th/welcome/img/welcome_briefing_hiyoshi.jpg",
         "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会の日吉第2回開催です。現役メンバーによる説明はもちろん、OBやKBCの活動を支えてくださっている起業支援家の方もお招きしていますので、「起業したい」と考えている方でもぜひお越しください!",
         "timelimit": {
             "year": 2014,
@@ -73,7 +73,7 @@
     },
     {
         "name": "新入生対象説明会@SFC",
-        "image": "/img/event/9th/welcome_briefing_sfc.jpg",
+        "image": "/event/9th/welcome/img/welcome_briefing_sfc.jpg",
         "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会です。",
         "timelimit": {
             "year": 2014,
@@ -91,7 +91,7 @@
     },
     {
         "name": "学生団体合同ウェルカムパーティー",
-        "image": "/img/event/9th/welcome_joint_fair.jpg",
+        "image": "/event/9th/welcome/img/welcome_joint_fair.jpg",
         "description": "KBC実行委員会・AISEC・OVAL・SALが合同で開催する新入生歓迎会です。「ビジネスやグローバルに興味があるけど、どの学生団体がいいのかわからない」という方、ぜひお越しください!",
         "timelimit": {
             "year": 2014,
@@ -109,7 +109,7 @@
     },
     {
         "name": "新入生向け起業家トークパーティ",
-        "image": "/img/event/9th/welcome_talk_party.jpg",
+        "image": "/event/9th/welcome/img/welcome_talk_party.jpg",
         "description": "新入生の皆さんにKBCにとっての最重要ワードである「起業」や「インキュベーション」について知っていただけるトークパーティです。実際に事業を進められている起業家の方お二人と起業支援家の方をお招きし、対談を行って頂く予定です。",
         "timelimit": {
             "year": 2014,
@@ -128,7 +128,7 @@
     },
     {
         "name": "新入生向け説明会@日吉",
-        "image": "/img/event/9th/welcome_briefing_hiyoshi.jpg",
+        "image": "/event/9th/welcome/img/welcome_briefing_hiyoshi.jpg",
         "description": "2014年度の新入生を対象としたKBC実行委員会の活動についての説明会です。現役メンバーによる説明はもちろん、OBやKBCの活動を支えてくださっている起業支援家の方もお招きしていますので、「起業したい」と考えている方でもぜひお越しください!",
         "timelimit": {
             "year": 2014,

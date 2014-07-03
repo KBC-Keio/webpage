@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" ng-app="ScaffoldNews">
+<html lang="ja" ng-app="kbcScaffoldNews">
 <head>
     <meta charset="UTF-8">
     <title>新しいニュースの追加 | KBC実行委員会</title>
@@ -9,21 +9,14 @@
     <meta name="copyright" content="KBC実行委員会" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/form.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/news/new.css" />
+    <link rel="stylesheet" type="text/css" href="/shared/css/form.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angularjs/angular.min.js"></script>
-    <script type="text/javascript" src="/lib/angular-file-upload/angular-file-upload.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
-    <script type="text/javascript" src="/js/news.js"></script>
-    <script type="text/javascript" src="/js/scaffold/news/new.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            kbc.scaffoldNewsNew.initialize();
-        });
-    </script>
+    <script type="text/javascript" src="/shared/js/news.js"></script>
+    <script type="text/javascript" src="/shared/js/kbc-scaffold.js"></script>
+    <script type="text/javascript" src="kbc-news-scaffold.js"></script>
 </head>
 <body>
 <div class="kbc-body">
@@ -48,30 +41,40 @@
 
                 <h2 class="caption-black headline">新しいニュースの追加</h2>
 
-                <form method="POST" action="/scaffold/news/index.php" name="form"
-                    ng-controller="FormController">
+                <form name="form" method="POST" action="/scaffold/news/index.php" enctype="multipart/form-data" ng-controller="NewController" kbc-form-submit="submit">
 
-                    <?php include __DIR__.'/_form.php' ?>
                     <input type="hidden" name="index" value="0" />
 
+                    <h4>ニュースタイトル</h4>
+                    <input type="text" name="title" ng-model="news.title" required />
+                    
+                    <h4>ニュース更新日</h4>
+                    <label>
+                        <input type="number" name="year" ng-pattern="/^[0-9]*$/" ng-model="news.date.year" required />
+                        年
+                    </label>
+                    <label>
+                        <input type="number" name="month" ng-pattern="/^[0-9]*$/" ng-model="news.date.month" required />
+                        月
+                    </label>
+                    <label>
+                        <input type="number" name="day" ng-pattern="/^[0-9]*$/" ng-model="news.date.day" required />
+                        日
+                    </label>
+                    
+                    <h4>ニュース内容</h4>
+                    <textarea name="description" ng-model="news.description" required></textarea>
                     <h4>サムネイル</h4>
                     <div class="file">
-                        <span>{{ imageName }}</span>
-                        <input type="file" ng-file-select="onFileSelect($files)" />
+                        画像を選択
+                        <input type="file" kbc-file-loader="load" />
                     </div>
-                    <label id="file-name" ng-show="uploaded">
-                        アップロード時のファイル名
-                        <input type="text" ng-model="uploadName" />
-                        <input type="hidden" name="image" />
-                    </label>
+                    <input type="hidden" name="image" ng-value="imagePath" />
 
                     <!-- Preview field -->
-                    <div id="news-preview" ng-show="form.$valid">
-                        {{ news | preview }}
-                    </div>
+                    <div id="news-preview" ng-show="form.$valid" news-preview></div>
 
-                    <input type="submit" value="新しいニュースの追加" class="btn btn-primary"
-                        ng-disabled="form.$invalid" />
+                    <input type="submit" value="新しいニュースの追加" class="btn btn-primary" ng-disabled="form.$invalid" />
 
                 </form>
 

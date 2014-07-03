@@ -9,21 +9,15 @@
     <meta name="copyright" content="KBC実行委員会" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/form.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/news/edit.css" />
+    <link rel="stylesheet" type="text/css" href="/shared/css/form.css" />
+    <link rel="stylesheet" type="text/css" href="edit.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angularjs/angular.min.js"></script>
-    <script type="text/javascript" src="/lib/angular-file-upload/angular-file-upload.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
-    <script type="text/javascript" src="/js/news.js"></script>
-    <script type="text/javascript" src="/js/scaffold/news/edit.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            kbc.scaffoldNewsEdit.initialize();
-        });
-    </script>
+    <script type="text/javascript" src="/shared/js/news.js"></script>
+    <script type="text/javascript" src="/shared/js/kbc-scaffold.js"></script>
+    <script type="text/javascript" src="kbc-news-scaffold.js"></script>
 </head>
 <body>
 <div class="kbc-body">

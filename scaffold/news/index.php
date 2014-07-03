@@ -59,13 +59,13 @@
     <meta name="copyright" content="KBC実行委員会" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/news/index.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="/index.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
-    <script type="text/javascript" src="/js/news.js"></script>
-    <script type="text/javascript" src="/js/scaffold/news/index.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="/shared/js/news.js"></script>
     <script type="text/javascript">
         $(function(){
             $.getJSON('/data/news.json', function(config){
@@ -83,7 +83,7 @@
     <div class="kbc-breadcrumb">
         <ul class="breadcrumb">
             <li><a href="/">ホーム</a></li>
-            <li><a href="/scaffold/">SCAFFOLD</a></li>
+            <li><a href="/scaffold">SCAFFOLD</a></li>
             <li class="active">News Scaffold</li>
         </ul>
     </div>

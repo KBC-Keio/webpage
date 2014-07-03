@@ -4,7 +4,8 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $image = $_FILES['image'];
         $dir = $_POST['dir'];
-        $name = $_POST['name'];
+
+        $name = sha1(uniqid(null, true)).strrchr($image['name'], '.');
 
         // TODO 例外処理
 
