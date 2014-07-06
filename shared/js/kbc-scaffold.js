@@ -1,3 +1,14 @@
+/*
+ * title       : KBC Angular Scafoold
+ * description : Scaffoldページで使用するAngularJSライブラリ郡。scaffoldディレクトリ以下のHTML/PHPファイルで読み込みます。基本的に本ファイルの内容は一切書き換えてはいけません。JavaScriptおよびjQuery、AngularJSを十分に理解していないメンバーが書き換えた場合にはScaffoldページが正しく機能しなくなる恐れがあります。
+ * dependency  : jQuery 1.10.2, AngularJS 1.3.0-beta.5
+ * version     : 1.0.0
+ * date        : 2014年7月6日
+ * author      : 第9期実行委員 出水厚輝
+ */
+
+
+
 (function(){
     'use strict'
 

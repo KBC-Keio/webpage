@@ -60,12 +60,11 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <link rel="stylesheet" type="text/css" href="/index.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
-    <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="/shared/js/news.js"></script>
+    <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript">
         $(function(){
             $.getJSON('/data/news.json', function(config){

@@ -59,18 +59,16 @@
     <meta name="copyright" content="KBC実行委員会" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/event/index.css" />
+    <link rel="stylesheet" type="text/css" href="/shared/css/event.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
-    <script type="text/javascript" src="/js/event.js"></script>
-    <script type="text/javascript" src="/js/scaffold/event/index.js"></script>
+    <script type="text/javascript" src="/shared/js/event.js"></script>
+    <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript">
         $(function(){
-            $.getJSON('/data/event.json', function(config){
-                kbc.scaffoldNewsIndex.initialize($('#news-edit-table'), config.news);
-            });
+            kbc.scaffoldEventIndex.initialize($('#events-edit-field'), ['/data/recentevent.json', '/data/pastevent.json']);
         });
     </script>
 </head>
@@ -101,10 +99,8 @@
                     <a href="new.php" class="btn btn-primary">新しいイベントを追加する</a>
                 </div>
 
-                <!--
                 <h3 class="caption-black headline">イベントの編集・削除</h3>
-                <table id="news-edit-table"></table>
-                -->
+                <div id="events-edit-field"></div>
 
             </div>
         </div>

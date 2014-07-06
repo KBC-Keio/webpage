@@ -10,7 +10,7 @@
 
 
 /*
- * window.kbc.slide
+ * window.kbc.news
  */
 (function(window, library, namespace, undefined){
 'use strict'
