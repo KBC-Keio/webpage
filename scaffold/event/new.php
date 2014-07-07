@@ -9,23 +9,14 @@
     <meta name="copyright" content="KBC実行委員会" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/form.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scaffold/event/new.css" />
+    <link rel="stylesheet" type="text/css" href="/shared/css/form.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angularjs/angular.min.js"></script>
-    <script type="text/javascript" src="/lib/angular-file-upload/angular-file-upload.min.js"></script>
     <script type="text/javascript" src="/lib/kbc-bootstrap/js/kbc-bootstrap.js"></script>
-    <!-- TODO
-    <script type="text/javascript" src="/js/news.js"></script>
-    -->
-    <script type="text/javascript" src="/js/scaffold/event/new.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            kbc.scaffoldNewsNew.initialize();
-        });
-    </script>
+    <script type="text/javascript" src="/shared/js/event.js"></script>
+    <script type="text/javascript" src="/shared/js/kbc-scaffold.js"></script>
+    <script type="text/javascript" src="kbc-event-scaffold.js"></script>
 </head>
 <body>
 <div class="kbc-body">
@@ -50,11 +41,44 @@
 
                 <h2 class="caption-black headline">新しいイベントの追加</h2>
 
-                <form method="POST" action="/scaffold/event/index.php" name="form"
-                    ng-controller="FormController">
+                <form name="form" method="POST" action="/scaffold/event/index.php" ng-controller="NewController" kbc-form-submit="submit">
 
-                    <?php include __DIR__.'/_form.php' ?>
                     <input type="hidden" name="index" value="0" />
+
+                    <h4>イベント名</h4>
+                    <input type="text" name="name" id="name"
+                        ng-model="event.name " required />
+                    
+                    <h4>イベント終了日時</h4>
+                    <label>
+                        <input type="number" name="year"
+                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.year" required />
+                        年
+                    </label>
+                    <label>
+                        <input
+                            type="number" name="month"
+                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.month" required />
+                        月
+                    </label>
+                    <label>
+                        <input type="number" name="day"
+                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.day" required />
+                        日
+                    </label>
+                    <label>
+                        <input type="number" name="hour"
+                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.hour" required />
+                        時
+                    </label>
+                    <label>
+                        <input type="number" name="minute"
+                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.minute" required />
+                        分
+                    </label>
+                    
+                    <h4>イベント紹介文</h4>
+                    <textarea name="description" ng-model="event.description" required></textarea>
 
                     <h4>サムネイル</h4>
                     <div class="file">
@@ -67,9 +91,31 @@
                         <input type="hidden" name="image" />
                     </label>
 
+                    <h4>イベント詳細</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>項目名</th>
+                                <th>内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>リンクボタン</h4>
+                    <h5>リンク先URL</h5>
+                    <label><input name="button_url" type="text" /></label>
+                    <h5>ボタンテキスト</h5>
+                    <label><input name="button_text" type="text" /></label>
+
                     <!-- Preview field -->
-                    <div id="news-preview" ng-show="form.$valid">
-                        {{ news | preview }}
+                    <div id="event-preview" ng-show="form.$valid">
+                        {{ event | preview }}
                     </div>
 
                     <input type="submit" value="新しいニュースの追加" class="btn btn-primary"

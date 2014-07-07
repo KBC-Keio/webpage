@@ -36,7 +36,7 @@
     ns.deleteNews = function(){
         if(window.confirm('削除してしまうとScaffoldで復元することはできませんが、よろしいですか?')){
             var index = $(this).parent().parent().attr('data-index');
-            $('<form method="POST" action="/scaffold/news/delete.php"></form>')
+            $('<form method="POST" action="/scaffold/news/destroy.php"></form>')
                 .append($('<input type="hidden" name="index" />').val(index))
                 .appendTo(document.body)
                 .submit();

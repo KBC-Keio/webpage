@@ -41,7 +41,7 @@
 
                 <h2 class="caption-black headline">新しいニュースの追加</h2>
 
-                <form name="form" method="POST" action="/scaffold/news/index.php" enctype="multipart/form-data" ng-controller="NewController" kbc-form-submit="submit">
+                <form name="form" method="POST" action="/scaffold/news/index.php" ng-controller="NewController" kbc-form-submit="submit">
 
                     <input type="hidden" name="index" value="news.index" />
 

@@ -1,50 +1,62 @@
 <?php
     define('ROOT_PATH', dirname(dirname(__DIR__)));
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $file = ROOT_PATH.$_POST['file'];
         $index = intval($_POST['index']);
-        $title = $_POST['title'];
+        $name = $_POST['name'];
+        $image = $_POST['image'];
+        $description = $_POST['description'];
         $year = intval($_POST['year']);
         $month = intval($_POST['month']);
         $day = intval($_POST['day']);
-        $description = $_POST['description'];
-        $image = $_POST['image'];
+        $hour = intval($_POST['hour']);
+        $minute = intval($_POST['minute']);
+        $details = json_decode($_POST['details']);
+        $button_url = $_POST['button_url'];
+        $button_text = $_POST['button_text'];
 
         // TODO 例外処理
 
-        $file = ROOT_PATH.'/data/news.json';
-
         $handle = fopen($file, 'r');
-        $news_data = json_decode(fread($handle, filesize($file)));
+        $event_data = json_decode(fread($handle, filesize($file)));
         fclose($handle);
 
         $new = array(
-            'title' => $title,
-            'date' => array(
+            'name' => $name,
+            'image' => $image,
+            'description' => $description,
+            'timelimit' => array(
                 'year' => $year,
                 'month' => $month,
-                'day' => $day
+                'day' => $day,
+                'hour' => $hour,
+                'minute' => $minute
             ),
-            'image' => $image,
-            'description' => $description
+            'details' => $details
         );
+        if($button_url){
+            $new = array_merge($new, array(
+                'button' => array(
+                    'url' => $button_url,
+                    'text' => $button_text
+                )));
+        }
 
         if($index){
             // update
-            $news = (array)($news_data->news);
-            $news[$index - 1] = $new;
-            $news_data->news = $news;
+            $event_data[$index - 1] = $new;
         } else{
             // create
-            array_unshift($news_data->news, $new);
+            array_unshift($event_data, $new);
         }
 
         $handle = fopen($file, 'w');
         fwrite($handle, json_encode($news_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
         fclose($handle);
 
-        exec('cd ..; ./gitpush');
+        // exec('cd ..; ./gitpush');
 
-        header('Location: /scaffold/news/');
+        header('Location: /scaffold/event/');
         exit;
     }
 ?>
