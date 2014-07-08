@@ -14,10 +14,6 @@
         $details = json_decode($_POST['details']);
         $button_url = $_POST['button_url'];
         $button_text = $_POST['button_text'];
-        header('Content-Type: text/javascript; charset: UTF-8;');
-        var_dump($details);
-        var_dump($button_url);
-    } else if(0){
 
         // TODO 例外処理
 
@@ -59,10 +55,10 @@
         }
 
         $handle = fopen($file, 'w');
-        fwrite($handle, json_encode($news_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+        fwrite($handle, json_encode($event_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
         fclose($handle);
 
-        // exec('cd ..; ./gitpush');
+        exec('cd ..; ./gitpush');
 
         header('Location: /scaffold/event/');
         exit;
