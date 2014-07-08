@@ -140,12 +140,11 @@
 
 
 
-    /*
-    m.controller('EditController', function($scope, $location, $window, News, KbcImageApi){
-        $scope.news = News;
+    m.controller('EditController', function($scope, $location, $window, Event, KbcImageApi){
+        $scope.event = Event;
 
         $scope.init = function(){
-            News.load(Number($location.search().index));
+            Event.load(Number($location.search().index));
         };
 
         $scope.load = function(files){
@@ -166,6 +165,5 @@
                 return false;
             }
         };
-    }).$inject = ['$scope', '$location', '$window', 'News', 'KbcImageApi'];
-    */
+    }).$inject = ['$scope', '$location', '$window', 'Event', 'KbcImageApi'];
 }());

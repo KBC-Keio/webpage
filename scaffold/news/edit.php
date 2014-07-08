@@ -41,7 +41,7 @@
 
                 <h2 class="caption-black headline">ニュースの編集</h2>
 
-                <form name="form" method="POST" action="{{ '/scaffold/news/index.php#?index=' + news.index }}" enctype="multipart/form-data" ng-controller="EditController" ng-init="init()" kbc-form-submit="submit">
+                <form name="form" method="POST" action="/scaffold/news/index.php" ng-controller="EditController" ng-init="init()" kbc-form-submit="submit">
 
                     <input type="hidden" name="index" ng-value="news.index + 1" />
 
