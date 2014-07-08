@@ -99,6 +99,9 @@ td{
 .btn{
     padding: 15px 30px;
 }
+.btn.btn-sm{
+    padding: 7px 15px;
+}
 .margin-center{
     margin-right: auto;
     margin-left: auto;

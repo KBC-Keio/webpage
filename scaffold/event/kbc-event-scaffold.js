@@ -1,32 +1,38 @@
 (function(){
     'use strict'
 
-    var m = angular.module('kbcScaffoldNews', ['kbcScaffold']);
+    var m = angular.module('kbcScaffoldEvent', ['kbcScaffold']);
 
-    m.factory('News', function($rootScope, $window, KbcImageApi){
+    m.factory('Event', function($rootScope, $window, KbcImageApi){
         var today = new Date();
         var self = {
             index: 0,
-            title: '',
-            date: {
+            name: '',
+            image: '/event/img/no_image.png',
+            description: '',
+            timelimit: {
                 year: today.getFullYear(),
                 month: today.getMonth() + 1,
-                day: today.getDate()
+                day: today.getDate(),
+                hour: today.getHours(),
+                minute: today.getMinutes()
             },
-            image: '/img/news/no_image.png',
-            description: '',
+            details: [],
+            button: undefined,
             file: undefined
         };
 
-        self.load = function(index){
-            $.getJSON('/data/news.json', function(config){
-                var loaded = config.news[index];
+        self.load = function(generation, index){
+            $.getJSON('/data/event-' + generation + '.json', function(events){
+                var loaded = events[index];
                 $rootScope.$apply(function(){
                     self.index = index;
-                    self.title = loaded.title;
-                    self.date = loaded.date;
+                    self.name = loaded.name;
                     self.image = loaded.image;
                     self.description = loaded.description;
+                    self.timelimit = loaded.timelimit;
+                    self.details = loaded.details;
+                    self.button = loaded.button;
                 });
             });
         };
@@ -35,7 +41,7 @@
             // TODO delete image
             self.file = file;
             // upload image
-            KbcImageApi.create(file, '/img/news/', function(err, data){
+            KbcImageApi.create(file, '/event/img/', function(err, data){
                 if(err){
                     $window.alert('サーバエラーが発生しました\n' + error);
                 }
@@ -56,36 +62,69 @@
 
 
 
-    m.directive('newsPreview', function(News){
+    m.directive('eventPreview', function(Event){
         return {
             restrict: 'A',
             link: function(scope, element, attr){
                 scope.$watch(function(){
-                    return News;
+                    return Event;
                 }, function(){
                     element.empty();
-                    kbc.news.append(element, News);
+                    var event = new kbc.event.EventCard(Event.name, Event.image, Event.description, Event.timelimit);
+                    if(Event.details.length > 0){
+                        event.setDetail(Event.details);
+                    }
+                    if(Event.button){
+                        event.setButton(Event.button.url, Event.button.text);
+                    }
+                    event.render(element);
                 }, true);
             }
         };
-    }).$inject = ['News'];
+    }).$inject = ['Event'];
 
 
 
-    m.controller('NewController', function($scope, $window, News, KbcImageApi){
-        $scope.news = News;
+    m.controller('NewController', function($scope, $window, Event, KbcImageApi){
+        $scope.event = Event;
+        $scope.details = Event.details;
+
+        $scope.addLinkText = 'リンクボタンをつける';
+        $scope.toggleLink = function(){
+            if(Event.button){
+                Event.button = undefined;
+                $scope.addLinkText = 'リンクボタンをつける';
+            } else{
+                Event.button = {
+                    url: '',
+                    text: ''
+                };
+                $scope.addLinkText = 'リンクボタンを削除';
+            }
+        };
+
+        $scope.addDetails = function(){
+            Event.details.push({
+                title: '',
+                text: ''
+            });
+        };
+
+        $scope.deleteDetail = function($index){
+            Event.details.splice($index, 1);
+        };
 
         $scope.load = function(files){
-            News.updateImage(files[0], function(path){
+            Event.updateImage(files[0], function(path){
                 $scope.imagePath = path;
             });
         };
 
         $scope.submit = function(){
-            if($window.confirm('プレビューの内容でニュースを作成しますが、よろしいですか?')){
+            if($window.confirm('プレビューの内容でイベントを作成しますが、よろしいですか?')){
                 if(!$scope.imagePath){
                     $scope.$apply(function(){
-                        $scope.imagePath = News.image;
+                        $scope.imagePath = Event.image;
                     });
                 }
                 return true;
@@ -93,10 +132,11 @@
                 return false;
             }
         };
-    }).$inject = ['$scope', '$window', 'News', 'KbcImageApi'];
+    }).$inject = ['$scope', '$window', 'Event', 'KbcImageApi'];
 
 
 
+    /*
     m.controller('EditController', function($scope, $location, $window, News, KbcImageApi){
         $scope.news = News;
 
@@ -123,4 +163,5 @@
             }
         };
     }).$inject = ['$scope', '$location', '$window', 'News', 'KbcImageApi'];
+    */
 }());

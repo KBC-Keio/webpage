@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" ng-app="ScaffoldEvent">
+<html lang="ja" ng-app="kbcScaffoldEvent">
 <head>
     <meta charset="UTF-8">
     <title>新しいイベントの追加 | KBC実行委員会</title>
@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/lib/kbc-bootstrap/css/kbc-bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/shared/css/form.css" />
+    <link rel="stylesheet" type="text/css" href="/shared/css/event.css" />
     <script type="text/javascript" src="/lib/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angularjs/angular.min.js"></script>
@@ -43,37 +44,31 @@
 
                 <form name="form" method="POST" action="/scaffold/event/index.php" ng-controller="NewController" kbc-form-submit="submit">
 
-                    <input type="hidden" name="index" value="0" />
+                    <input type="hidden" name="generation" ng-value="event.generation" />
+                    <input type="hidden" name="index" ng-value="event.index" />
 
                     <h4>イベント名</h4>
-                    <input type="text" name="name" id="name"
-                        ng-model="event.name " required />
+                    <input type="text" name="name" ng-model="event.name " required />
                     
                     <h4>イベント終了日時</h4>
                     <label>
-                        <input type="number" name="year"
-                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.year" required />
+                        <input type="number" name="year" ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.year" required />
                         年
                     </label>
                     <label>
-                        <input
-                            type="number" name="month"
-                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.month" required />
+                        <input type="number" name="month" ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.month" required />
                         月
                     </label>
                     <label>
-                        <input type="number" name="day"
-                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.day" required />
+                        <input type="number" name="day" ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.day" required />
                         日
                     </label>
                     <label>
-                        <input type="number" name="hour"
-                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.hour" required />
+                        <input type="number" name="hour" ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.hour" required />
                         時
                     </label>
                     <label>
-                        <input type="number" name="minute"
-                            ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.minute" required />
+                        <input type="number" name="minute" ng-pattern="/^[0-9]*$/" ng-model="event.timelimit.minute" required />
                         分
                     </label>
                     
@@ -82,17 +77,13 @@
 
                     <h4>サムネイル</h4>
                     <div class="file">
-                        <span>{{ imageName }}</span>
-                        <input type="file" ng-file-select="onFileSelect($files)" />
+                        画像を選択
+                        <input type="file" kbc-file-loader="load" />
                     </div>
-                    <label id="file-name" ng-show="uploaded">
-                        アップロード時のファイル名
-                        <input type="text" ng-model="uploadName" />
-                        <input type="hidden" name="image" />
-                    </label>
+                    <input type="hidden" name="image" ng-value="imagePath" />
 
                     <h4>イベント詳細</h4>
-                    <table>
+                    <table ng-show="event.details.length > 0">
                         <thead>
                             <tr>
                                 <th>項目名</th>
@@ -100,26 +91,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input type="text" /></td>
-                                <td><input type="text" /></td>
+                            <tr ng-repeat="d in details">
+                                <td><input type="text" ng-model="d.title" /></td>
+                                <td><input type="text" ng-model="d.content" /></td>
+                                <td><button class="btn btn-sm btn-danger" ng-click="deleteDetail($index)">削除</button></td>
                             </tr>
                         </tbody>
                     </table>
+                    <input type="button" class="btn btn-sm btn-success" value="項目を追加" ng-click="addDetails()" />
 
                     <h4>リンクボタン</h4>
-                    <h5>リンク先URL</h5>
-                    <label><input name="button_url" type="text" /></label>
-                    <h5>ボタンテキスト</h5>
-                    <label><input name="button_text" type="text" /></label>
+                    <div ng-show="event.button">
+                        リンク先URL
+                        <input name="button_url" type="text" ng-model="event.button.url" />
+                    </div>
+                    <div ng-show="event.button">
+                        リンクテキスト
+                        <input name="button_text" type="text" ng-model="event.button.text" />
+                    </div>
+                    <input type="button" class="btn btn-sm btn-success" ng-value="addLinkText" ng-click="toggleLink()" />
 
                     <!-- Preview field -->
-                    <div id="event-preview" ng-show="form.$valid">
-                        {{ event | preview }}
-                    </div>
+                    <div id="event-preview" ng-show="form.$valid" event-preview></div>
 
-                    <input type="submit" value="新しいニュースの追加" class="btn btn-primary"
-                        ng-disabled="form.$invalid" />
+                    <input type="submit" value="新しいイベントの追加" class="btn btn-primary" ng-disabled="form.$invalid" />
 
                 </form>
 

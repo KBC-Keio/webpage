@@ -94,7 +94,7 @@
                     var cards = new Array();
                     for(var i = 0; i < raws.length; i++){
                         var raw = raws[i];
-                        var card = new EventCard(raw.name, raw.image, raw.description, parseDate(raw.timelimit));
+                        var card = new ns.EventCard(raw.name, raw.image, raw.description, parseDate(raw.timelimit));
                         if(raw.details){
                             card.setDetail(raw.details);
                         }
@@ -129,7 +129,7 @@
      * description = String
      * timeLimit = Date
      */
-    var EventCard = function(name, image, description, timeLimit){
+    ns.EventCard = function(name, image, description, timeLimit){
         this.$headline = $('<h2>').append(name);
         this.$body = $('<div class="kbc-event">')
                      .append(this.$headline)
@@ -145,7 +145,7 @@
             this.past = true;
         }
     };
-    EventCard.prototype = {
+    ns.EventCard.prototype = {
         render: function($elem){
             this.$body.append(this.$contents.append(this.$description));
             if(this.$button){

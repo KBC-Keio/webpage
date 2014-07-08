@@ -43,7 +43,7 @@
 
                 <form name="form" method="POST" action="/scaffold/news/index.php" ng-controller="NewController" kbc-form-submit="submit">
 
-                    <input type="hidden" name="index" value="news.index" />
+                    <input type="hidden" name="index" ng-value="news.index" />
 
                     <h4>ニュースタイトル</h4>
                     <input type="text" name="title" ng-model="news.title" required />
