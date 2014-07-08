@@ -33,17 +33,17 @@
                 'minute' => $minute
             )
         );
+        if(count($details) > 0){
+            $new = array_merge($new, array(
+                'details' => $details
+            ));
+        }
         if(!empty($button_url)){
             $new = array_merge($new, array(
                 'button' => array(
                     'url' => $button_url,
                     'text' => $button_text
                 )));
-        }
-        if(count($details) > 0){
-            $new = array_merge($new, array(
-                'details' => $details
-            ));
         }
 
         if($index){
@@ -58,7 +58,7 @@
         fwrite($handle, json_encode($event_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
         fclose($handle);
 
-        // exec('cd ..; ./gitpush');
+        exec('cd ..; ./gitpush');
 
         header('Location: /scaffold/event/');
         exit;

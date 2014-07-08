@@ -90,27 +90,31 @@
                                 <th>内容</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody ng-controller="DetailsController">
                             <tr ng-repeat="d in details">
                                 <td><input type="text" ng-model="d.title" /></td>
                                 <td><input type="text" ng-model="d.content" /></td>
                                 <td><button class="btn btn-sm btn-danger" ng-click="deleteDetail($index)">削除</button></td>
                             </tr>
+                            <tr>
+                                <td><input type="button" class="btn btn-sm btn-success" value="項目を追加" ng-click="addDetails()" /></td>
+                            </tr>
                         </tbody>
                     </table>
                     <input type="hidden" name="details" ng-value="event.details | json" />
-                    <input type="button" class="btn btn-sm btn-success" value="項目を追加" ng-click="addDetails()" />
 
                     <h4>リンクボタン</h4>
-                    <div ng-show="event.button">
-                        リンク先URL
-                        <input name="button_url" type="text" ng-model="event.button.url" />
+                    <div ng-controller="LinkButtonController" ng-show="event.button">
+                        <div>
+                            リンク先URL
+                            <input name="button_url" type="text" ng-model="event.button.url" />
+                        </div>
+                        <div>
+                            リンクテキスト
+                            <input name="button_text" type="text" ng-model="event.button.text" />
+                        </div>
+                        <input type="button" class="btn btn-sm btn-success" ng-value="addLinkText" ng-click="toggleLink()" />
                     </div>
-                    <div ng-show="event.button">
-                        リンクテキスト
-                        <input name="button_text" type="text" ng-model="event.button.text" />
-                    </div>
-                    <input type="button" class="btn btn-sm btn-success" ng-value="addLinkText" ng-click="toggleLink()" />
 
                     <!-- Preview field -->
                     <div id="event-preview" ng-show="form.$valid" event-preview></div>

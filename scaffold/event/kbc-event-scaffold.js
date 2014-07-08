@@ -26,19 +26,32 @@
             self.datafile = '/data/event-' + config.generation + '.json';
         });
 
-        self.load = function(generation, index){
-            $.getJSON(self.datafile, function(events){
-                var loaded = events[index];
-                $rootScope.$apply(function(){
-                    self.index = index;
-                    self.name = loaded.name;
-                    self.image = loaded.image;
-                    self.description = loaded.description;
-                    self.timelimit = loaded.timelimit;
-                    self.details = loaded.details;
-                    self.button = loaded.button;
+        self.load = function(index){
+            var load = function(){
+                $.getJSON(self.datafile, function(events){
+                    var loaded = events[index];
+                    $rootScope.$apply(function(){
+                        self.index = index;
+                        self.name = loaded.name;
+                        self.image = loaded.image;
+                        self.description = loaded.description;
+                        self.timelimit = loaded.timelimit;
+                        self.details = loaded.details;
+                        self.button = loaded.button;
+                    });
                 });
-            });
+            };
+            if(self.datafile){
+                load();
+            } else{
+                $rootScope.$watch(function(){
+                    return self.datafile;
+                }, function(datafile){
+                    if(datafile){
+                        load();
+                    }
+                });
+            }
         };
 
         self.updateImage = function(file, callback){
@@ -91,32 +104,6 @@
 
     m.controller('NewController', function($scope, $window, Event, KbcImageApi){
         $scope.event = Event;
-        $scope.details = Event.details;
-
-        $scope.addLinkText = 'リンクボタンをつける';
-        $scope.toggleLink = function(){
-            if(Event.button){
-                Event.button = undefined;
-                $scope.addLinkText = 'リンクボタンをつける';
-            } else{
-                Event.button = {
-                    url: '',
-                    text: ''
-                };
-                $scope.addLinkText = 'リンクボタンを削除';
-            }
-        };
-
-        $scope.addDetails = function(){
-            Event.details.push({
-                title: '',
-                content: ''
-            });
-        };
-
-        $scope.deleteDetail = function($index){
-            Event.details.splice($index, 1);
-        };
 
         $scope.load = function(files){
             Event.updateImage(files[0], function(path){
@@ -148,16 +135,16 @@
         };
 
         $scope.load = function(files){
-            News.updateImage(files[0], function(path){
+            Event.updateImage(files[0], function(path){
                 $scope.imagePath = path;
             });
         };
 
         $scope.submit = function(){
-            if($window.confirm('プレビューの内容でニュースを編集しますが、よろしいですか?')){
+            if($window.confirm('プレビューの内容でイベントを編集しますが、よろしいですか?')){
                 if(!$scope.imagePath){
                     $scope.$apply(function(){
-                        $scope.imagePath = News.image;
+                        $scope.imagePath = Event.image;
                     });
                 }
                 return true;
@@ -166,4 +153,47 @@
             }
         };
     }).$inject = ['$scope', '$location', '$window', 'Event', 'KbcImageApi'];
+
+
+
+    m.controller('DetailsController', function($scope, Event){
+        $scope.details = Event.details;
+
+        $scope.$watch(function(){
+            return Event.details;
+        }, function(details){
+            $scope.details = details
+        });
+
+        $scope.addDetails = function(){
+            Event.details.push({
+                title: '',
+                content: ''
+            });
+        };
+
+        $scope.deleteDetail = function($index){
+            Event.details.splice($index, 1);
+        };
+    }).$inject = ['$scope', 'Event'];
+
+
+
+    m.controller('LinkButtonController', function($scope, Event){
+        $scope.event = Event;
+
+        $scope.addLinkText = 'リンクボタンをつける';
+        $scope.toggleLink = function(){
+            if(Event.button){
+                Event.button = undefined;
+                $scope.addLinkText = 'リンクボタンをつける';
+            } else{
+                Event.button = {
+                    url: '',
+                    text: ''
+                };
+                $scope.addLinkText = 'リンクボタンを削除';
+            }
+        };
+    }).$inject = ['$scope', 'Event'];
 }());
