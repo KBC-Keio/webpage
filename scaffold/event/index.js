@@ -14,7 +14,10 @@
         lib[namespace] = ns;
     }
 
+    var datafile;
+
     ns.initialize = function($field, json){
+        datafile = json;
         var i = 0;
         var append = function(card){
             card.render($field);
@@ -43,10 +46,11 @@
         });
     };
 
-    ns.deleteNews = function(){
+    ns.deleteEvent = function(){
         if(window.confirm('削除してしまうとScaffoldで復元することはできませんが、よろしいですか?')){
-            var index = $(this).parent().parent().attr('data-index');
-            $('<form method="POST" action="/scaffold/event/delete.php"></form>')
+            var index = $(this).parent().attr('data-index');
+            $('<form method="POST" action="/scaffold/event/destroy.php"></form>')
+                .append($('<input type="hidden" name="datafile" />').val(datafile))
                 .append($('<input type="hidden" name="index" />').val(index))
                 .appendTo(document.body)
                 .submit();
