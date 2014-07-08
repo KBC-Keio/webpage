@@ -18,7 +18,16 @@
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript">
         $(function(){
-            kbc.event.initialize('/data/recentevent.json', ['/data/pastevent.json']);
+            kbc.view.setCallback(function(config){
+                var prefix = '/data/event-';
+                var suffix = '.json';
+                var recent = prefix + config.generation + suffix;
+                var past = [];
+                for(var i = parseInt(config.generation) - 1; i > 0; i--){
+                    past.push(prefix + i + suffix);
+                }
+                kbc.event.initialize(recent, past);
+            });
         });
     </script>
 </head>

@@ -1,7 +1,7 @@
 <?php
     define('ROOT_PATH', dirname(dirname(__DIR__)));
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $file = ROOT_PATH.$_POST['file'];
+        $file = ROOT_PATH.$_POST['datafile'];
         $index = intval($_POST['index']);
         $name = $_POST['name'];
         $image = $_POST['image'];
@@ -14,6 +14,10 @@
         $details = json_decode($_POST['details']);
         $button_url = $_POST['button_url'];
         $button_text = $_POST['button_text'];
+        header('Content-Type: text/javascript; charset: UTF-8;');
+        var_dump($details);
+        var_dump($button_url);
+    } else if(0){
 
         // TODO 例外処理
 
@@ -31,15 +35,19 @@
                 'day' => $day,
                 'hour' => $hour,
                 'minute' => $minute
-            ),
-            'details' => $details
+            )
         );
-        if($button_url){
+        if(!empty($button_url)){
             $new = array_merge($new, array(
                 'button' => array(
                     'url' => $button_url,
                     'text' => $button_text
                 )));
+        }
+        if(count($details) > 0){
+            $new = array_merge($new, array(
+                'details' => $details
+            ));
         }
 
         if($index){
@@ -80,7 +88,15 @@
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript">
         $(function(){
-            kbc.scaffoldEventIndex.initialize($('#events-edit-field'), ['/data/recentevent.json', '/data/pastevent.json']);
+            kbc.view.setCallback(function(config){
+                var prefix = '/data/event-';
+                var suffix = '.json';
+                var jsons = [];
+                for(var i = parseInt(config.generation); i > 0; i--){
+                    jsons.push(prefix + i + suffix);
+                }
+                kbc.scaffoldEventIndex.initialize($('#events-edit-field'), jsons);
+            });
         });
     </script>
 </head>

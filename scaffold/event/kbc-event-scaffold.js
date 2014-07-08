@@ -3,7 +3,7 @@
 
     var m = angular.module('kbcScaffoldEvent', ['kbcScaffold']);
 
-    m.factory('Event', function($rootScope, $window, KbcImageApi){
+    m.factory('Event', function($rootScope, $window, $http, KbcImageApi){
         var today = new Date();
         var self = {
             index: 0,
@@ -22,8 +22,12 @@
             file: undefined
         };
 
+        $http.get('/data/configuration.json').success(function(config){
+            self.datafile = '/data/event-' + config.generation + '.json';
+        });
+
         self.load = function(generation, index){
-            $.getJSON('/data/event-' + generation + '.json', function(events){
+            $.getJSON(self.datafile, function(events){
                 var loaded = events[index];
                 $rootScope.$apply(function(){
                     self.index = index;
@@ -58,7 +62,7 @@
         };
 
         return self;
-    }).$inject = ['$rootScope', '$window', 'KbcImageApi'];
+    }).$inject = ['$rootScope', '$window', '$http', 'KbcImageApi'];
 
 
 
@@ -106,7 +110,7 @@
         $scope.addDetails = function(){
             Event.details.push({
                 title: '',
-                text: ''
+                content: ''
             });
         };
 

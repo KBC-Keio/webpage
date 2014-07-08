@@ -44,11 +44,11 @@
 
                 <form name="form" method="POST" action="/scaffold/event/index.php" ng-controller="NewController" kbc-form-submit="submit">
 
-                    <input type="hidden" name="generation" ng-value="event.generation" />
+                    <input type="hidden" name="datafile" ng-value="event.datafile" />
                     <input type="hidden" name="index" ng-value="event.index" />
 
                     <h4>イベント名</h4>
-                    <input type="text" name="name" ng-model="event.name " required />
+                    <input type="text" name="name" ng-model="event.name" required />
                     
                     <h4>イベント終了日時</h4>
                     <label>
@@ -98,6 +98,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    <input type="hidden" name="details" ng-value="event.details | json" />
                     <input type="button" class="btn btn-sm btn-success" value="項目を追加" ng-click="addDetails()" />
 
                     <h4>リンクボタン</h4>
