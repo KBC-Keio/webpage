@@ -14,7 +14,7 @@
         lib[namespace] = ns;
     }
 
-    ns.initialize = function($field, jsons){
+    ns.initialize = function($field, json){
         var i = 0;
         var append = function(card){
             card.render($field);
@@ -31,7 +31,7 @@
                           .append($deleteButton));
             i++;
         };
-        var pagination = new kbc.event.EventPagination(jsons);
+        var pagination = new kbc.event.EventPagination([json]);
         pagination.next(3, append);
 
         $(window).on('scroll', function(){

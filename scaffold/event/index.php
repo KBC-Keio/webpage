@@ -58,7 +58,7 @@
         fwrite($handle, json_encode($event_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
         fclose($handle);
 
-        exec('cd ..; ./gitpush');
+        // exec('cd ..; ./gitpush');
 
         header('Location: /scaffold/event/');
         exit;
@@ -85,13 +85,7 @@
     <script type="text/javascript">
         $(function(){
             kbc.view.setCallback(function(config){
-                var prefix = '/data/event-';
-                var suffix = '.json';
-                var jsons = [];
-                for(var i = parseInt(config.generation); i > 0; i--){
-                    jsons.push(prefix + i + suffix);
-                }
-                kbc.scaffoldEventIndex.initialize($('#events-edit-field'), jsons);
+                kbc.scaffoldEventIndex.initialize($('#events-edit-field'), '/data/event-' + config.generation + '.json');
             });
         });
     </script>
