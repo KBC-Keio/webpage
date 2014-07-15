@@ -2,3 +2,4 @@
 .htpasswd
 img/source
 img/tmp
+.DS_Store
