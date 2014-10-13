@@ -1,5 +1,27 @@
 [
     {
+        "name": "KBC Business Leverage 2.0 〜第１回報告会〜",
+        "image": "/event/img/207c042e891852f855f543cb939faaf1f99bd762.png",
+        "description": "KBC Summitに向けて、前回のKick Off Partyで宣言した内容の改善点共有と活動支援金を得るためのプレゼンテーション及び審査、そして事業を推進するために必要なメンターと参加者の繋がりをつくる機会の創出が今回の目的です。\r\n",
+        "timelimit": {
+            "year": 2014,
+            "month": 10,
+            "day": 19,
+            "hour": 12,
+            "minute": 0
+        },
+        "details": [
+            {
+                "title": "日時",
+                "content": "10月19日 10:00〜14:00"
+            },
+            {
+                "title": "場所",
+                "content": "慶應義塾大学三田キャンパス大学院棟313"
+            }
+        ]
+    },
+    {
         "name": "Business Leverage 2.0 募集締め切り",
         "image": "/event/9th/leverage/img/leverage_thumb.jpg",
         "description": "KBC Business Leverage 2.0の申込締切日です。",
