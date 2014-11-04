@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "KBC Business Leverage 2.0 〜第２回報告会〜",
+            "date": {
+                "year": 2014,
+                "month": 11,
+                "day": 4
+            },
+            "image": "/img/news/3d801f9abaecd91b45005fb58ace8d30a35a649b.jpg",
+            "description": "\r\n\t\r\nKBC Summitに向けて、前回の第一回報告会からの進捗度の確認と、活動支援金を得るためのプレゼンテーション及び審査、そして事業を推進するために必要なメンターと参加者を繋げる機会の創出、さらにはKBC Summitまでの宣言が今回の目的です。\r\n日時\t11/16(日) 10:00〜14:00\r\n場所\t慶應義塾大学三田キャンパス グローバルセキュリティ研究所(G-SEC) 6,7階\r\n"
+        },
+        {
             "title": "KBC Business Leverage 2.0 - 第１回報告会無事終了！",
             "date": {
                 "year": 2014,
