@@ -2,16 +2,6 @@
     "elem": ".kbc-container-index",
     "news": [
         {
-            "title": "KBC Business Leverage 2.0 - 勉強会終了！",
-            "date": {
-                "year": 2014,
-                "month": 8,
-                "day": 25
-            },
-            "image": "/img/news/72fda06d3d20e0fb680477fffebe3231ed64726f.jpg",
-            "description": "\t8/25（月）に見事選考に通過した、14チームの為の勉強会が行われました。今回の勉強会の主旨は「ユーザーやペルソナをしっかり定義すること」でした。この会を通して、次回の9/13に行われるLaunch Pad（第二次ステージに残るための選考）に役立て、事業を進めて頂けると嬉しいですね。"
-        },
-        {
             "title": "KBC Business Leverage 2.0 - キックオフパーティー終了！",
             "date": {
                 "year": 2014,
