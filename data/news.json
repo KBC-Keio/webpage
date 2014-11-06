@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "KBC Business Leverage 2.0 - 2nd Term Kick Off Party終了！",
+            "date": {
+                "year": 2014,
+                "month": 9,
+                "day": 27
+            },
+            "image": "/img/news/7f802fa10b55189161ec26ca3fb1fbf568bd6ef0.jpg",
+            "description": "創業手帳で有名な大久保さんに、PDCAサイクルに関して、チームビルディングに関して、参加者の現在直面している課題についてご講演していただきました！\r\nまた、豪華なメンターや、スーパーバイザーによるメンタリングも行いました！\r\n第二次行動期間への合図となるこのキックオフパーティで、参加者も鼓舞されたことと思います。次回の活動支援金獲得に関わる第一回報告会に向けてさらなる事業のブラッシュアップを期待しています！"
+        },
+        {
             "title": "KBC Business Leverage 2.0 - Launch Pad終了！",
             "date": {
                 "year": 2014,
