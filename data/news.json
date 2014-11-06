@@ -2,16 +2,6 @@
     "elem": ".kbc-container-index",
     "news": [
         {
-            "title": "KBC Business Leverage 2.0 - 第１回報告会無事終了！",
-            "date": {
-                "year": 2014,
-                "month": 10,
-                "day": 19
-            },
-            "image": "/img/news/dc6eccaddae68e42b45d15580abd8e9d623bf570.jpg",
-            "description": "本日は第二次行動期間での最初のイベントにあたる、第1回報告会が盛大のうちに終了致しました。\r\n これは選抜された5チームのための、専門家によるメンタリングを中心とした会です。先の第1次行動期間ではMVPを作成し、それを元に仮説検証を行いながら事業を深めていきました。その過程の中で新たな課題を迎えたチームもいました。本日のメンタリングを今後のマイルストーンとして位置づけ、さらに爆走で行動してもらいたいと思います。"
-        },
-        {
             "title": "KBC Business Leverage 2.0 - Launch Pad終了！",
             "date": {
                 "year": 2014,
