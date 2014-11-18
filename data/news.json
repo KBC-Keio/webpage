@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "KBC Business Leverage 2.0 - 第２回報告会終了！",
+            "date": {
+                "year": 2014,
+                "month": 11,
+                "day": 16
+            },
+            "image": "/img/news/425cc7970cfc7089b7adcc8d6f89096e84f2f3b4.jpg",
+            "description": "第１回報告会に続き、活動支援金獲得に関わるビッグイベントが無事終了致しました。メンター・スーパーバイザーと協力し、どんどん事業がブラッシュアップされているチーム、事業転換したチームなど様々なチームがありますが、来る１２月１４日、KBC Summitでの最終プレゼンテーションが楽しみです。長いKBC Business Levarageの期間も残りわずか！より多くの活動支援金獲得に向けて駆け抜けて欲しいです！"
+        },
+        {
             "title": "KBC Business Leverage 2.0 - 第２回報告会",
             "date": {
                 "year": 2014,
