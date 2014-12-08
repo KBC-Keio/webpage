@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "KBC Business Leverage 2.0 - クラウドファウンディング終了のお知らせ",
+            "date": {
+                "year": 2014,
+                "month": 12,
+                "day": 8
+            },
+            "image": "/img/news/d46fa3d4ff99ed998d1b1cf5966b651414a626f5.png",
+            "description": "KBC Summitで観覧者賞を設置するために、moonshotでのクラウドファウンディングを利用して10万円の資金を集めることに成功しました。KBC一同、みなさまのご支援、ご協力に心から感謝申し上げます。"
+        },
+        {
             "title": "KBC Business Leverage 2.0 - クラウドファウンディング募集のお知らせ",
             "date": {
                 "year": 2014,
