@@ -1,6 +1,9 @@
 {
     "elem": ".kbc-slide",
     "slides": [
-        { "url": "http://c2d15cb647afb05eb105e45f8a.doorkeeper.jp/events/17139", "image": "/img/slide/kbcsummit.jpg" }
+        { "url": "/event", "image": "/img/slide/recruitment.png" },
+        { "url": "/about", "image": "/img/slide/sample1.png" }
     ]
 }
+
+
