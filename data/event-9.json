@@ -1,5 +1,31 @@
 [
     {
+        "name": "Business Leverage 3.0 募集締め切り",
+        "image": "/event/img/f931cc2e9ccf7f7d1f186b4042ab7eaa8686b998.jpg",
+        "description": "KBC Business Leverage 2.0の申込締切日です。",
+        "timelimit": {
+            "year": 2015,
+            "month": 9,
+            "day": 30,
+            "hour": 23,
+            "minute": 59
+        },
+        "details": [
+            {
+                "title": "募集期間",
+                "content": "2015年9月1日(火) ~ 9月30日(水)23:59"
+            },
+            {
+                "title": "応募方法",
+                "content": "応募ページより必要書類をダウンロードして書き込んだ上で、締切時間までにメール(kbc-info@keio-contest.net)で提出してください。"
+            }
+        ],
+        "button": {
+            "url": "http://www.keio-contest.org/event/10th/leverage/",
+            "text": "応募ページへ"
+        }
+    },
+    {
         "name": "第一回KBC Academia",
         "image": "/event/img/f2102fdb5db38698056c49ae73eb1e239d7de4a2.jpg",
         "description": "「KBC Academia」は、様々な起業家・起業支援家・学問の権威の方々にテーマに沿ってパネルディスカッションを行っていただく、KBC実行委員会が主催するイベントです。その第一回である今回は「失敗力」をテーマに4名のゲストの皆様によるパネルディスカッションを予定しています。また、昨年度のKBC実行委員会のイベントである「KBC Business Leverage 2.0」にて育ったチームによる報告プレゼンテーションを実施します。\r\nさらに、アイセック慶應湘南藤沢委員会、OVAL JAPAN、KINGの3団体による新歓説明会も行います。\r\n説明会の後は新入生とKBC実行委員会を含めた各メンバーとの懇親会を開催します。\r\nプログラムの予定は順次更新していきます。",
