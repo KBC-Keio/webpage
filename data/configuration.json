@@ -19,7 +19,7 @@
     "footer": {
         "elem": ".kbc-footer",
         "opts": {
-            "year": 2014,
+            "year": 2015,
             "nav": [
                 { "url": "#pagetop", "text": "ページ上部へ戻る" },
                 { "url": "/", "text": "トップページ" },
