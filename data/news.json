@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "KBC Business Leverage 3.0 - 応募締め切りのお知らせ",
+            "date": {
+                "year": 2015,
+                "month": 10,
+                "day": 1
+            },
+            "image": "/img/news/ae3c833253b33be4ee30b763e0d3967268ad6298.jpg",
+            "description": "【御礼】<br>\r\n9月30日(水)をもちまして応募を締め切りさせて頂きました。\r\nおかげさまで多くのご応募を頂きまして、心より感謝申し上げます。\r\n今月からKBC Business Leverage 3.0が始動致しますので、今後とも宜しくお願い申し上げます。\r\nまた、次回は10月31日(土)にてDemo Day(第二次選考会)を学生限定で一般公開致しますので、是非、お越しください。"
+        },
+        {
             "title": "KBC Business Leverage 3.0 参加者募集中",
             "date": {
                 "year": 2015,
