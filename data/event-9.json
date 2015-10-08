@@ -1,5 +1,31 @@
 [
     {
+        "name": "KBC Business Leverage 3.0 - Launch Pad",
+        "image": "/event/img/0ad66f2afac28d236425c343fdf67ff63f0f1f9b.JPG",
+        "description": "書類審査を通過した The 10th KBC Business Leverage 3.0 参加チームの最初のコミュニケーションを取る機会であり、3分間のプレゼンテーションを行ってもらいます",
+        "timelimit": {
+            "year": 2015,
+            "month": 10,
+            "day": 12,
+            "hour": 17,
+            "minute": 45
+        },
+        "details": [
+            {
+                "title": "日時",
+                "content": "10/12(月) 14:00〜17:45"
+            },
+            {
+                "title": "場所",
+                "content": "慶應義塾大学三田キャンパス グローバルセキュリティ研究所(G-SEC Lab)"
+            },
+            {
+                "title": "参加対象",
+                "content": "1次審査通過チーム"
+            }
+        ]
+    },
+    {
         "name": "KBC Business Leverage 3.0 募集締め切り",
         "image": "/event/img/f931cc2e9ccf7f7d1f186b4042ab7eaa8686b998.jpg",
         "description": "KBC Business Leverage 3.0の申込締切日です。",
