@@ -1,5 +1,31 @@
 [
     {
+        "name": "【第一回報告会】",
+        "image": "/event/img/2df92bac69871d72768b1ec6d8c4bde9321e489c.JPG",
+        "description": "KBC Business Leverage3.0参加者がこれまでの進捗を報告する会です。参加者は進捗報告後、弊団体のメンターよりメンタリングを受けていただき、プランをブラッシュアップ致します。",
+        "timelimit": {
+            "year": 2015,
+            "month": 10,
+            "day": 18,
+            "hour": 18,
+            "minute": 0
+        },
+        "details": [
+            {
+                "title": "日時",
+                "content": "10/18(日) 13:00〜17:00"
+            },
+            {
+                "title": "場所",
+                "content": "慶應義塾大学三田キャンパス グローバルセキュリティ研究所(G-SEC Lab)"
+            },
+            {
+                "title": "参加対象",
+                "content": "1次審査通過チーム"
+            }
+        ]
+    },
+    {
         "name": "KBC Business Leverage 3.0 - Launch Pad",
         "image": "/event/img/0ad66f2afac28d236425c343fdf67ff63f0f1f9b.JPG",
         "description": "書類審査を通過したKBC Business Leverage3.0参加チームの初顔合わせの場です 。参加者にはそれぞれの事業プランのプレゼンテーションを行ってもらいます。その後、プロトタイプセミナーを開催いたします。",
