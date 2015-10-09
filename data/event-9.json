@@ -1,5 +1,35 @@
 [
     {
+        "name": "【 KBC Business Leverage 3.0 】Demo day",
+        "image": "/event/img/ec2cc1491f1624fabaa0f29eb2cdd1d217118ec3.jpg",
+        "description": "KBC Business Leverage3.0参加者が自身のプランのプロトタイプを披露する場です。本イベントにて第二次行動期間に通過するチームを選考します。一般の方も観覧できますので、ぜひお越しください。",
+        "timelimit": {
+            "year": 2015,
+            "month": 10,
+            "day": 31,
+            "hour": 19,
+            "minute": 0
+        },
+        "details": [
+            {
+                "title": "日時",
+                "content": "10/31(日) 13:00〜18:00"
+            },
+            {
+                "title": "場所",
+                "content": "VOYAGE GROUP 本社（渋谷ファーストプレイスオフィス８階）"
+            },
+            {
+                "title": "参加対象",
+                "content": "学生"
+            },
+            {
+                "title": "閲覧",
+                "content": "無料"
+            }
+        ]
+    },
+    {
         "name": "【第一回報告会】",
         "image": "/event/img/2df92bac69871d72768b1ec6d8c4bde9321e489c.JPG",
         "description": "KBC Business Leverage3.0参加者がこれまでの進捗を報告する会です。参加者は進捗報告後、弊団体のメンターよりメンタリングを受けていただき、プランをブラッシュアップ致します。",
