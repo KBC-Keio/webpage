@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "【KBC Business Leverage 3.0】第1回報告会終了",
+            "date": {
+                "year": 2015,
+                "month": 10,
+                "day": 19
+            },
+            "image": "/img/news/310635f1c867561ebc904a4ad17d406e486cc98d.jpg",
+            "description": "　 昨日10月18日、慶応大学三田キャンパスG-SEC Lab にて第1回報告会が開催されました。<br>\r\n 第1回報告会では、リーンスタートアップの専門家である和波俊久様によるリーンスタートアップに関するご講演と、同和波様による各チームへの講評をして頂きました。和波様の実体験に基づいたお話とアドバイス、そしてその熱意は各チームの今後の活動を後押しすることでしょう！"
+        },
+        {
             "title": "【KBC Business Leverage3.0】Launch Pad 終了！",
             "date": {
                 "year": 2015,
