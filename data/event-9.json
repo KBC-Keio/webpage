@@ -1,5 +1,31 @@
 [
     {
+        "name": "KBC Business Leverage3.0 - 第1回 Brushup Camp",
+        "image": "/event/img/61547113ab8e68baa929ae3f4f8b6a651e20e786.JPG",
+        "description": "第2次行動期間、最初のイベントは本戦通過チームによる合宿になります。11月7、8日にある本合宿では Lean UX の観点からビジネスプランを良くしていく方法と、自己分析セミナーを行う予定です。",
+        "timelimit": {
+            "year": 2015,
+            "month": 11,
+            "day": 8,
+            "hour": 19,
+            "minute": 0
+        },
+        "details": [
+            {
+                "title": "\b日時",
+                "content": "11月7日(土)12:00~8日(日)16:00"
+            },
+            {
+                "title": "場所",
+                "content": "国立オリンピック記念青少年総合センター"
+            },
+            {
+                "title": "参加対象",
+                "content": "KBC Business Leverage3.0 最終通過チーム"
+            }
+        ]
+    },
+    {
         "name": "KBC Business Leverage 3.0 - Demo Day",
         "image": "/event/img/ec2cc1491f1624fabaa0f29eb2cdd1d217118ec3.jpg",
         "description": "KBC Business Leverage3.0参加者が自身のプランのプロトタイプを披露する場です。本イベントにて第二次行動期間に通過するチームを選考します。一般の方も観覧できますので、ぜひお越しください。",
