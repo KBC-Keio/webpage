@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "【KBC Business Leverage 3.0】 ビジネスモデル講習会が終了いたしました！",
+            "date": {
+                "year": 2015,
+                "month": 11,
+                "day": 10
+            },
+            "image": "/img/news/a5e8fbf4607b6f09590872112438ab92bcdfe06e.jpg",
+            "description": "11月8日、ビジネスモデル講習会が行われました。<br>\r\nビジネスモデル講習会では、株式会社MMインキュベーションパートナーズ 代表取締役宮地恵美様によるビジネスモデルキャンパスに関する講演ならびにワークショップと、その内容に基づいた、チームとメンターの方々によるメンタリングを致しました。"
+        },
+        {
             "title": "【KBC Business Leverage 3.0】DemoDay が終了いたしました！",
             "date": {
                 "year": 2015,
