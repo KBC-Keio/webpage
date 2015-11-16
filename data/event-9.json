@@ -1,5 +1,27 @@
 [
     {
+        "name": "KBC Business Leverage 3.0 - 第2回報告会",
+        "image": "/event/img/75fbb77d71675619b004ef7793cb5b2ae9e4dd79.JPG",
+        "description": "11月14日(土)に第2回報告会を行います。<br>\r\n第2回報告会では、Medium Japan代表の坂田一倫様をお呼びして、リーンUX の手法に関する講演とワークショップを行う予定になります。",
+        "timelimit": {
+            "year": 2015,
+            "month": 11,
+            "day": 14,
+            "hour": 19,
+            "minute": 0
+        },
+        "details": [
+            {
+                "title": "場所",
+                "content": "日本メガソーラー設備事業オフィス<br>東京都港区2-3-18　YM芝公園ビル3F"
+            },
+            {
+                "title": "日時",
+                "content": "2015年11月14日(土)　13:00 ~ 16:00"
+            }
+        ]
+    },
+    {
         "name": "KBC Business Leverage3.0 - ビジネスモデル講習会",
         "image": "/event/img/61547113ab8e68baa929ae3f4f8b6a651e20e786.JPG",
         "description": "第2次行動期間最初のイベントは、11月8日のビジネスモデル講習会になります。<br>\r\nビジネスモデル講習会では、慶應義塾大学SFC研究所・上席研究員/特任教授である宮地恵美様によるビジネスモデルキャンパスの講演会とメンターによる通過チームのメンタリングを行います。",
