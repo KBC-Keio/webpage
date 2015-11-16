@@ -2,6 +2,16 @@
     "elem": ".kbc-container-index",
     "news": [
         {
+            "title": "【KBC Business Leverage 3.0】第２回報告会が終了いたしました。",
+            "date": {
+                "year": 2015,
+                "month": 11,
+                "day": 16
+            },
+            "image": "/img/news/a1f8a5dd25b87aa46a1d0e812d14957001ff34b1.JPG",
+            "description": "11月14日、第2回報告会が終了いたしました。<br>\r\n当日はMedium Japan代表の坂田一倫様をお呼びして、リーンUX の手法に関する講演とリーンキャンパス・ペルソナシート・6UPスケッチーズに関するワークショップを行いました。\r\n"
+        },
+        {
             "title": "【KBC Business Leverage 3.0】 ビジネスモデル講習会が終了いたしました！",
             "date": {
                 "year": 2015,
