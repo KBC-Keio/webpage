@@ -1,5 +1,27 @@
 [
     {
+        "name": "KBC Business Leverage 3.0 - Brush up camp",
+        "image": "/event/img/f66cd56a5311eaf8632645f79d9ca28888518bad.jpg",
+        "description": "11月28,29日に、神奈川県伊勢原市のたけだ旅館にて Brush up camp を行います。<br>\r\nBrushup camp では、プロトタイプの作成、プレゼン講座そしてメンターによるメンタリングを行います。<br>\r\n自然に囲まれた恵まれた環境で各チームはそれぞれの活動を進展させていくことでしょう！",
+        "timelimit": {
+            "year": 2015,
+            "month": 11,
+            "day": 29,
+            "hour": 19,
+            "minute": 0
+        },
+        "details": [
+            {
+                "title": "日時",
+                "content": "11月28日13:00〜11月29日16:00"
+            },
+            {
+                "title": "場所",
+                "content": "たけだ旅館<br>神奈川県伊勢原市大山908"
+            }
+        ]
+    },
+    {
         "name": "KBC Business Leverage 3.0 - 第2回報告会",
         "image": "/event/img/bee3a19fa1d283b9d4fca7e1ce4aa0c6439bc2e0.JPG",
         "description": "11月14日(土)に第2回報告会を行います。<br>\r\n第2回報告会では、Medium Japan代表の坂田一倫様をお呼びして、リーンUX の手法に関する講演とワークショップを行う予定になります。",
